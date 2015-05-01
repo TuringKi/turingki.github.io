@@ -1,4 +1,4 @@
-markdown:redcarpet
+markdown:kramdown
 safe: false
 pygments: true
 excerpt_separator: "\n\n\n"
