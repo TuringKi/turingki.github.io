@@ -1,5 +1,11 @@
-markdown:kramdown
-safe: false
-pygments: true
-excerpt_separator: "\n\n\n"
-paginate: 5
+name: TuringKi
+description: Personal Blog
+url: http://turingki.github.com
+highlighter: true
+permalink: /:categories/:year-:month-:day-:title/
+relative_permalinks: false
+markdown: kramdown
+#markdown: rdiscount
+#markdown: redcarpet
+baidu_tongji_id: 3F3d35307f190110ab5152701a7ffb30f7
+baseurl: 
