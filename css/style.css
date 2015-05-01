@@ -8,10 +8,10 @@
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
-  color: black;
-  background: lightgrey;
+  color: #ddd;
+  background: #333;
 }
 
 .clear {
@@ -41,8 +41,7 @@ body > header {
 /* Header */
 body > header .title {
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
-
-  background: gray;
+  background: #444;
   border-radius: 10px 10px 0 0;
   box-shadow: 0 3px 10px rgba(0,0,0,.1);
   padding: 20px 20px 20px 20px;
@@ -113,7 +112,7 @@ nav li {
 
 /* Section */
 body > section .grid{
-  background: gray;
+  background: #444;
   border-radius: 0px 0px 10px 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,.1);
 }
@@ -624,8 +623,3 @@ code.option, code.flag, code.filter, code.output {
 .lang_flag_en { background: url(../img/lang_en.png) no-repeat }
 .lang_flag_cn { background: url(../img/lang_cn.png) no-repeat }
 
-
-.main_title
-{
-  margin: 10px;
-}
