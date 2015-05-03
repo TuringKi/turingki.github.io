@@ -45,3 +45,4 @@ _site/
 Gemfile
 Gemfile.lock
 .sass-cache
+up.bat
