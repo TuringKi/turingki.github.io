@@ -1,7 +1,7 @@
 name: TuringKi
 description: Personal Blog
 url: http://turingki.github.com
-highlighter: true
+pygments: true
 permalink: /:categories/:year-:month-:day-:title/
 relative_permalinks: false
 markdown: kramdown
