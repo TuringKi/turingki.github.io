@@ -60,6 +60,8 @@ IP使用四个关键技术提供服务：`服务类型`，`生存时间`，`选�
 `Code-division multiplexing (CDM)`:Each sender uses a unique random number (code) and XORs the signal with this random number.
  `码分多路复用`CDM又称`码分多址（Code Division Multiple Access ,CDMA）`,它既共享信道的频率,也共享时间,是一种真正的动态复用技术.其原理是每比特时间被分成m个更短的时间槽，称为芯片（Chip）,通常情况下每比特有64或128个芯片.每个站点(通道)被指定一个唯一的m位的代码或芯片序列。当发送1时站点就发送芯片序列，发送0时就发送芯片序列的反码。当两个或多个站点同时发送时，各路数据在信道中被线形相加。为了从信道中分离出各路信号，要求各个站点的芯片序列是相互正交的.
 
+CDMA的优点：`All terminals can use the same frequency, no planning needed Huge code space (e.g. 232) compared to frequency space;Interferences is not coded `
+
 
 ##IV. Cellular System Fundamentals
 
@@ -102,6 +104,16 @@ IP使用四个关键技术提供服务：`服务类型`，`生存时间`，`选�
 `Infrastructure`: require a complex infrastructure to have full coverage of the whole service area and onnect all base stations
 
 `Handoff`: moving from one cell into another 
+
+`Umbrella cell (hierarchical cell)`:
+
+Two (or more) levels: macro cell over multiple micro-cells
+
+To reduce number of handoffs for fast moving users (in vehicles)
+
+A tradeoff solution for channel reuse and the frequent handoffs
+
+
 
 ####A. 蜂窝信道分配
 
@@ -171,7 +183,12 @@ WLANs 的两种模式:`Infrastructure Mode(eg.WiFi)` 和 `Ad Hoc Mode（eg.蓝�
 
 `RTS/CTS协议`：即请求发送/允许发送协议，相当于一种握手协议，主要用来解决"隐藏终端"问题。"隐藏终端"（Hidden Stations）是指，基站A向基站B发送信息，基站C未侦测到A也向B发送，故A和C同时将信号发送至B，引起信号冲突，最终导致发送至B的信号都丢失了。"隐藏终端"多发生在大型单元中（一般在室外环境），这将带来效率损失，并且需要错误恢复机制。当需要传送大容量文件时，尤其需要杜绝"隐藏终端"现象的发生。IEEE802.11提供了如下解决方案。在参数配置中，若使用RTS/CTS协议，同时设置传送上限字节数----一旦待传送的数据大于此上限值时，即启动RTS/CTS握手协议：首先，A向B发送RTS信号，表明A要向B发送若干数据，B收到RTS后，向所有基站发出CTS信号，表明已准备就绪，A可以发送，而其余欲向B发送数据的基站则暂停发送；双方在成功交换RTS/CTS信号（即完成握手）后才开始真正的数据传递，保证了多个互不可见的发送站点同时向同一接收站点发送信号时，实际只能是收到接收站点回应CTS的那个站点能够进行发送，避免了冲突发生。即使有冲突发生，也只是在发送RTS时，这种情况下，由于收不到接收站点的CTS消息，大家再回头用DCF协议提供的竞争机制，分配一个随机退守定时值，等待下一次介质空闲DIFS（Distributed Inter-Frame Space）后竞争发送RTS，直到成功为止。
 
+
+![RTS_CTS](../img/RTS_CTS.png)
+
 ##VII. Wireless Mesh Networks
+
+`Mesh`:所有节点都相连。
 
 无线网状网络（`无线Mesh网络，或WMN/wireless mesh network`）也称为“多跳（multi-hop）”网络，它是一种与传统无线网络完全不同的新型无线网络技术。在传统的无线局域网(WLAN)中，每个客户端均通过一条与AP相连的无线链路来访问网络，用户如果要进行相互通信的话，必须首先访问一个固定的接入点(AP)，这种网络结构被称为单跳网络。而在无线Mesh网络中，任何无线设备节点都可以同时作为AP和路由器，网络中的每个节点都可以发送和接收信号，每个节点都可以与一个或者多个对等节点进行直接通信。这种结构的最大好处在于：如果最近的AP由于流量过大而导致拥塞的话，那么数据可以自动重新路由到一个通信流量较小的邻近节点进行传输。依此类推，数据包还可以根据网络的情况，继续路由到与之最近的下一个节点进行传输，直到到达最终目的地为止。这样的访问方式就是多跳访问。
 
@@ -197,7 +214,19 @@ Working Modes of Sensor Networks:1)`Proactive networks`,2)`reactive networks`.
 
 路径加强(Data Delivery,reinforced gradients)：最后sink节点选择一条最优路径作为强化路径。
 
+Problems of flooding protocol.
+
+`Implosion`(内聚): A node always sends data to its neighbors even if the same data has been received by the neighbors from other nodes.
+
+`Overlap`（重叠）: The nodes waste energy and bandwidth by sending the overlapping data.
+
+`Resource` Blindness: Nodes do not change activities based on the energy availability.
+
+
 2)`Sensor Protocols for Information via Negotiation` :
+
+`Negotiation` : communicate with each other about the sensor data already received and the data still needed, via meta-data messages.
+
 
 Data ADV (advertisement) is broadcast throughout the network;
 
@@ -226,3 +255,34 @@ SPIN-1:
 该算法基本思想是：以循环的方式随机选择`簇头节点`，将整个网络的能量负载平均分配到每个传感器节点中，从而达到降低网络能源消耗、提高网络整体生存时间的目的。仿真表明，与一般的平面多跳路由协议和静态分层算法相比，LEACH分簇协议可以将网络生命周期延长15%。
 
 ![LEACH](../img/LEACH.png)
+
+##X. Vehicular Ad Hoc Networks
+
+
+`What are vehicular networks? `:A vehicle in the near future will be an integrated system with on-board sensors, computers and communication devices on wheels.
+`Why vehicular networks?`:Fast and Direct Communication;Low cost;
+`Characteristics of VANETs`:
+
+Highly dynamic topology
+
+Frequently disconnected network
+
+Sufficient energy and storage
+
+Geographical type of communication
+
+`Routing in VANETs`
+
+`Ad hoc routing`
+
+`Prediction-based AODV`:Predict link lifetimes using the speed and location information of nodes
+
+Position-based routing
+
+`GPSR`
+
+`GPCR`
+
+`Cluster-based routing`
+
+`Forming stable clustering structure`
