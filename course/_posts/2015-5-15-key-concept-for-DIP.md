@@ -81,3 +81,6 @@ $$
 $$
 
 It tells us that even if we know the degradation function we cannot recover the undegraded image. Because $N(u,v)$ is a random function whose Fourier transform is not known.
+
+##Median Filtering,Average Filtering,Laplacian Filtering
+
