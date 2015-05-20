@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-05-20 14:32:28</updateDate>
+		<updateDate>2015-05-20 14:48:17</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.github.com</link>
@@ -422,19 +422,7 @@ G(u,v) = H(u,v)F(u,v) + N(u,v)
   &lt;p&gt;摘要:这篇短文主要介绍卢卡斯-卡纳德算法及其应用。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=1802&quot;&gt;Bruce D. Lucas&lt;/a&gt;和&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=136&quot;&gt;Takeo Kanade&lt;/a&gt;提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;bolme2010visual&quot;&gt;Bolme, D. S., Beveridge, J. R., Draper, B. A., &amp;amp; Lui, Y. M. (2010). Visual object tracking using adaptive correlation filters. In &lt;i&gt;Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on&lt;/i&gt; (pp. 2544–2550). IEEE.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;henriques2012exploiting&quot;&gt;Henriques, J. F., Caseiro, R., Martins, P., &amp;amp; Batista, J. (2012). Exploiting the circulant structure of tracking-by-detection with kernels. In &lt;i&gt;Computer Vision–ECCV 2012&lt;/i&gt; (pp. 702–715). Springer.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;danelljan2014accurate&quot;&gt;Danelljan, M., Häger, G., Khan, F. S., &amp;amp; Felsberg, M. (2014). Accurate scale estimation for robust visual tracking. In &lt;i&gt;Proceedings of the British Machine Vision Conference BMVC&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;boddeti2013correlation&quot;&gt;Boddeti, V. N., Kanade, T., &amp;amp; Kumar, B. V. K. V. (2013). Correlation filters for object alignment. In &lt;i&gt;Computer Vision and Pattern Recognition (CVPR), 2013 IEEE Conference on&lt;/i&gt; (pp. 2291–2298). IEEE.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;baker2004lucas&quot;&gt;Baker, S., &amp;amp; Matthews, I. (2004). Lucas-Kanade 20 Years On: A Unifying Framework. &lt;i&gt;International Journal Of Computer Vision&lt;/i&gt;, &lt;i&gt;56&lt;/i&gt;(3), 221–255. doi:10.1023/B:VISI.0000011205.11775.fd&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;baker2001equivalence&quot;&gt;Baker, S., &amp;amp; Matthews, I. (2001). Equivalence and efficiency of image alignment algorithms. In &lt;i&gt;Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on&lt;/i&gt; (Vol. 1, pp. I–1090). IEEE.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;cootes2001representing&quot;&gt;Cootes, T. F., &amp;amp; Taylor, C. J. (2001). On representing edge structure for model matching. In &lt;i&gt;Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on&lt;/i&gt; (Vol. 1, pp. I–1114). IEEE.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;babenko2009visual&quot;&gt;Babenko, B., Yang, M.-H., &amp;amp; Belongie, S. (2009). Visual tracking with online multiple instance learning. In &lt;i&gt;Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on&lt;/i&gt; (pp. 983–990). IEEE.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;hare2011struck&quot;&gt;Hare, S., Saffari, A., &amp;amp; Torr, P. H. S. (2011). Struck: Structured output tracking with kernels. In &lt;i&gt;Computer Vision (ICCV), 2011 IEEE International Conference on&lt;/i&gt; (pp. 263–270). IEEE.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;kalal2012tracking&quot;&gt;Kalal, Z., Mikolajczyk, K., &amp;amp; Matas, J. (2012). Tracking-learning-detection. &lt;i&gt;Pattern Analysis And Machine Intelligence, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;34&lt;/i&gt;(7), 1409–1422.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;ross2008incremental&quot;&gt;Ross, D. A., Lim, J., Lin, R.-S., &amp;amp; Yang, M.-H. (2008). Incremental learning for robust visual tracking. &lt;i&gt;International Journal Of Computer Vision&lt;/i&gt;, &lt;i&gt;77&lt;/i&gt;(1-3), 125–141.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;mei2009robust&quot;&gt;Mei, X., &amp;amp; Ling, H. (2009). Robust visual tracking using l1 minimization. In &lt;i&gt;Computer Vision, 2009 IEEE 12th International Conference on&lt;/i&gt; (pp. 1436–1443). IEEE.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;pestana2014computer&quot;&gt;Pestana, J., Sanchez-Lopez, J. L., Saripalli, S., &amp;amp; Campoy, P. (2014). Computer vision based general object following for GPS-denied multirotor unmanned vehicles. In &lt;i&gt;American Control Conference (ACC), 2014&lt;/i&gt; (pp. 1886–1891). IEEE.&lt;/span&gt;&lt;/li&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;baker2004lucas&quot;&gt;Baker, S., &amp;amp; Matthews, I. (2004). Lucas-Kanade 20 Years On: A Unifying Framework. &lt;i&gt;International Journal Of Computer Vision&lt;/i&gt;, &lt;i&gt;56&lt;/i&gt;(3), 221–255. doi:10.1023/B:VISI.0000011205.11775.fd&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;Lucas_kanade_1981&quot;&gt;Lucas, B. D., &amp;amp; Kanade, T. (1981). An Iterative Image Registration Technique with an Application to Stereo Vision (IJCAI). In &lt;i&gt;Proceedings of the 7th International Joint Conference on Artificial Intelligence (IJCAI ’81)&lt;/i&gt; (pp. 674–679).&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
 
 </description>
