@@ -1,0 +1,54 @@
+{% include top.html %}
+
+<body class="wrap">
+  {% include header.html %}
+
+  <section class="docs">
+  <div class="grid">
+    <article>
+    <ul class = "pagination1">
+      {% assign category = page.categories | join: ' ' | split: ' ' | last %}
+      {% assign index = 0 %}
+      {% for post in site.categories[category] %}
+       <li id = "{{index}}" >
+      {% capture index %}{{ index | plus: '1' }}{% endcapture %}
+       <h3><a href="{{ post.url }}">{{ post.title }}</a><b> </b><small><time date="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time></small></h3>
+   
+       <h5>Abstract:</h5>{{ post.summary |truncate:300 }}
+
+      {% endfor %}
+      </li>
+    </ul>
+  
+</section>
+
+  {% include footer.html %}
+  {% include analytics.html %}
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    blogs = {{index}};
+    pages = Math.floor(blogs / 10) + 1;
+    $("#curr_page").text("1/" +pages);
+
+    $(".prev").click(function(){
+      alert("aa");
+    });
+
+    $(".next").click(function(){
+      alert("aa");
+    });
+    //initial
+   // for (var i = 0; i <10 && i<blogs; i++) {
+   //   $("#"+i).show().addClass("blk_shown");
+   // };
+
+   $("ul.pagination1").quickPagination();
+
+  });
+  </script>
+
+
+</body>
+<script type="text/javascript" src="{{ site.baseurl }}/js/jquery.quick.pagination.min.js"></script>
+</html>
