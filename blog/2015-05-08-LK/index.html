@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>卢卡斯-卡纳德(Lucas-Kanade) 算法</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="/css/gridism.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <!--<link rel="stylesheet" href="/css/pygments.css" />-->
+  <!--<link rel="stylesheet" href="/css/i.css" /> -->
+  <link rel="alternate" type="application/rss+xml" title="TuringKi" href="http://turingki.github.com/feed.xml">
+</head>
+
+
+<body class="wrap">
+  <header>
+  <header class="grid title main_title">
+    <h1>
+      <a href="/">TuringKi's Blog</a>
+    </h1>
+    <p/>
+	<h6>"青春的光辉，理想的钥匙，生命的意义，乃至人类的生存、发展……全包含在这两个字之中……奋斗！只有奋斗，才能治愈过去的创伤；只有奋斗，才是我们民族的希望和光明所在。"      --卡尔·马克思</h6>
+  </header>
+  <div class="grid">
+    <nav class="main-nav">
+      
+      <ul>
+
+        <li class="current">
+        <a href="/blog">Blogs</a>
+        </li>
+         <li class="">
+        <a href="/course">Courses</a>
+        </li>
+        <li class="">
+        <a href="/math">Mathematics</a>
+        </li>
+         <li class="">
+        <a href="/publication">Publications</a>
+        </li>
+        <li class="">
+        <a href="/about">About Me</a>
+        </li>
+        <li>
+          <a href="http://lab.turingki.com">Lab</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+		  tex2jax: {
+			inlineMath: [['$','$'], ['\\(','\\)']],
+			processEscapes: true
+		  },
+		  TeX: {extensions: ["color.js"]}
+});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+</header>
+
+
+  <section class="docs">
+  <div class="grid">
+    <article>
+    <h1>卢卡斯-卡纳德(Lucas-Kanade) 算法</h1>
+    <blockquote>
+  <p>摘要:这篇短文主要介绍卢卡斯-卡纳德算法及其应用。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由<a href="http://www.ri.cmu.edu/person.html?person_id=1802">Bruce D. Lucas</a>和<a href="http://www.ri.cmu.edu/person.html?person_id=136">Takeo Kanade</a>提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。</p>
+</blockquote>
+
+<ol class="bibliography"><li><span id="bolme2010visual">Bolme, D. S., Beveridge, J. R., Draper, B. A., &amp; Lui, Y. M. (2010). Visual object tracking using adaptive correlation filters. In <i>Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on</i> (pp. 2544–2550). IEEE.</span></li>
+<li><span id="henriques2012exploiting">Henriques, J. F., Caseiro, R., Martins, P., &amp; Batista, J. (2012). Exploiting the circulant structure of tracking-by-detection with kernels. In <i>Computer Vision–ECCV 2012</i> (pp. 702–715). Springer.</span></li>
+<li><span id="danelljan2014accurate">Danelljan, M., Häger, G., Khan, F. S., &amp; Felsberg, M. (2014). Accurate scale estimation for robust visual tracking. In <i>Proceedings of the British Machine Vision Conference BMVC</i>.</span></li>
+<li><span id="boddeti2013correlation">Boddeti, V. N., Kanade, T., &amp; Kumar, B. V. K. V. (2013). Correlation filters for object alignment. In <i>Computer Vision and Pattern Recognition (CVPR), 2013 IEEE Conference on</i> (pp. 2291–2298). IEEE.</span></li>
+<li><span id="baker2004lucas">Baker, S., &amp; Matthews, I. (2004). Lucas-Kanade 20 Years On: A Unifying Framework. <i>International Journal Of Computer Vision</i>, <i>56</i>(3), 221–255. doi:10.1023/B:VISI.0000011205.11775.fd</span></li>
+<li><span id="baker2001equivalence">Baker, S., &amp; Matthews, I. (2001). Equivalence and efficiency of image alignment algorithms. In <i>Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on</i> (Vol. 1, pp. I–1090). IEEE.</span></li>
+<li><span id="cootes2001representing">Cootes, T. F., &amp; Taylor, C. J. (2001). On representing edge structure for model matching. In <i>Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on</i> (Vol. 1, pp. I–1114). IEEE.</span></li>
+<li><span id="babenko2009visual">Babenko, B., Yang, M.-H., &amp; Belongie, S. (2009). Visual tracking with online multiple instance learning. In <i>Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on</i> (pp. 983–990). IEEE.</span></li>
+<li><span id="hare2011struck">Hare, S., Saffari, A., &amp; Torr, P. H. S. (2011). Struck: Structured output tracking with kernels. In <i>Computer Vision (ICCV), 2011 IEEE International Conference on</i> (pp. 263–270). IEEE.</span></li>
+<li><span id="kalal2012tracking">Kalal, Z., Mikolajczyk, K., &amp; Matas, J. (2012). Tracking-learning-detection. <i>Pattern Analysis And Machine Intelligence, IEEE Transactions On</i>, <i>34</i>(7), 1409–1422.</span></li>
+<li><span id="ross2008incremental">Ross, D. A., Lim, J., Lin, R.-S., &amp; Yang, M.-H. (2008). Incremental learning for robust visual tracking. <i>International Journal Of Computer Vision</i>, <i>77</i>(1-3), 125–141.</span></li>
+<li><span id="mei2009robust">Mei, X., &amp; Ling, H. (2009). Robust visual tracking using l1 minimization. In <i>Computer Vision, 2009 IEEE 12th International Conference on</i> (pp. 1436–1443). IEEE.</span></li>
+<li><span id="pestana2014computer">Pestana, J., Sanchez-Lopez, J. L., Saripalli, S., &amp; Campoy, P. (2014). Computer vision based general object following for GPS-denied multirotor unmanned vehicles. In <i>American Control Conference (ACC), 2014</i> (pp. 1886–1891). IEEE.</span></li>
+<li><span id="Lucas_kanade_1981">Lucas, B. D., &amp; Kanade, T. (1981). An Iterative Image Registration Technique with an Application to Stereo Vision (IJCAI). In <i>Proceedings of the 7th International Joint Conference on Artificial Intelligence (IJCAI ’81)</i> (pp. 674–679).</span></li></ol>
+
+
+    
+
+
+
+
+  
+    
+  
+
+  
+    
+    
+    
+      
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+    
+      
+        
+      
+    
+  
+
+<div class="section-nav">
+  <div class="left align-right">
+    
+      <a href="/blog/2015-05-03-PCA/" class="prev">Back</a>
+    
+  </div>
+  <div class="right align-left">
+    
+      <span class="next disabled">Next</span>
+    
+  </div>
+  <div class="clear"></div>
+</div>
+
+	
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'turingki'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<!--
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+-->
+
+
+	
+    </article>
+  </div>
+</section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit align-center center-on-mobiles">
+    <a href = "https://github.com/turingki"><img width = "159px" height = "150px" src="/publics/img/Chitoge.gif" ></a>
+    <p>Power By <a href = 'https://pages.github.com/'>Github pages</a>,the web template is based on <a href="https://github.com/pkuwwt/pkuwwt.github.com/">pkuwwt</a>'s page.</p>
+		<!--<a href="/feed.xml"><img src="/img/rss.gif" alt="RSS"></a> 
+
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" alt="GitHub • Social coding">
+        </a>
+      </p>
+  -->
+    </div>
+  </div>
+</footer>
+
+  
+
+
+
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46094623-1', 'pkuwwt.tk');
+    ga('send', 'pageview');
+
+	</script>
+</html>
