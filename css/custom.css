@@ -94,3 +94,6 @@ table.pageme td {
     border-collapse: collapse;
     border: 1px solid #ccc;
 }
+p.figure_caption{
+    font-size: 12px;
+}
