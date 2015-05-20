@@ -82,5 +82,32 @@ $$
 
 It tells us that even if we know the degradation function we cannot recover the undegraded image. Because $N(u,v)$ is a random function whose Fourier transform is not known.
 
-##Median Filtering,Average Filtering,Laplacian Filtering
+##V. Median Filtering,Average Filtering,Laplacian Filtering
 
+`中值滤波`的基本思想是，把局部区域的像素按灰度等级进行排序，取该领域中灰度的中值作为当前像素的灰度值。
+
+`均值滤波`:
+
+$$
+\
+\left[\begin{array}{cccc}
+    \frac{1}{9} &    \frac{1}{9}    & \frac{1}{9} \\
+    \frac{1}{9} &    \frac{1}{9}   & \frac{1}{9}\\
+    \frac{1}{9} & \frac{1}{9} & \frac{1}{9}
+\end{array}\right]
+
+$$
+
+`拉普拉斯滤波`:
+
+$$
+\
+\left[\begin{array}{cccc}
+    0 & 1 & 0 \\
+    1 & -4 & 1 \\
+    0 & 1 & 0 
+\end{array}\right]
+
+$$
+
+##VI. 膨胀和腐蚀
