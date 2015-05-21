@@ -24,7 +24,7 @@ task :commit, :message do |t, arg|
   status = system("git commit -m \"#{arg[:message]||"Update"}. #{message}\"")
   puts status ? "Success" : "Failed"
   puts "\n## Pushing commits to remote #{source_branch}"
-  status = system("git push origin #{source_branch}")
+  status = system("git push -f origin #{source_branch}")
   puts status ? "Success" : "Failed"
 end
 
@@ -57,7 +57,7 @@ task :deploy do
   status = system("git commit -m \"#{message}\"")
   puts status ? "Success" : "Failed"
   puts "\n## Pushing commits to remote #{production_branch}"
-  status = system("git push origin #{production_branch}")
+  status = system("git push -f origin #{production_branch}")
   puts status ? "Success" : "Failed"
 
   puts "\n## Switching back to #{source_branch} branch"

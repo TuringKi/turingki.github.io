@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>HOG特征与线性SVM分类器在机器视觉中的应用</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/pygments.css" />
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="/css/gridism.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/custom.css" />
+  
+  <!--<link rel="stylesheet" href="/css/pygments.css" />-->
+  <!--<link rel="stylesheet" href="/css/i.css" /> -->
+  <link rel="alternate" type="application/rss+xml" title="TuringKi" href="http://turingki.github.com/feed.xml">
+
+  <script src="../../js/jquery-1.10.2.min.js" charset="utf-8"></script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+      tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+      },
+      TeX: {extensions: ["color.js"]}
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+
+<body class="wrap">
+  <header>
+  <header class="grid title main_title">
+    <h1>
+      <a href="/" class = 'big_title'>TuringKi's Blog</a>
+    </h1>
+    <h3>Studying about Statistical Learning,Pattern Recognition and Computer Vision.</h3>
+	
+  </header>
+  <div class="grid">
+    <nav class="main-nav">
+      
+      <ul>
+
+        <li class="current">
+        <a href="/blog">Blogs</a>
+        </li>
+         <li class="">
+        <a href="/course">Courses</a>
+        </li>
+        <li class="">
+        <a href="/math">Mathematics</a>
+        </li>
+         <li class="">
+        <a href="/publication">Publications</a>
+        </li>
+        <li class="">
+        <a href="/about">About Me</a>
+        </li>
+        <li>
+          <a href="http://lab.turingki.com">Lab</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+
+
+</header>
+
+
+   <link rel="stylesheet" href="/css/zTreeStyle.css" type="text/css">
+
+<section class="docs">
+  <div class="grid">
+
+
+
+    <article>
+    <h1>HOG特征与线性SVM分类器在机器视觉中的应用</h1>
+<div class="BlogAnchor">
+    <p>
+        <b id="AnchorContentToggle" title="收起" style="cursor:pointer;">Contents[-]</b>
+    </p>
+   
+    <div class="AnchorContent" id="AnchorContent">
+
+                           <ul id="tree" class="ztree" style='width:100%'>
+        
+                    </ul>
+     </div>
+</div>
+    <h3 id="section">摘要</h3>
+
+<p>这篇博客源自对论文<a href="../img/2014_arXiv_Bristow.pdf">Why do linear SVMs trained on HOG features perform so well?</a>的一些体会。</p>
+
+    
+
+
+
+
+  
+    
+    
+    
+      
+        
+      
+    
+  
+
+  
+    
+    
+    
+      
+        
+      
+    
+  
+
+  
+    
+  
+
+<div class="section-nav">
+  <div class="left align-right">
+    
+      <span class="prev disabled">Back</span>
+    
+  </div>
+  <div class="right align-left">
+    
+      <a href="/blog/2015-05-03-PCA/" class="next">Next</a>
+    
+  </div>
+  <div class="clear"></div>
+</div>
+
+	
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'turingki'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<!--
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+-->
+
+
+	
+    </article>
+  </div>
+</section>
+
+<link rel="stylesheet" href="/css/toc.css" type="text/css">
+<link rel="stylesheet" href="/css/zTreeStyle.css" type="text/css">
+
+
+<!--<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>-->
+<script type="text/javascript">
+
+$("#AnchorContentToggle").click(function(){
+    var text = $(this).html();
+    if(text=="Contents[-]"){
+        $(this).html("Contents[+]");
+        $(this).attr({"title":"展开"});
+    }else{
+        $(this).html("Contents[-]");
+        $(this).attr({"title":"收起"});
+    }
+    $("#AnchorContent").toggle();
+});
+
+
+
+$(".anchor-link").click(function(){
+    $("html,body").animate({scrollTop: $($(this).attr("link")).offset().top}, 1000);
+});
+</script>
+
+<script src='/js/jquery.ztree.all-3.5.min.js'></script>
+<script src='/js/ztree_toc.js'></script>
+<SCRIPT type="text/javascript" >
+  <!--
+  $(document).ready(function(){
+    jQuery('#tree').ztree_toc({
+      is_auto_number:true,
+      documment_selector:'article',
+      ztreeStyle: {
+                        overflow: 'auto',
+                        position: 'inherit',
+                        'z-index': 2147483647,
+                        border: '0px none',
+                        left: '0px',
+                        top: '0px'
+                    }
+    });
+  });
+  //-->
+</SCRIPT>
+
+  <footer>
+  <div class="grid">
+    <div class="unit align-center center-on-mobiles">
+    
+    <p>Power By <a href = 'https://pages.github.com/'>Github pages</a>,the web template is based on <a href="https://github.com/pkuwwt/pkuwwt.github.com/">pkuwwt</a>'s page.</p>
+		<!--<a href="/feed.xml"><img src="/img/rss.gif" alt="RSS"></a> 
+
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" alt="GitHub • Social coding">
+        </a>
+      </p>
+  -->
+    </div>
+  </div>
+</footer>
+
+
+  
+</body>
+
+</html>
