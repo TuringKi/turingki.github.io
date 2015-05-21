@@ -18,11 +18,17 @@ categories: course
 
   <div class="grid">
     <article>
-    <div class = "unit">
-     <ul class = "course_panel">
+    <div class = "course_unit">
+     <ul class = "course_panel ">
       {% assign category = page.categories | join: ' ' | split: ' ' | last %}
       {% for post in site.categories[category] %}
-      <li><a href="{{ post.url }}"><img src="./cover/{{post.course_name}}.jpg" alt></a></li>
+      <li name = "{{post.course_name}}" class="grid">
+      <div class = "unit one-third course_cover"><a href="{{ post.url }}"><img src="./cover/{{post.cover}}" alt></a></div>
+      <div class = "unit course_detail two-thirds "><a href="{{ post.url }}"><h3>{{post.course_name}}</h3></a>
+      <h4>Introduction:</h4>
+      <p>{{post.introduction}}</p>
+      </div>
+      </li>
       {% endfor %}
     </ul>
     </div>

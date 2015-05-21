@@ -112,20 +112,40 @@ p.figure_caption{
     margin: 12px;
     font-family: MathJax_Math-italic;
 }
-ul.course_panel li
+.course_cover 
 {
-    float: left;
+  
     list-style: none;
     padding: 8px;
     width:200px;
     height:280px;
-    margin: 10px;
-box-shadow: 0 5px 10px rgba(0,0,0,.6);
+   
+           /* W3C syntax */
 }
-ul.course_panel li a img{
+.course_unit{
+    padding: 10px;
+    width: 100%;
+}
+.course_panel li{
+    display: block;
+    list-style: none;
+    border: 15px;
+    border-color: white;
+    height: 300px;
+}
+.course_detail{
+    width: 64%;
+}
+.course_detail h3{
+    text-align: center;
+}
+.course_cover a img{
       width:170px;
     height:250px;
    clear: both; 
 display: block; 
 margin:auto; 
+box-shadow: 5px 15px 18px rgba(0,0,0,.6);
+border: 5px;
+    border-radius:8px;            /* W3C syntax */
 }

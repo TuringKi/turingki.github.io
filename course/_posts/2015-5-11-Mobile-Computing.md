@@ -2,7 +2,9 @@
 layout: blog
 comments: true
 title: 【课程】移动计算
-course_name: mobile computing
+cover: mobile computing.jpg
+course_name: Mobile Computing
+introduction: This course introduces about WLANs,Cellular Networks,Wireless Mesh Networks,and other wireless networks.
 ---
 
 >基于[贾小华](http://www.cs.cityu.edu.hk/~jia)老师的课件整理。
