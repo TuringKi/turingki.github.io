@@ -69,15 +69,24 @@ MathJax.Hub.Config({
 </header>
 
 
-  <section class="docs">
+   <link rel="stylesheet" href="/css/zTreeStyle.css" type="text/css">
+
+<section class="docs">
   <div class="grid">
+
     <article>
     <h1>卢卡斯-卡纳德(Lucas-Kanade) 算法</h1>
+<div class="BlogAnchor">
+    <p>
+        <b id="AnchorContentToggle" title="收起" style="cursor:pointer;">Contents[-]</b>
+    </p>
+    <div class="AnchorContent" id="AnchorContent"> </div>
+</div>
     <blockquote>
   <p>摘要:这篇短文主要介绍卢卡斯-卡纳德算法及其应用。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由<a href="http://www.ri.cmu.edu/person.html?person_id=1802">Bruce D. Lucas</a>和<a href="http://www.ri.cmu.edu/person.html?person_id=136">Takeo Kanade</a>提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。</p>
 </blockquote>
 
-<h2 id="i-">I. 介绍</h2>
+<h2 id="section">介绍</h2>
 
 <p>自从Lucas-Kanade 光流算法<a href="#Lucas_kanade_1981">(Lucas &amp; Kanade, 1981)</a>第一次作为一种图像对齐(Image Alignment)的技术被引入，LK算法已经成为了一种在机器视觉各种应用中被广泛使用的算法。这些应用包括追踪<a href="#eigen_tracking">(Black &amp; Jepson, 1998; Hager &amp; Belhumeur, 1998)</a>，运动估计<a href="#hierarchical_motion_estimate">(Bergen, Anandan, Hanna, &amp; Hingorani, 1992)</a>,图像拼接<a href="#Shum_Szeliski_00">(Shum &amp; Szeliski, 2000)</a>,医学图像配准<a href="#Christensen_Johnson_01">(Christensen &amp; Johnson, 2001)</a>，以及人脸建模<a href="#Baker_Matthews_01">(Baker &amp; Matthews, 2001; Cootes, Edwards, &amp; Taylor, 1998)</a>。</p>
 
@@ -88,7 +97,13 @@ MathJax.Hub.Config({
 
 <p>我们令$\mathbf{p} = (p_0,p_1,\dots,p_n)^T \in \mathbb{R}^n$表示仿射变换的参数</p>
 
-<h2 id="section">引用</h2>
+<h2 id="section-1">原理</h2>
+
+<h2 id="matlab">简单的Matlab实现</h2>
+
+<h2 id="section-2">总结</h2>
+
+<h2 id="section-3">引用</h2>
 
 <ol class="bibliography"><li><span id="Lucas_kanade_1981">Lucas, B. D., &amp; Kanade, T. (1981). An Iterative Image Registration Technique with an Application to Stereo Vision (IJCAI). In <i>Proceedings of the 7th International Joint Conference on Artificial Intelligence (IJCAI ’81)</i> (pp. 674–679).</span></li>
 <li><span id="eigen_tracking">Black, M. J., &amp; Jepson, A. D. (1998). EigenTracking: Robust Matching and Tracking of Articulated Objects Using a View-Based Representation. <i>International Journal Of Computer Vision</i>, <i>26</i>(1), 63–84. doi:10.1023/A:1007939232436</span></li>
@@ -169,6 +184,41 @@ var disqus_shortname = 'turingki'; // required: replace example with your forum 
   </div>
 </section>
 
+<link rel="stylesheet" href="/css/toc.css" type="text/css">
+
+
+<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+  
+//在文章中查找title并填充到div AnchorContent中
+$("article").find("h2,h3,h4,h5,h6").each(function(i,item){
+    var tag = $(item).get(0).localName;
+    $(item).attr("id","wow"+i);
+    $("#AnchorContent").append('<li><a class="new'+tag+' anchor-link" onclick="return false;" href="#" link="#wow'+i+'">'+(i+1)+" · "+$(this).text()+'</a></li>');
+    $(".newh2").css("margin-left",0);
+    $(".newh3").css("margin-left",20);
+    $(".newh4").css("margin-left",40);
+    $(".newh5").css("margin-left",60);
+    $(".newh6").css("margin-left",80);
+});
+$("#AnchorContentToggle").click(function(){
+    var text = $(this).html();
+    if(text=="Contents[-]"){
+        $(this).html("Contents[+]");
+        $(this).attr({"title":"展开"});
+    }else{
+        $(this).html("Contents[-]");
+        $(this).attr({"title":"收起"});
+    }
+    $("#AnchorContent").toggle();
+});
+
+
+
+$(".anchor-link").click(function(){
+    $("html,body").animate({scrollTop: $($(this).attr("link")).offset().top}, 1000);
+});
+</script>
 
   <footer>
   <div class="grid">
