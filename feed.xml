@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-05-21 11:15:07</updateDate>
+		<updateDate>2015-05-21 13:11:29</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.github.com</link>
@@ -431,15 +431,19 @@ G(u,v) = H(u,v)F(u,v) + N(u,v)
 &lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/lk_function.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 1.如上图所示，LK在图像对齐中的应用:通过LK算法可以求得图像$I(\mathbf{x})$中绿框所表示的仿射参数，
 使得框出的图像与模板$T(\mathbf{x})$最匹配，即所谓的“对齐”。&lt;/p&gt;&lt;/div&gt;
 
-&lt;p&gt;我们令$\mathbf{p} = (p_0,p_1,\dots,p_n)^T \in \mathbb{R}^n$表示仿射变换的参数&lt;/p&gt;
+&lt;p&gt;这篇短文主要目的是简要介绍LK算法的基本原理以及简单的算法实现。下面的一个小节我们将推导出LK算法。之后以一个简单1维的例子说明LK算法的原理。最后给出LK算法的Matlab实现。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;原理&lt;/h2&gt;
 
+&lt;h3 id=&quot;section-2&quot;&gt;仿射变换&lt;/h3&gt;
+
+&lt;p&gt;我们令$\mathbf{p} = (p_0,p_1,\dots,p_n)^T \in \mathbb{R}^n$表示仿射变换的参数。构造函数$W(\mathbf{x};\mathbf{p})$，$W :\mathscr{X} \to \mathscr{X}$，即W将给定的图像中的位置坐标$\mathbf{x}$按照仿射变换参数$\mathbf{p}$变换到另一个坐标位置。&lt;/p&gt;
+
 &lt;h2 id=&quot;matlab&quot;&gt;简单的Matlab实现&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;总结&lt;/h2&gt;
+&lt;h2 id=&quot;section-3&quot;&gt;总结&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;引用&lt;/h2&gt;
+&lt;h2 id=&quot;section-4&quot;&gt;引用&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;Lucas_kanade_1981&quot;&gt;Lucas, B. D., &amp;amp; Kanade, T. (1981). An Iterative Image Registration Technique with an Application to Stereo Vision (IJCAI). In &lt;i&gt;Proceedings of the 7th International Joint Conference on Artificial Intelligence (IJCAI ’81)&lt;/i&gt; (pp. 674–679).&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;eigen_tracking&quot;&gt;Black, M. J., &amp;amp; Jepson, A. D. (1998). EigenTracking: Robust Matching and Tracking of Articulated Objects Using a View-Based Representation. &lt;i&gt;International Journal Of Computer Vision&lt;/i&gt;, &lt;i&gt;26&lt;/i&gt;(1), 63–84. doi:10.1023/A:1007939232436&lt;/span&gt;&lt;/li&gt;
