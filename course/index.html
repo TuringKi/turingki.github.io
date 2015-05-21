@@ -14,6 +14,19 @@
   <link rel="alternate" type="application/rss+xml" title="TuringKi" href="http://turingki.github.com/feed.xml">
 
   <script src="../../js/jquery-1.10.2.min.js" charset="utf-8"></script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+      tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+      },
+      TeX: {extensions: ["color.js"]}
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </head>
 
 
@@ -21,9 +34,9 @@
   <header>
   <header class="grid title main_title">
     <h1>
-      <a href="/">TuringKi's Blog</a>
+      <a href="/" class = 'big_title'>TuringKi's Blog</a>
     </h1>
-    <p/>
+    <h3>Studying about Statistical Learning,Pattern Recognition and Computer Vision.</h3>
 	
   </header>
   <div class="grid">
@@ -53,31 +66,19 @@
     </nav>
   </div>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-		  tex2jax: {
-			inlineMath: [['$','$'], ['\\(','\\)']],
-			processEscapes: true
-		  },
-		  TeX: {extensions: ["color.js"]}
-});
-</script>
 
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 </header>
 
 
   <section class="docs">
-  <div class="grid">
+  <!--<div class="grid">
     <article>
     <ul>
       
       
-      <li><span>2015-05-15</span> &raquo; <a href="/course/2015-05-15-key-concept-for-DIP/">【课程】数字图像处理重点</a></li>
+      <li><span>2015-05-15</span> &raquo; <a href="/course/2015-05-15-DIP/">【课程】数字图像处理重点</a></li>
       
       <li><span>2015-05-11</span> &raquo; <a href="/course/2015-05-11-Mobile-Computing/">【课程】移动计算</a></li>
       
@@ -85,6 +86,24 @@ MathJax.Hub.Config({
       
     </ul>
     </article>
+  </div>
+-->
+
+  <div class="grid">
+    <article>
+    <div class = "unit">
+     <ul class = "course_panel">
+      
+      
+      <li><a href="/course/2015-05-15-DIP/"><img src="./cover/DIP.jpg" alt></a></li>
+      
+      <li><a href="/course/2015-05-11-Mobile-Computing/"><img src="./cover/mobile computing.jpg" alt></a></li>
+      
+      <li><a href="/course/2015-05-05-DS/"><img src="./cover/DS.jpg" alt></a></li>
+      
+    </ul>
+    </div>
+    </article> 
   </div>
 </section>
 

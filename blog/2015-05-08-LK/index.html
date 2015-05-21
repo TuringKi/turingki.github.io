@@ -14,6 +14,19 @@
   <link rel="alternate" type="application/rss+xml" title="TuringKi" href="http://turingki.github.com/feed.xml">
 
   <script src="../../js/jquery-1.10.2.min.js" charset="utf-8"></script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+      tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+      },
+      TeX: {extensions: ["color.js"]}
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </head>
 
 
@@ -21,9 +34,9 @@
   <header>
   <header class="grid title main_title">
     <h1>
-      <a href="/">TuringKi's Blog</a>
+      <a href="/" class = 'big_title'>TuringKi's Blog</a>
     </h1>
-    <p/>
+    <h3>Studying about Statistical Learning,Pattern Recognition and Computer Vision.</h3>
 	
   </header>
   <div class="grid">
@@ -53,19 +66,7 @@
     </nav>
   </div>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-		  tex2jax: {
-			inlineMath: [['$','$'], ['\\(','\\)']],
-			processEscapes: true
-		  },
-		  TeX: {extensions: ["color.js"]}
-});
-</script>
 
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 </header>
@@ -93,7 +94,7 @@ MathJax.Hub.Config({
      </div>
 </div>
     <blockquote>
-  <p>摘要:这篇短文主要介绍卢卡斯-卡纳德算法及其应用。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由<a href="http://www.ri.cmu.edu/person.html?person_id=1802">Bruce D. Lucas</a>和<a href="http://www.ri.cmu.edu/person.html?person_id=136">Takeo Kanade</a>提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。</p>
+  <p>摘要:这篇短文主要介绍卢卡斯-卡纳德算法的原理及其实现。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由<a href="http://www.ri.cmu.edu/person.html?person_id=1802">Bruce D. Lucas</a>和<a href="http://www.ri.cmu.edu/person.html?person_id=136">Takeo Kanade</a>提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。</p>
 </blockquote>
 
 <h2 id="section">介绍</h2>
@@ -111,7 +112,86 @@ MathJax.Hub.Config({
 
 <h3 id="section-2">仿射变换</h3>
 
-<p>我们令$\mathbf{p} = (p_0,p_1,\dots,p_n)^T \in \mathbb{R}^n$表示仿射变换的参数。构造函数$W(\mathbf{x};\mathbf{p})$，$W :\mathscr{X} \to \mathscr{X}$，即W将给定的图像中的位置坐标$\mathbf{x}$按照仿射变换参数$\mathbf{p}$变换到另一个坐标位置。</p>
+<p>因为LK算法是在仿射变换的参数空间做梯度下降搜索，那么我们应该首先弄清楚什么叫仿射变换。在此我们做简单的介绍。</p>
+
+<p>一个任意的仿射变换都可以表示为一个矩阵（<code>线性变换</code>）再加上一个向量(<code>偏移量</code>)。下面的例子是将列向量组成的矩阵$A$仿射变换到矩阵$B$。其中$M_0$是线性变换矩阵，$\mathbf{b}$是偏移向量。</p>
+
+<script type="math/tex; mode=display">
+B = M_0A + \mathbf{b}
+</script>
+
+<p>上式也可简写为:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\left[      
+ \begin{array}{c} B\\ 1 
+ \end{array} 
+ \right] 
+ = M\left[ \begin{array}{c} A\\ 1 \end{array} 
+ \right] =  \left[      
+ \begin{array}{ccc} M_0&\mathbf{b}\\ \mathbf{0}&1 \end{array} 
+ \right] \left[ \begin{array}{c} A\\ 1 \end{array} 
+ \right]
+
+ %]]></script>
+
+<p>我们称$M$为<code>仿射变换的参数矩阵</code>。</p>
+
+<div align="center"><img src="../img/affine_transform_example.png" width="300px" /><p class="figure_caption">Figure 2.给定一个仿射变换参数矩阵$M$，我们可以将Image 1的三角形仿射变换到Image 2。</p></div>
+
+<p>因为图像坐标$\mathbf{x} \in \mathbb{R}^2$，所以在图像处理中的仿射变换参数矩阵为$M \in \mathbb{R}^{3 \times 3}$。</p>
+
+<h3 id="lk">LK算法的推导</h3>
+
+<p>我们先给出LK算法的目标函数。</p>
+
+<script type="math/tex; mode=display">
+
+E = \min{\| T(X_0) - I(MX))\|_F^2 }
+
+</script>
+
+<p>其中$X_0,X$分别表示模板图像$T$和查询图像$I$的像素坐标矩阵，$M$表示仿射变换的参数矩阵。我们需要在仿射变换的参数空间找到一个$M_{opt}$使得目标函数$E$最小。由于我们无法得知函数$I(\mathbf{x})$的解析形式，故使用求偏导解$E$的方法无法实现。LK算法利用了一个巧妙的方法迭代求解$E$的最优解。下面我们将介绍这一方法。</p>
+
+<p>我们先令：</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+
+M = \left[ 
+
+\begin{array}{ccc}
+
+p_1&p_2&p_3\\
+p_4&p_5&p_6\\
+0&0&1
+\end{array}
+\right]
+
+ %]]></script>
+
+<p>即矩阵$M$可以用六个实数参数$p_1,p_2,\dots,p_6$表示。我们令$\mathbf{p} = (p_1,p_2,\dots,p_6)^T$。那么可以构造函数$W(\mathbf{x};\mathbf{p}) = M \mathbf{x}$，$W :\mathscr{X} \to \mathscr{X}$，即W将给定的图像中的位置坐标$\mathbf{x}$按照仿射变换参数$\mathbf{p}$变换到另一个坐标位置。则有:</p>
+
+<script type="math/tex; mode=display">
+I(M X) = I(W(X;\mathbf{p}))
+</script>
+
+<p>注意此处我们已将坐标向量$\mathbf{x}$换成了整幅图像所有坐标所组成的矩阵$X$,所以此处$X$其实是一个常数。由于不知道$I$的解析形式，但我们可以对$I$构造如下的迭代形式：</p>
+
+<script type="math/tex; mode=display">
+I(W(X;\mathbf{p_{i}})) = I(W(X;\mathbf{p_{i - 1}} + \Delta \mathbf{p}))
+</script>
+
+<p>只要我们知道每一步迭代的$\Delta \mathbf{p}$值，就可以求得$\mathbf{p_{opt}}$。</p>
+
+<p>将上述表示在$\mathbf{p_i}$处做<code>一阶泰勒展开</code>，有：</p>
+
+<script type="math/tex; mode=display">
+I(W(X;\mathbf{p_{i}})) = I(W(X;\mathbf{p_{i - 1}})) + \nabla I \frac{\partial{W}}{\partial{\mathbf{p}}} |_{\mathbf{p_i}} \Delta \mathbf{p}
+</script>
+
+<p>我们称$\frac{\partial{W}}{\partial{\mathbf{p}}}$为<code>Jacobian矩阵</code>。</p>
 
 <h2 id="matlab">简单的Matlab实现</h2>
 
