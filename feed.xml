@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-05-21 22:26:03</updateDate>
+		<updateDate>2015-05-21 22:58:26</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.github.com</link>
@@ -13,23 +13,33 @@
   &lt;p&gt;摘要：本课程参照MIT的&lt;a href=&quot;http://www.mit.edu/~9.520/fall14/&quot;&gt;9.520:Statistical Learning Theory and Applications&lt;/a&gt;整理而成，它从正则(Regularization )的角度全面审视了包括&lt;code&gt;Logistic 回归&lt;/code&gt;, &lt;code&gt;支持向量机&lt;/code&gt;，&lt;code&gt;稀疏表示&lt;/code&gt;、&lt;code&gt;流形正则&lt;/code&gt;等方法在内的多种机器学习方法。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;学习问题和正则&lt;/h2&gt;
+&lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;数学补充(泛函分析和概率论)&lt;/h2&gt;
+&lt;p&gt;本课程主要讲解统计学习理论框架下的机器学习方法的一些最新进展。这既包括一些经典的方法，如正则网络和支持向量机，也会涉及一些几何(geometry)方法，稀疏(sparsity)，在线学习，特征选择(feature selection)，结构化输出和多任务学习等在内的一些前沿的技术。本课程也会谈到RBF和深度学习网络的联系。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;再生核空间&lt;/h2&gt;
+&lt;p&gt;过去15年中，如何有效的&lt;code&gt;学习&lt;/code&gt;已经成为了研究AI的一个中心问题。&lt;/p&gt;
+
+&lt;p&gt;数学理论，算法实现和神经科学是机器学习的三大支柱。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/learnin_math_algorithm_neuroscience.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 1.1.数学为机器学习的算法研究提供了理论工具以回答一些基础问题，例如什么样的学习模型具有泛化能力？如何提高学习算法的稳定性？这些问题都需要数学的介入。工程实践是对理论算法的实现，它需要针对实际问题对理论算法进行某种改造。&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;学习问题和正则&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;数学补充(泛函分析和概率论)&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;再生核空间&lt;/h2&gt;
 
 &lt;h2 id=&quot;mercer-&quot;&gt;字典，特征映射Mercer 理论&lt;/h2&gt;
 
 &lt;h2 id=&quot;tikhonov-&quot;&gt;Tikhonov 正则和表示理论&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;正则最小二乘&lt;/h2&gt;
+&lt;h2 id=&quot;section-4&quot;&gt;正则最小二乘&lt;/h2&gt;
 
 &lt;h2 id=&quot;logistic-&quot;&gt;Logistic 回归和支持向量机&lt;/h2&gt;
 
 &lt;h2 id=&quot;iterative-regularization-via-early-stopping&quot;&gt;Iterative Regularization via Early Stopping&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;稀疏表示&lt;/h2&gt;
+&lt;h2 id=&quot;section-5&quot;&gt;稀疏表示&lt;/h2&gt;
 
 &lt;h2 id=&quot;proximal-methods&quot;&gt;Proximal Methods&lt;/h2&gt;
 
@@ -45,7 +55,7 @@
 
 &lt;h2 id=&quot;regularization-for-multi-output-learning&quot;&gt;Regularization for Multi-Output Learning&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;学习数据表示:深度学习&lt;/h2&gt;
+&lt;h2 id=&quot;section-6&quot;&gt;学习数据表示:深度学习&lt;/h2&gt;
 </description>
 				<pubDate>Fri, 22 May 2015 00:00:00 +0800</pubDate>
 				<link>http://turingki.github.com/course/2015-05-22-Statistical-Learning/</link>
