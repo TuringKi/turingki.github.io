@@ -4,7 +4,7 @@ title: Courses
 categories: course
 ---
 <section class="docs">
-  <div class="grid">
+  <!--<div class="grid">
     <article>
     <ul>
       {% assign category = page.categories | join: ' ' | split: ' ' | last %}
@@ -13,5 +13,19 @@ categories: course
       {% endfor %}
     </ul>
     </article>
+  </div>
+-->
+
+  <div class="grid">
+    <article>
+    <div class = "unit">
+     <ul class = "course_panel">
+      {% assign category = page.categories | join: ' ' | split: ' ' | last %}
+      {% for post in site.categories[category] %}
+      <li><a href="{{ post.url }}"><img src="./cover/{{post.course_name}}.jpg" alt></a></li>
+      {% endfor %}
+    </ul>
+    </div>
+    </article> 
   </div>
 </section>

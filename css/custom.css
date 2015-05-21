@@ -1,3 +1,12 @@
+
+@font-face {
+
+    font-family: "MathJax_Math-Italic";
+
+    src: url("./font/MathJax_Math-Italic.otf");
+}
+
+ 
 #pagination {
     border-top: 1px dotted #888888;
     padding-top: 1em;
@@ -96,4 +105,27 @@ table.pageme td {
 }
 p.figure_caption{
     font-size: 12px;
+}
+
+.big_title{
+    font-size: 45px;
+    margin: 12px;
+    font-family: MathJax_Math-italic;
+}
+ul.course_panel li
+{
+    float: left;
+    list-style: none;
+    padding: 8px;
+    width:200px;
+    height:280px;
+    margin: 10px;
+box-shadow: 0 5px 10px rgba(0,0,0,.6);
+}
+ul.course_panel li a img{
+      width:170px;
+    height:250px;
+   clear: both; 
+display: block; 
+margin:auto; 
 }
