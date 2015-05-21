@@ -18,7 +18,9 @@ introduction: 本课程参照MIT的9.520:Statistical Learning Theory and Applica
 数学理论，算法实现和神经科学是机器学习的三大支柱。
 
 
-<div align='center'><img src="../img/learnin_math_algorithm_neuroscience.png"  /><p class = "figure_caption">Figure 1.1.数学为机器学习的算法研究提供了理论工具以回答一些基础问题，例如什么样的学习模型具有泛化能力？如何提高学习算法的稳定性？这些问题都需要数学的介入。工程实践是对理论算法的实现，它需要针对实际问题对理论算法进行某种改造。</p></div>
+<div align='center'><img src="../img/learnin_math_algorithm_neuroscience.png"  /><p class = "figure_caption">Figure 1.1.数学为机器学习的算法研究提供了理论工具以回答一些基础问题，例如什么样的学习模型具有泛化能力？如何提高学习算法的稳定性？这些问题都需要数学的介入。工程实践是对理论算法的实现，它需要针对实际问题对理论算法进行某种改造。而神经科学对于机器学习的作用是比较研究，站在神经科学的角度看待机器学习，你会发现机器学习可能在自然科学的研究中发挥其独特的作用：即回答什么是智能？</p></div>
+
+机器学习和传统求解实际问题的数学模型(例如微分方程)最大的不同在于它需要关注模型的 `泛化能量(generalization)`，即对未知数据的预测能力，而不仅仅关注当前数据的拟合情况。更多的情况下，机器学习算法甚至需要在当前的数据(训练集)的拟合程度和泛化能力之间做出权衡。
 
 ##学习问题和正则
 
