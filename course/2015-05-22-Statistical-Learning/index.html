@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title>【课程】数字图像处理重点</title>
+  <title>【课程】统计学习</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="stylesheet" href="/css/normalize.css" />
@@ -80,7 +80,7 @@ MathJax.Hub.Config({
 
 
     <article>
-    <h1>【课程】数字图像处理重点</h1>
+    <h1>【课程】统计学习</h1>
 <div class="BlogAnchor">
     <p>
         <b id="AnchorContentToggle" title="收起" style="cursor:pointer;">Contents[-]</b>
@@ -93,133 +93,12 @@ MathJax.Hub.Config({
                     </ul>
      </div>
 </div>
-    <table>
-  <tbody>
-    <tr>
-      <td>基于<a href="http://cs.hitsz.edu.cn/teachers/t1/1190359289.html">卢光明</a>老师的讲义整理，以问题的形式回顾本课程的重点。</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="i-">I. 什么是霍夫变换？简述其过程。</h2>
-
-<p><img src="../img/hough transform.png" alt="hough transform" /></p>
-
-<p>Calculating steps of hough transform:</p>
-
-<ol>
-  <li>In parameter space, quantize $a$ and $b$, and give out 
-($a_{min}$).</li>
-  <li>Set an accumulator A: A is A(amin:amax, bmin:bmax),set A to zero at the beginning.</li>
-  <li>For a given point (xi,yi) in the original space, let a equal to each allowed values on the a-axis, and solve for the corresponding b using the equation: </li>
-  <li>The resulting b are then rounded off to the nearest allowed value in the b-axis. If a choice of ap results in solution bq, we let A(p,q)=A(p,q)+1
-At the end of this procedure, a value Q in $A_{(i,j)}$ corresponds to Q points in the xy space lying on the line y=aix+bj.</li>
-</ol>
-
-<h2 id="ii-">II. 列出三种颜色模型，简述其基本组成。</h2>
-
-<p><code>GRB模型</code>:最简单的颜色模型，以三维数组存放Red,Green,Blue的颜色值。</p>
-
-<p><code>HSI模型</code>:反映了人的视觉系统感知彩色的方式，以<code>色调</code>、<code>饱和度</code>和<code>强度</code>三种基本特征量来感知颜色。</p>
-
-<p><img src="../img/HSI2RGB.png" alt="HSI2RGB" /></p>
-
-<p><code>YUV模型</code>:用于电视显示的颜色模型。Y表示亮度，$U = \frac{Red}{Green}$,$Q =  \frac{Blue}{Yellow}$。单独列出亮度信号是方便兼容黑白电视。</p>
-
-<h2 id="iii-">III. 压缩率和冗余</h2>
-
-<p>Data redundancy is the central issue in digital image compression.</p>
-
-<p>If $n1$ and $n2$ denote the number of information-carrying units in two data sets that represent the same information</p>
-
-<p>The relative data redundancy $RD$ of the first data set can be defined as:</p>
-
-<script type="math/tex; mode=display">
-RD = 1 −1/CR
-</script>
-
-<p>where compression ratio $CR$ is</p>
-
-<script type="math/tex; mode=display">
-CR =n1/n2
-</script>
-
-<h2 id="iv--inverse-filtering--">IV. 什么是 inverse filtering ? 简述图像复原模型。</h2>
-
-<p>The degradation process is modeled as a degradation function that together with an additive noise term.</p>
-
-<script type="math/tex; mode=display">
-g(x,y) = h(x,y) * f(x,y) + \eta(x,y)
-</script>
-
-<p>In frequency domain representation:</p>
-
-<script type="math/tex; mode=display">
-G(u,v) = H(u,v)F(u,v) + N(u,v)
-</script>
-
-<p>Where: $f(x,y)$ is the input image, $g(x,y)$ is the degraded image, $h(x,y)$ is the degradation function, and $\eta(x,y)$ is the additive noise.The degradation model is as shown following figure:</p>
-
-<p><img src="../img/degradation model.png" alt="degradation model" /></p>
-
-<p>And the restoration model is:</p>
-
-<p><img src="../img/restoration model.png" alt="restoration model" /></p>
-
-<p>From the equation above:</p>
-
-<script type="math/tex; mode=display">
-\bar{F}(u,v) = \frac{G(u,v)}{H(u,v)} = F(u,v) + \frac{N(u,v)}{H(u,v)}
-</script>
-
-<p>It tells us that even if we know the degradation function we cannot recover the undegraded image. Because $N(u,v)$ is a random function whose Fourier transform is not known.</p>
-
-<h2 id="v-median-filteringaverage-filteringlaplacian-filtering">V. Median Filtering,Average Filtering,Laplacian Filtering</h2>
-
-<p><code>中值滤波</code>的基本思想是，把局部区域的像素按灰度等级进行排序，取该领域中灰度的中值作为当前像素的灰度值。</p>
-
-<p><code>均值滤波</code>:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\
-\left[\begin{array}{cccc}
-    \frac{1}{9} &    \frac{1}{9}    & \frac{1}{9} \\
-    \frac{1}{9} &    \frac{1}{9}   & \frac{1}{9}\\
-    \frac{1}{9} & \frac{1}{9} & \frac{1}{9}
-\end{array}\right]
-
- %]]></script>
-
-<p><code>拉普拉斯滤波</code>:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\
-\left[\begin{array}{cccc}
-    0 & 1 & 0 \\
-    1 & -4 & 1 \\
-    0 & 1 & 0 
-\end{array}\right]
-
- %]]></script>
-
-<h2 id="vi-">VI. 膨胀和腐蚀</h2>
+    
 
     
 
 
 
-
-  
-    
-    
-    
-      
-        
-      
-    
-  
 
   
     
@@ -247,15 +126,25 @@ G(u,v) = H(u,v)F(u,v) + N(u,v)
     
   
 
+  
+    
+    
+    
+      
+        
+      
+    
+  
+
 <div class="section-nav">
   <div class="left align-right">
     
-      <a href="/course/2015-05-11-Mobile-Computing/" class="prev">Back</a>
+      <a href="/course/2015-05-15-DIP/" class="prev">Back</a>
     
   </div>
   <div class="right align-left">
     
-      <a href="/course/2015-05-22-Statistical-Learning/" class="next">Next</a>
+      <span class="next disabled">Next</span>
     
   </div>
   <div class="clear"></div>

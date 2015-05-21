@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-05-21 18:59:52</updateDate>
+		<updateDate>2015-05-21 20:13:50</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.github.com</link>
 		<atom:link href="http://turingki.github.com/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>【课程】统计学习</title>
+				<description>
+</description>
+				<pubDate>Fri, 22 May 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.github.com/course/2015-05-22-Statistical-Learning/</link>
+				<guid isPermaLink="true">http://turingki.github.com/course/2015-05-22-Statistical-Learning/</guid>
+			</item>
 		
 			<item>
 				<title>【课程】数字图像处理重点</title>
