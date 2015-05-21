@@ -5,10 +5,12 @@
   <title>卢卡斯-卡纳德(Lucas-Kanade) 算法</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/pygments.css" />
   <link rel="stylesheet" href="/css/normalize.css" />
   <link rel="stylesheet" href="/css/gridism.css" />
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/custom.css" />
+  
   <!--<link rel="stylesheet" href="/css/pygments.css" />-->
   <!--<link rel="stylesheet" href="/css/i.css" /> -->
   <link rel="alternate" type="application/rss+xml" title="TuringKi" href="http://turingki.github.com/feed.xml">
@@ -194,6 +196,22 @@ I(W(X;\mathbf{p_{i}})) = I(W(X;\mathbf{p_{i - 1}})) + \nabla I \frac{\partial{W}
 <p>我们称$\frac{\partial{W}}{\partial{\mathbf{p}}}$为<code>Jacobian矩阵</code>。</p>
 
 <h2 id="matlab">简单的Matlab实现</h2>
+
+<p>计算Jacobian矩阵：</p>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-matlab" data-lang="matlab">1
+2
+3
+4
+5
+6</code></pre></div></td><td class="code"><div class="highlight"><pre><span class="n">jac_x</span> <span class="p">=</span> <span class="n">kron</span><span class="p">([</span><span class="mi">0</span><span class="p">:</span><span class="n">nx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span><span class="nb">ones</span><span class="p">(</span><span class="n">ny</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+    <span class="n">jac_y</span> <span class="p">=</span> <span class="n">kron</span><span class="p">([</span><span class="mi">0</span><span class="p">:</span><span class="n">ny</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">&#39;</span><span class="p">,</span><span class="nb">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nx</span><span class="p">));</span>
+    <span class="n">jac_zero</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">);</span>
+    <span class="n">jac_one</span> <span class="p">=</span> <span class="nb">ones</span><span class="p">(</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">);</span>
+    <span class="n">dW_dp</span> <span class="p">=</span> <span class="p">[</span><span class="n">jac_one</span><span class="p">,</span> <span class="n">jac_zero</span><span class="p">,</span><span class="n">jac_x</span><span class="p">,</span> <span class="n">jac_zero</span><span class="p">,</span> <span class="n">jac_y</span><span class="p">,</span> <span class="n">jac_zero</span><span class="p">;</span><span class="c">...</span>
+    <span class="n">jac_zero</span><span class="p">,</span> <span class="n">jac_one</span><span class="p">,</span><span class="n">jac_zero</span><span class="p">,</span> <span class="n">jac_x</span><span class="p">,</span> <span class="n">jac_zero</span><span class="p">,</span> <span class="n">jac_y</span><span class="p">;];</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="section-3">总结</h2>
 

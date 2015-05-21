@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-05-21 20:13:50</updateDate>
+		<updateDate>2015-05-21 22:26:03</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.github.com</link>
@@ -9,7 +9,43 @@
 		
 			<item>
 				<title>【课程】统计学习</title>
-				<description>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;摘要：本课程参照MIT的&lt;a href=&quot;http://www.mit.edu/~9.520/fall14/&quot;&gt;9.520:Statistical Learning Theory and Applications&lt;/a&gt;整理而成，它从正则(Regularization )的角度全面审视了包括&lt;code&gt;Logistic 回归&lt;/code&gt;, &lt;code&gt;支持向量机&lt;/code&gt;，&lt;code&gt;稀疏表示&lt;/code&gt;、&lt;code&gt;流形正则&lt;/code&gt;等方法在内的多种机器学习方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;学习问题和正则&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;数学补充(泛函分析和概率论)&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;再生核空间&lt;/h2&gt;
+
+&lt;h2 id=&quot;mercer-&quot;&gt;字典，特征映射Mercer 理论&lt;/h2&gt;
+
+&lt;h2 id=&quot;tikhonov-&quot;&gt;Tikhonov 正则和表示理论&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;正则最小二乘&lt;/h2&gt;
+
+&lt;h2 id=&quot;logistic-&quot;&gt;Logistic 回归和支持向量机&lt;/h2&gt;
+
+&lt;h2 id=&quot;iterative-regularization-via-early-stopping&quot;&gt;Iterative Regularization via Early Stopping&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;稀疏表示&lt;/h2&gt;
+
+&lt;h2 id=&quot;proximal-methods&quot;&gt;Proximal Methods&lt;/h2&gt;
+
+&lt;h2 id=&quot;multiple-kernel-learning&quot;&gt;Multiple Kernel Learning&lt;/h2&gt;
+
+&lt;h2 id=&quot;generalization-bounds-intro-to-stability&quot;&gt;Generalization Bounds, Intro to Stability&lt;/h2&gt;
+
+&lt;h2 id=&quot;stability-of-tikhonov-regularization&quot;&gt;Stability of Tikhonov Regularization&lt;/h2&gt;
+
+&lt;h2 id=&quot;consistency-learnability-and-regularization&quot;&gt;Consistency, Learnability and Regularization&lt;/h2&gt;
+
+&lt;h2 id=&quot;manifold-regularization&quot;&gt;Manifold Regularization&lt;/h2&gt;
+
+&lt;h2 id=&quot;regularization-for-multi-output-learning&quot;&gt;Regularization for Multi-Output Learning&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;学习数据表示:深度学习&lt;/h2&gt;
 </description>
 				<pubDate>Fri, 22 May 2015 00:00:00 +0800</pubDate>
 				<link>http://turingki.github.com/course/2015-05-22-Statistical-Learning/</link>
@@ -528,6 +564,22 @@ I(W(X;\mathbf{p_{i}})) = I(W(X;\mathbf{p_{i - 1}})) + \nabla I \frac{\partial{W}
 &lt;p&gt;我们称$\frac{\partial{W}}{\partial{\mathbf{p}}}$为&lt;code&gt;Jacobian矩阵&lt;/code&gt;。&lt;/p&gt;
 
 &lt;h2 id=&quot;matlab&quot;&gt;简单的Matlab实现&lt;/h2&gt;
+
+&lt;p&gt;计算Jacobian矩阵：&lt;/p&gt;
+
+&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;1
+2
+3
+4
+5
+6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;jac_x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kron&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;jac_y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kron&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;jac_one&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dW_dp&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jac_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jac_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;总结&lt;/h2&gt;
 
