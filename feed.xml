@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-05-22 18:25:46</updateDate>
+		<updateDate>2015-05-22 18:32:01</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.github.com</link>
@@ -474,9 +474,9 @@ G(u,v) = H(u,v)F(u,v) + N(u,v)
 			</item>
 		
 			<item>
-				<title>卢卡斯-武雄(Lucas-Kanade) 算法</title>
+				<title>卢卡斯- 金出武雄(Lucas-Kanade) 算法</title>
 				<description>&lt;blockquote&gt;
-  &lt;p&gt;摘要:这篇短文主要介绍卢卡斯-武雄算法的原理及其实现。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=1802&quot;&gt;Bruce D. Lucas&lt;/a&gt;和&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=136&quot;&gt;Takeo Kanade&lt;/a&gt;提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。&lt;/p&gt;
+  &lt;p&gt;摘要:这篇短文主要介绍卢卡斯- 金出武雄算法的原理及其实现。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=1802&quot;&gt;Bruce D. Lucas&lt;/a&gt;和&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=136&quot;&gt;Takeo Kanade&lt;/a&gt;提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
