@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-05-22 13:05:44</updateDate>
+		<updateDate>2015-05-22 18:25:46</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.github.com</link>
@@ -531,12 +531,12 @@ B = M_0A + \mathbf{b}
 &lt;p&gt;我们先给出LK算法的目标函数。&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-
+\label{obejct_function}
 E = \min{\| T(X_0) - I(MX))\|_F^2 }
 
 &lt;/script&gt;
 
-&lt;p&gt;其中$X_0,X$分别表示模板图像$T$和查询图像$I$的像素坐标矩阵，$M$表示仿射变换的参数矩阵。我们需要在仿射变换的参数空间找到一个$M_{opt}$使得目标函数$E$最小。由于我们无法得知函数$I(\mathbf{x})$的解析形式，故使用求偏导解$E$的方法无法实现。LK算法利用了一个巧妙的方法迭代求解$E$的最优解。下面我们将介绍这一方法。&lt;/p&gt;
+&lt;p&gt;其中$X_0,X$分别表示模板图像$T$和查询图像$I$的像素坐标矩阵，为便于后面的分析，我们将模板和查询图像都抽成列向量的形式，即令$T,I \in \mathbb{R}^N$，$N$为归一化后的图像像素点个数。$M$表示仿射变换的参数矩阵。我们需要在仿射变换的参数空间找到一个$M_{opt}$使得目标函数$E$最小。由于我们无法得知函数$I(\mathbf{x})$的解析形式，故使用求偏导解$E$的方法无法实现。LK算法利用了一个巧妙的方法迭代求解$E$的最优解。下面我们将介绍这一方法。&lt;/p&gt;
 
 &lt;p&gt;我们先令：&lt;/p&gt;
 
@@ -572,10 +572,137 @@ I(W(X;\mathbf{p_{i}})) = I(W(X;\mathbf{p_{i - 1}} + \Delta \mathbf{p}))
 &lt;p&gt;将上述表示在$\mathbf{p_i}$处做&lt;code&gt;一阶泰勒展开&lt;/code&gt;，有：&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-I(W(X;\mathbf{p_{i}})) = I(W(X;\mathbf{p_{i - 1}})) + \nabla I \frac{\partial{W}}{\partial{\mathbf{p}}} |_{\mathbf{p_i}} \Delta \mathbf{p}
+
+I(W(X;\mathbf{p_{i + 1}})) = I(W(X;\mathbf{p_{i}})) + \nabla I  |_{\mathbf{p_i}}\frac{\partial{W}}{\partial{\mathbf{p}}} \Delta \mathbf{p}
+\label{taylor_expansion}
+
+
 &lt;/script&gt;
 
-&lt;p&gt;我们称$\frac{\partial{W}}{\partial{\mathbf{p}}}$为&lt;code&gt;Jacobian矩阵&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;$\frac{\partial{W}}{\partial{\mathbf{p}}}$为&lt;code&gt;Jacobian矩阵&lt;/code&gt;。它可表示为:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\frac{\partial{W}}{\partial{\mathbf{p}}} = 
+ \left[ 
+
+\begin{array}{cccccc}
+
+\frac{\partial{W_1}}{\partial{p_1}}&amp;\frac{\partial{W_1}}{\partial{p_2}}&amp;\frac{\partial{W_1}}{\partial{p_3}}&amp;\frac{\partial{W_1}}{\partial{p_4}}&amp;\frac{\partial{W_1}}{\partial{p_5}}&amp;\frac{\partial{W_1}}{\partial{p_6}}\\
+
+\frac{\partial{W_2}}{\partial{p_1}}&amp;\frac{\partial{W_2}}{\partial{p_2}}&amp;\frac{\partial{W_2}}{\partial{p_3}}&amp;\frac{\partial{W_2}}{\partial{p_4}}&amp;\frac{\partial{W_2}}{\partial{p_5}}&amp;\frac{\partial{W_2}}{\partial{p_6}}
+\end{array}
+\right]
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;其中：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+W = \left[
+\begin{array}{cc}
+W_1\\W_2
+\end{array}
+\right],
+
+&lt;/script&gt;
+
+&lt;p&gt;$W_1,W_2 \in \mathbb{R}^N$，$N$是查询图像归一化到同一大小（一般与模板的大小相同）后的像素个数。&lt;/p&gt;
+
+&lt;p&gt;因为:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\left[      
+ \begin{array}{c} W\\ \mathbf{1} 
+ \end{array} 
+ \right] 
+ = M\left[ \begin{array}{c} X\\ \mathbf{1} \end{array} 
+ \right] =  \left[ 
+
+\begin{array}{ccc}
+
+p_1&amp;p_2&amp;p_3\\
+p_4&amp;p_5&amp;p_6\\
+0&amp;0&amp;1
+\end{array}
+\right] \left[ \begin{array}{c} X\\ \mathbf{1} \end{array} 
+ \right]
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;所以我们可以得到:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+\frac{\partial{W_1}}{\partial{p_1}} = X_1, 
+\frac{\partial{W_1}}{\partial{p_2}} = X_2,
+\frac{\partial{W_1}}{\partial{p_3}} = \mathbf{1}, 
+\frac{\partial{W_1}}{\partial{p_4}} = \mathbf{0}, 
+\frac{\partial{W_1}}{\partial{p_5}} = \mathbf{0}, 
+\frac{\partial{W_1}}{\partial{p_6}} = \mathbf{0}. 
+
+\\
+
+\frac{\partial{W_2}}{\partial{p_1}} = \mathbf{0}, 
+\frac{\partial{W_2}}{\partial{p_2}} = \mathbf{0},
+\frac{\partial{W_2}}{\partial{p_3}} = \mathbf{0}, 
+\frac{\partial{W_2}}{\partial{p_4}} = X_1, 
+\frac{\partial{W_2}}{\partial{p_5}} = X_2, 
+\frac{\partial{W_2}}{\partial{p_6}} = \mathbf{1}. 
+
+&lt;/script&gt;
+
+&lt;p&gt;其中：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+X = \left[
+\begin{array}{cc}
+X_1\\X_2
+\end{array}
+\right]
+
+&lt;/script&gt;
+
+&lt;p&gt;$X_1,X_2 \in \mathbb{R}^N$。那么$\frac{\partial{W}}{\partial{\mathbf{p}}}$为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\frac{\partial{W}}{\partial{\mathbf{p}}} = 
+ \left[ 
+
+\begin{array}{cccccc}
+
+X_1&amp;X_2&amp;\mathbf{1}&amp;\mathbf{0}&amp;\mathbf{0}&amp;\mathbf{0} \\
+\mathbf{0}&amp;\mathbf{0}&amp;\mathbf{0}&amp;X_1&amp;X_2&amp;\mathbf{1} \\
+
+\end{array}
+\right]
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;我们回过头继续处理目标函数$\ref{obejct_function}$,将泰勒展开式$\ref{taylor_expansion}$带入，可得到第$i+1$次迭代的目标函数,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+E_{i+1} = \min{\| T(X_0) - I(W(X;\mathbf{p_{i}})) - \nabla I |_{\mathbf{pi}}\frac{\partial{W}}{\partial{\mathbf{p}}}  \Delta \mathbf{p}
+ \|_F^2 }
+
+&lt;/script&gt;
+
+&lt;p&gt;上式是关于$\Delta \mathbf{p}$的最小二乘问题，可得到：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+\Delta \mathbf{p} = H^{\dagger} (I(W(X;\mathbf{p_{i}})) - T(X_0))
+&lt;/script&gt;
+
+&lt;p&gt;其中，&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+H = \nabla I|_{\mathbf{pi}} \frac{\partial{W}}{\partial{\mathbf{p}}} 
+&lt;/script&gt;
+
+&lt;p&gt;由上面的推导过程可知，在迭代求解目标函数最优解的每一次迭代中，我们只需要知道矩阵$H$就可以解出$\Delta \mathbf{p}$的值。而$H$的计算包含两部分，1)Jacobian矩阵可以在迭代开始前预先算出;2)$图像梯度 \nabla I$的计算需要知道上一次迭代求出的图像。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/lk_illustration.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 3.LK算法的过程示例图&lt;a href=&quot;#Baker_Simon_04&quot;&gt;(Baker &amp;amp; Matthews, 2004)&lt;/a&gt;。注意，与上述推导过程不同，此处图像并没有抽成列向量的形式。&lt;/p&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;matlab&quot;&gt;简单的Matlab实现&lt;/h2&gt;
 
@@ -613,7 +740,8 @@ I(W(X;\mathbf{p_{i}})) = I(W(X;\mathbf{p_{i - 1}})) + \nabla I \frac{\partial{W}
 &lt;li&gt;&lt;span id=&quot;Dowson_Bowden_08&quot;&gt;Dowson, N., &amp;amp; Bowden, R. (2008). Mutual Information for Lucas-Kanade Tracking (MILK): An Inverse Compositional Formulation. &lt;i&gt;Pattern Analysis And Machine Intelligence, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;30&lt;/i&gt;(1), 180–185. doi:10.1109/TPAMI.2007.70757&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;Amberg_Blake_09&quot;&gt;Amberg, B., Blake, A., &amp;amp; Vetter, T. (2009). On compositional Image Alignment, with an application to Active Appearance Models. In &lt;i&gt;Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on&lt;/i&gt; (pp. 1714–1721). doi:10.1109/CVPR.2009.5206788&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;Megret_Authesserre_10&quot;&gt;Megret, R., Authesserre, J., &amp;amp; Berthoumieu, Y. (2010). Bidirectional Composition on Lie Groups for Gradient-Based Image Alignment. &lt;i&gt;Image Processing, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;19&lt;/i&gt;(9), 2369–2381. doi:10.1109/TIP.2010.2048406&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Oron_Bar-Hillel_14&quot;&gt;Oron, S., Bar-Hillel, A., &amp;amp; Avidan, S. (2014). Extended Lucas Kanade Tracking. In &lt;i&gt;European Conference on Computer Vision (ECCV)&lt;/i&gt;. Springer.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;li&gt;&lt;span id=&quot;Oron_Bar-Hillel_14&quot;&gt;Oron, S., Bar-Hillel, A., &amp;amp; Avidan, S. (2014). Extended Lucas Kanade Tracking. In &lt;i&gt;European Conference on Computer Vision (ECCV)&lt;/i&gt;. Springer.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Baker_Simon_04&quot;&gt;Baker, S., &amp;amp; Matthews, I. (2004). Lucas-Kanade 20 Years On: A Unifying Framework. &lt;i&gt;International Journal Of Computer Vision&lt;/i&gt;, &lt;i&gt;56&lt;/i&gt;(3), 221–255. doi:10.1023/B:VISI.0000011205.11775.fd&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
 
 </description>
 				<pubDate>Fri, 08 May 2015 00:00:00 +0800</pubDate>
