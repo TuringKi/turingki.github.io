@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-05-21 23:21:13</updateDate>
+		<updateDate>2015-05-22 13:05:44</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.github.com</link>
@@ -474,16 +474,18 @@ G(u,v) = H(u,v)F(u,v) + N(u,v)
 			</item>
 		
 			<item>
-				<title>卢卡斯-卡纳德(Lucas-Kanade) 算法</title>
+				<title>卢卡斯-武雄(Lucas-Kanade) 算法</title>
 				<description>&lt;blockquote&gt;
-  &lt;p&gt;摘要:这篇短文主要介绍卢卡斯-卡纳德算法的原理及其实现。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=1802&quot;&gt;Bruce D. Lucas&lt;/a&gt;和&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=136&quot;&gt;Takeo Kanade&lt;/a&gt;提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。&lt;/p&gt;
+  &lt;p&gt;摘要:这篇短文主要介绍卢卡斯-武雄算法的原理及其实现。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=1802&quot;&gt;Bruce D. Lucas&lt;/a&gt;和&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=136&quot;&gt;Takeo Kanade&lt;/a&gt;提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
 
 &lt;p&gt;自从Lucas-Kanade 光流算法&lt;a href=&quot;#Lucas_kanade_1981&quot;&gt;(Lucas &amp;amp; Kanade, 1981)&lt;/a&gt;第一次作为一种图像对齐(Image Alignment)的技术被引入，LK算法已经成为了一种在机器视觉各种应用中被广泛使用的算法。这些应用包括追踪&lt;a href=&quot;#eigen_tracking&quot;&gt;(Black &amp;amp; Jepson, 1998; Hager &amp;amp; Belhumeur, 1998)&lt;/a&gt;，运动估计&lt;a href=&quot;#hierarchical_motion_estimate&quot;&gt;(Bergen, Anandan, Hanna, &amp;amp; Hingorani, 1992)&lt;/a&gt;,图像拼接&lt;a href=&quot;#Shum_Szeliski_00&quot;&gt;(Shum &amp;amp; Szeliski, 2000)&lt;/a&gt;,医学图像配准&lt;a href=&quot;#Christensen_Johnson_01&quot;&gt;(Christensen &amp;amp; Johnson, 2001)&lt;/a&gt;，以及人脸建模&lt;a href=&quot;#Baker_Matthews_01&quot;&gt;(Baker &amp;amp; Matthews, 2001; Cootes, Edwards, &amp;amp; Taylor, 1998)&lt;/a&gt;。&lt;/p&gt;
 
-&lt;p&gt;LK算法实质上是一种针对图像像素的梯度下降算法。给定一个模板$T(\mathbf{x})$,原始的LK算法&lt;a href=&quot;#Lucas_kanade_1981&quot;&gt;(Lucas &amp;amp; Kanade, 1981)&lt;/a&gt;被用于在查询图像$I(\mathbf{x})$中&lt;code&gt;对齐（ alignment）&lt;/code&gt;模板。其中$\mathbf{x} = (x,y)^T$表示图像像素的坐标。具体的说，在已知一个初始仿射变换参数$\mathbf{p_0}$的条件下，LK构造一个最小平方误差（MSE）目标函数$E$，以梯度下降的方式在仿射变换参数空间求得$E$在$\mathbf{p_0}$的某个邻域内的最优解$\mathbf{p}$，那么$\mathbf{p}$所表征的在$I(\mathbf{x})$中的图像即为与模板$T(\mathbf{x})$最“相像”的图像(Figure 1.)。&lt;/p&gt;
+&lt;p&gt;在过去的20多年里，很多作者尝试对LK算法进行扩展，包括提高求解效率&lt;a href=&quot;#Dellaert_Collins_99&quot;&gt;(Dellaert &amp;amp; Collins, 1999; Baker &amp;amp; Matthews, 2001)&lt;/a&gt;、鲁棒性&lt;a href=&quot;#region_tracking&quot;&gt;(Hager &amp;amp; Belhumeur, 1998; Baker, Gross, &amp;amp; Matthews, 2003; Ashraf, Lucey, &amp;amp; Chen, 2010; Dowson &amp;amp; Bowden, 2008)&lt;/a&gt;,优化算法的准确性&lt;a href=&quot;#Amberg_Blake_09&quot;&gt;(Amberg, Blake, &amp;amp; Vetter, 2009; Megret, Authesserre, &amp;amp; Berthoumieu, 2010; Oron, Bar-Hillel, &amp;amp; Avidan, 2014)&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;LK算法实质上是一种针对图像像素的梯度下降算法。给定一个模板$T(\mathbf{x})$,原始的LK算法(missing reference)被用于在查询图像$I(\mathbf{x})$中&lt;code&gt;对齐（ alignment）&lt;/code&gt;模板。其中$\mathbf{x} = (x,y)^T$表示图像像素的坐标。具体的说，在已知一个初始仿射变换参数$\mathbf{p_0}$的条件下，LK构造一个最小平方误差（MSE）目标函数$E$，以梯度下降的方式在仿射变换参数空间求得$E$在$\mathbf{p_0}$的某个邻域内的最优解$\mathbf{p}$，那么$\mathbf{p}$所表征的在$I(\mathbf{x})$中的图像即为与模板$T(\mathbf{x})$最“相像”的图像(Figure 1.)。&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/lk_function.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 1.如上图所示，LK在图像对齐中的应用:通过LK算法可以求得图像$I(\mathbf{x})$中绿框所表示的仿射参数，
 使得框出的图像与模板$T(\mathbf{x})$最匹配，即所谓的“对齐”。&lt;/p&gt;&lt;/div&gt;
@@ -604,7 +606,14 @@ I(W(X;\mathbf{p_{i}})) = I(W(X;\mathbf{p_{i - 1}})) + \nabla I \frac{\partial{W}
 &lt;li&gt;&lt;span id=&quot;Shum_Szeliski_00&quot;&gt;Shum, H.-Y., &amp;amp; Szeliski, R. (2000). Construction of panoramic mosaics with global and local alignment. &lt;i&gt;International Journal Of Computer Vision&lt;/i&gt;, &lt;i&gt;36&lt;/i&gt;(2), 101–130. Retrieved from http://research.microsoft.com/apps/pubs/default.aspx?id=75614&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;Christensen_Johnson_01&quot;&gt;Christensen, G. E., &amp;amp; Johnson, H. J. (2001). Consistent image registration. &lt;i&gt;Medical Imaging, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;20&lt;/i&gt;(7), 568–582. doi:10.1109/42.932742&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;Baker_Matthews_01&quot;&gt;Baker, S., &amp;amp; Matthews, I. (2001). Equivalence and efficiency of image alignment algorithms. In &lt;i&gt;Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on&lt;/i&gt; (Vol. 1, pp. I-1090-I-1097 vol.1). doi:10.1109/CVPR.2001.990652&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Cootes_Edwards_98&quot;&gt;Cootes, T. F., Edwards, G. J., &amp;amp; Taylor, C. J. (1998). Active appearance models. In H. Burkhardt &amp;amp; B. Neumann (Eds.), &lt;i&gt;Computer Vision ECCV’98&lt;/i&gt; (Vol. 1407, pp. 484–498). Springer Berlin Heidelberg. doi:10.1007/BFb0054760&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;li&gt;&lt;span id=&quot;Cootes_Edwards_98&quot;&gt;Cootes, T. F., Edwards, G. J., &amp;amp; Taylor, C. J. (1998). Active appearance models. In H. Burkhardt &amp;amp; B. Neumann (Eds.), &lt;i&gt;Computer Vision ECCV’98&lt;/i&gt; (Vol. 1407, pp. 484–498). Springer Berlin Heidelberg. doi:10.1007/BFb0054760&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Dellaert_Collins_99&quot;&gt;Dellaert, F., &amp;amp; Collins, R. (1999). Fast Image-Based Tracking by Selective Pixel Integration. In &lt;i&gt;In Proceedings of the ICCV Workshop on Frame-Rate Vision&lt;/i&gt; (pp. 1–22).&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Baker_Gross_03&quot;&gt;Baker, S., Gross, R., &amp;amp; Matthews, I. (2003). &lt;i&gt;Lucas-Kanade 20 Years On: A Unifying Framework: Part 3&lt;/i&gt; (No. CMU-RI-TR-03-35). Pittsburgh, PA: Robotics Institute.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Ashraf_Lucey_10&quot;&gt;Ashraf, A. B., Lucey, S., &amp;amp; Chen, T. (2010). Fast image alignment in the Fourier domain. In &lt;i&gt;Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on&lt;/i&gt; (pp. 2480–2487). doi:10.1109/CVPR.2010.5539948&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Dowson_Bowden_08&quot;&gt;Dowson, N., &amp;amp; Bowden, R. (2008). Mutual Information for Lucas-Kanade Tracking (MILK): An Inverse Compositional Formulation. &lt;i&gt;Pattern Analysis And Machine Intelligence, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;30&lt;/i&gt;(1), 180–185. doi:10.1109/TPAMI.2007.70757&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Amberg_Blake_09&quot;&gt;Amberg, B., Blake, A., &amp;amp; Vetter, T. (2009). On compositional Image Alignment, with an application to Active Appearance Models. In &lt;i&gt;Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on&lt;/i&gt; (pp. 1714–1721). doi:10.1109/CVPR.2009.5206788&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Megret_Authesserre_10&quot;&gt;Megret, R., Authesserre, J., &amp;amp; Berthoumieu, Y. (2010). Bidirectional Composition on Lie Groups for Gradient-Based Image Alignment. &lt;i&gt;Image Processing, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;19&lt;/i&gt;(9), 2369–2381. doi:10.1109/TIP.2010.2048406&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Oron_Bar-Hillel_14&quot;&gt;Oron, S., Bar-Hillel, A., &amp;amp; Avidan, S. (2014). Extended Lucas Kanade Tracking. In &lt;i&gt;European Conference on Computer Vision (ECCV)&lt;/i&gt;. Springer.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
 
 </description>
 				<pubDate>Fri, 08 May 2015 00:00:00 +0800</pubDate>
