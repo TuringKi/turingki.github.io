@@ -1,6 +1,6 @@
 name: TuringKi
 description: Personal Blog
-url: http://turingki.github.com
+url: http://turingki.com
 hightlighter: pygments
 permalink: /:categories/:year-:month-:day-:title/
 relative_permalinks: false
@@ -10,7 +10,7 @@ markdown: kramdown
 baseurl: 
 
 scholar:
-  style: apa
+  style: ieee 
   locale: en
 
   sort_by: none
