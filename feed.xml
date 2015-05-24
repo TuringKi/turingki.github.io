@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-05-22 18:32:01</updateDate>
+		<updateDate>2015-05-24 23:13:31</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
-		<link>http://turingki.github.com</link>
-		<atom:link href="http://turingki.github.com/feed.xml" rel="self" type="application/rss+xml" />
+		<link>http://turingki.com</link>
+		<atom:link href="http://turingki.com/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>相关滤波器(Correlation Filters)</title>
+				<description>&lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
+
+&lt;p&gt;在开始介绍相关滤波之前，我们先看看&lt;a href=&quot;http://www.votchallenge.net/vot2014/index.html&quot;&gt;VOT 2014&lt;/a&gt;前十名的算法：&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/vot2014.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 1. VOT 2014前十名。&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;其中排在前三位的算法DSST&lt;a href=&quot;#danelljan2014accurate&quot;&gt;[1]&lt;/a&gt;，SAMF(多种方法的整合，无对应的公开发表论文)，KCF&lt;a href=&quot;#henriques2015tracking&quot;&gt;[2]&lt;/a&gt;都是基于相关滤波的。从排名我们可以看出相关滤波在目标追踪领域有着非常出彩的效果。那么到底什么是相关滤波呢？对此我们按照相关滤波的历史发展过程进行讲解。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;原理&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;总结&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;引用&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;danelljan2014accurate&quot;&gt;[1]M. Danelljan, G. Häger, F. S. Khan, and M. Felsberg, “Accurate scale estimation for robust visual tracking,” in &lt;i&gt;Proceedings of the British Machine Vision Conference BMVC&lt;/i&gt;, 2014.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;henriques2015tracking&quot;&gt;[2]J. F. Henriques, R. Caseiro, P. Martins, and J. Batista, “High-Speed Tracking with Kernelized Correlation Filters,” &lt;i&gt;Pattern Analysis and Machine Intelligence, IEEE Transactions on&lt;/i&gt;, 2015.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</description>
+				<pubDate>Sat, 23 May 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/blog/2015-05-23-CF/</link>
+				<guid isPermaLink="true">http://turingki.com/blog/2015-05-23-CF/</guid>
+			</item>
 		
 			<item>
 				<title>【课程】统计学习</title>
@@ -60,8 +84,8 @@
 &lt;h2 id=&quot;section-6&quot;&gt;学习数据表示:深度学习&lt;/h2&gt;
 </description>
 				<pubDate>Fri, 22 May 2015 00:00:00 +0800</pubDate>
-				<link>http://turingki.github.com/course/2015-05-22-Statistical-Learning/</link>
-				<guid isPermaLink="true">http://turingki.github.com/course/2015-05-22-Statistical-Learning/</guid>
+				<link>http://turingki.com/course/2015-05-22-Statistical-Learning/</link>
+				<guid isPermaLink="true">http://turingki.com/course/2015-05-22-Statistical-Learning/</guid>
 			</item>
 		
 			<item>
@@ -180,8 +204,8 @@ G(u,v) = H(u,v)F(u,v) + N(u,v)
 &lt;h2 id=&quot;vi-&quot;&gt;VI. 膨胀和腐蚀&lt;/h2&gt;
 </description>
 				<pubDate>Fri, 15 May 2015 00:00:00 +0800</pubDate>
-				<link>http://turingki.github.com/course/2015-05-15-DIP/</link>
-				<guid isPermaLink="true">http://turingki.github.com/course/2015-05-15-DIP/</guid>
+				<link>http://turingki.com/course/2015-05-15-DIP/</link>
+				<guid isPermaLink="true">http://turingki.com/course/2015-05-15-DIP/</guid>
 			</item>
 		
 			<item>
@@ -469,8 +493,8 @@ G(u,v) = H(u,v)F(u,v) + N(u,v)
 &lt;p&gt;&lt;code&gt;Forming stable clustering structure&lt;/code&gt;&lt;/p&gt;
 </description>
 				<pubDate>Mon, 11 May 2015 00:00:00 +0800</pubDate>
-				<link>http://turingki.github.com/course/2015-05-11-Mobile-Computing/</link>
-				<guid isPermaLink="true">http://turingki.github.com/course/2015-05-11-Mobile-Computing/</guid>
+				<link>http://turingki.com/course/2015-05-11-Mobile-Computing/</link>
+				<guid isPermaLink="true">http://turingki.com/course/2015-05-11-Mobile-Computing/</guid>
 			</item>
 		
 			<item>
@@ -481,9 +505,9 @@ G(u,v) = H(u,v)F(u,v) + N(u,v)
 
 &lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
 
-&lt;p&gt;自从Lucas-Kanade 光流算法&lt;a href=&quot;#Lucas_kanade_1981&quot;&gt;(Lucas &amp;amp; Kanade, 1981)&lt;/a&gt;第一次作为一种图像对齐(Image Alignment)的技术被引入，LK算法已经成为了一种在机器视觉各种应用中被广泛使用的算法。这些应用包括追踪&lt;a href=&quot;#eigen_tracking&quot;&gt;(Black &amp;amp; Jepson, 1998; Hager &amp;amp; Belhumeur, 1998)&lt;/a&gt;，运动估计&lt;a href=&quot;#hierarchical_motion_estimate&quot;&gt;(Bergen, Anandan, Hanna, &amp;amp; Hingorani, 1992)&lt;/a&gt;,图像拼接&lt;a href=&quot;#Shum_Szeliski_00&quot;&gt;(Shum &amp;amp; Szeliski, 2000)&lt;/a&gt;,医学图像配准&lt;a href=&quot;#Christensen_Johnson_01&quot;&gt;(Christensen &amp;amp; Johnson, 2001)&lt;/a&gt;，以及人脸建模&lt;a href=&quot;#Baker_Matthews_01&quot;&gt;(Baker &amp;amp; Matthews, 2001; Cootes, Edwards, &amp;amp; Taylor, 1998)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;自从Lucas-Kanade 光流算法&lt;a href=&quot;#Lucas_kanade_1981&quot;&gt;[1]&lt;/a&gt;第一次作为一种图像对齐(Image Alignment)的技术被引入，LK算法已经成为了一种在机器视觉各种应用中被广泛使用的算法。这些应用包括追踪&lt;a href=&quot;#eigen_tracking&quot;&gt;[2], [3]&lt;/a&gt;，运动估计&lt;a href=&quot;#hierarchical_motion_estimate&quot;&gt;[4]&lt;/a&gt;,图像拼接&lt;a href=&quot;#Shum_Szeliski_00&quot;&gt;[5]&lt;/a&gt;,医学图像配准&lt;a href=&quot;#Christensen_Johnson_01&quot;&gt;[6]&lt;/a&gt;，以及人脸建模&lt;a href=&quot;#Baker_Matthews_01&quot;&gt;[7], [8]&lt;/a&gt;。&lt;/p&gt;
 
-&lt;p&gt;在过去的20多年里，很多作者尝试对LK算法进行扩展，包括提高求解效率&lt;a href=&quot;#Dellaert_Collins_99&quot;&gt;(Dellaert &amp;amp; Collins, 1999; Baker &amp;amp; Matthews, 2001)&lt;/a&gt;、鲁棒性&lt;a href=&quot;#region_tracking&quot;&gt;(Hager &amp;amp; Belhumeur, 1998; Baker, Gross, &amp;amp; Matthews, 2003; Ashraf, Lucey, &amp;amp; Chen, 2010; Dowson &amp;amp; Bowden, 2008)&lt;/a&gt;,优化算法的准确性&lt;a href=&quot;#Amberg_Blake_09&quot;&gt;(Amberg, Blake, &amp;amp; Vetter, 2009; Megret, Authesserre, &amp;amp; Berthoumieu, 2010; Oron, Bar-Hillel, &amp;amp; Avidan, 2014)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;在过去的20多年里，很多作者尝试对LK算法进行扩展，包括提高求解效率&lt;a href=&quot;#Dellaert_Collins_99&quot;&gt;[9], [7]&lt;/a&gt;、鲁棒性&lt;a href=&quot;#region_tracking&quot;&gt;[3], [10], [11], [12]&lt;/a&gt;,优化算法的准确性&lt;a href=&quot;#Amberg_Blake_09&quot;&gt;[13], [14], [15]&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;LK算法实质上是一种针对图像像素的梯度下降算法。给定一个模板$T(\mathbf{x})$,原始的LK算法(missing reference)被用于在查询图像$I(\mathbf{x})$中&lt;code&gt;对齐（ alignment）&lt;/code&gt;模板。其中$\mathbf{x} = (x,y)^T$表示图像像素的坐标。具体的说，在已知一个初始仿射变换参数$\mathbf{p_0}$的条件下，LK构造一个最小平方误差（MSE）目标函数$E$，以梯度下降的方式在仿射变换参数空间求得$E$在$\mathbf{p_0}$的某个邻域内的最优解$\mathbf{p}$，那么$\mathbf{p}$所表征的在$I(\mathbf{x})$中的图像即为与模板$T(\mathbf{x})$最“相像”的图像(Figure 1.)。&lt;/p&gt;
 
@@ -702,7 +726,7 @@ H = \nabla I|_{\mathbf{pi}} \frac{\partial{W}}{\partial{\mathbf{p}}}
 
 &lt;p&gt;由上面的推导过程可知，在迭代求解目标函数最优解的每一次迭代中，我们只需要知道矩阵$H$就可以解出$\Delta \mathbf{p}$的值。而$H$的计算包含两部分，1)Jacobian矩阵可以在迭代开始前预先算出;2)$图像梯度 \nabla I$的计算需要知道上一次迭代求出的图像。&lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/lk_illustration.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 3.LK算法的过程示例图&lt;a href=&quot;#Baker_Simon_04&quot;&gt;(Baker &amp;amp; Matthews, 2004)&lt;/a&gt;。注意，与上述推导过程不同，此处图像并没有抽成列向量的形式。&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/lk_illustration.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 3.LK算法的过程示例图&lt;a href=&quot;#Baker_Simon_04&quot;&gt;[16]&lt;/a&gt;。注意，与上述推导过程不同，此处图像并没有抽成列向量的形式。&lt;/p&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;matlab&quot;&gt;简单的Matlab实现&lt;/h2&gt;
 
@@ -726,27 +750,27 @@ H = \nabla I|_{\mathbf{pi}} \frac{\partial{W}}{\partial{\mathbf{p}}}
 
 &lt;h2 id=&quot;section-4&quot;&gt;引用&lt;/h2&gt;
 
-&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;Lucas_kanade_1981&quot;&gt;Lucas, B. D., &amp;amp; Kanade, T. (1981). An Iterative Image Registration Technique with an Application to Stereo Vision (IJCAI). In &lt;i&gt;Proceedings of the 7th International Joint Conference on Artificial Intelligence (IJCAI ’81)&lt;/i&gt; (pp. 674–679).&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;eigen_tracking&quot;&gt;Black, M. J., &amp;amp; Jepson, A. D. (1998). EigenTracking: Robust Matching and Tracking of Articulated Objects Using a View-Based Representation. &lt;i&gt;International Journal Of Computer Vision&lt;/i&gt;, &lt;i&gt;26&lt;/i&gt;(1), 63–84. doi:10.1023/A:1007939232436&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;region_tracking&quot;&gt;Hager, G. D., &amp;amp; Belhumeur, P. N. (1998). Efficient region tracking with parametric models of geometry and illumination. &lt;i&gt;Pattern Analysis And Machine Intelligence, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;20&lt;/i&gt;(10), 1025–1039. doi:10.1109/34.722606&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;hierarchical_motion_estimate&quot;&gt;Bergen, J. R., Anandan, P., Hanna, T. J., &amp;amp; Hingorani, R. (1992). Hierarchical model-based motion estimation (pp. 237–252). Springer-Verlag.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Shum_Szeliski_00&quot;&gt;Shum, H.-Y., &amp;amp; Szeliski, R. (2000). Construction of panoramic mosaics with global and local alignment. &lt;i&gt;International Journal Of Computer Vision&lt;/i&gt;, &lt;i&gt;36&lt;/i&gt;(2), 101–130. Retrieved from http://research.microsoft.com/apps/pubs/default.aspx?id=75614&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Christensen_Johnson_01&quot;&gt;Christensen, G. E., &amp;amp; Johnson, H. J. (2001). Consistent image registration. &lt;i&gt;Medical Imaging, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;20&lt;/i&gt;(7), 568–582. doi:10.1109/42.932742&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Baker_Matthews_01&quot;&gt;Baker, S., &amp;amp; Matthews, I. (2001). Equivalence and efficiency of image alignment algorithms. In &lt;i&gt;Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on&lt;/i&gt; (Vol. 1, pp. I-1090-I-1097 vol.1). doi:10.1109/CVPR.2001.990652&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Cootes_Edwards_98&quot;&gt;Cootes, T. F., Edwards, G. J., &amp;amp; Taylor, C. J. (1998). Active appearance models. In H. Burkhardt &amp;amp; B. Neumann (Eds.), &lt;i&gt;Computer Vision ECCV’98&lt;/i&gt; (Vol. 1407, pp. 484–498). Springer Berlin Heidelberg. doi:10.1007/BFb0054760&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Dellaert_Collins_99&quot;&gt;Dellaert, F., &amp;amp; Collins, R. (1999). Fast Image-Based Tracking by Selective Pixel Integration. In &lt;i&gt;In Proceedings of the ICCV Workshop on Frame-Rate Vision&lt;/i&gt; (pp. 1–22).&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Baker_Gross_03&quot;&gt;Baker, S., Gross, R., &amp;amp; Matthews, I. (2003). &lt;i&gt;Lucas-Kanade 20 Years On: A Unifying Framework: Part 3&lt;/i&gt; (No. CMU-RI-TR-03-35). Pittsburgh, PA: Robotics Institute.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Ashraf_Lucey_10&quot;&gt;Ashraf, A. B., Lucey, S., &amp;amp; Chen, T. (2010). Fast image alignment in the Fourier domain. In &lt;i&gt;Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on&lt;/i&gt; (pp. 2480–2487). doi:10.1109/CVPR.2010.5539948&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Dowson_Bowden_08&quot;&gt;Dowson, N., &amp;amp; Bowden, R. (2008). Mutual Information for Lucas-Kanade Tracking (MILK): An Inverse Compositional Formulation. &lt;i&gt;Pattern Analysis And Machine Intelligence, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;30&lt;/i&gt;(1), 180–185. doi:10.1109/TPAMI.2007.70757&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Amberg_Blake_09&quot;&gt;Amberg, B., Blake, A., &amp;amp; Vetter, T. (2009). On compositional Image Alignment, with an application to Active Appearance Models. In &lt;i&gt;Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on&lt;/i&gt; (pp. 1714–1721). doi:10.1109/CVPR.2009.5206788&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Megret_Authesserre_10&quot;&gt;Megret, R., Authesserre, J., &amp;amp; Berthoumieu, Y. (2010). Bidirectional Composition on Lie Groups for Gradient-Based Image Alignment. &lt;i&gt;Image Processing, IEEE Transactions On&lt;/i&gt;, &lt;i&gt;19&lt;/i&gt;(9), 2369–2381. doi:10.1109/TIP.2010.2048406&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Oron_Bar-Hillel_14&quot;&gt;Oron, S., Bar-Hillel, A., &amp;amp; Avidan, S. (2014). Extended Lucas Kanade Tracking. In &lt;i&gt;European Conference on Computer Vision (ECCV)&lt;/i&gt;. Springer.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;Baker_Simon_04&quot;&gt;Baker, S., &amp;amp; Matthews, I. (2004). Lucas-Kanade 20 Years On: A Unifying Framework. &lt;i&gt;International Journal Of Computer Vision&lt;/i&gt;, &lt;i&gt;56&lt;/i&gt;(3), 221–255. doi:10.1023/B:VISI.0000011205.11775.fd&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;Lucas_kanade_1981&quot;&gt;[1]B. D. Lucas and T. Kanade, “An Iterative Image Registration Technique with an Application to Stereo Vision (IJCAI),” in &lt;i&gt;Proceedings of the 7th International Joint Conference on Artificial Intelligence (IJCAI ’81)&lt;/i&gt;, 1981, pp. 674–679.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;eigen_tracking&quot;&gt;[2]M. J. Black and A. D. Jepson, “EigenTracking: Robust Matching and Tracking of Articulated Objects Using a View-Based Representation,” &lt;i&gt;International Journal of Computer Vision&lt;/i&gt;, vol. 26, no. 1, pp. 63–84, 1998.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;region_tracking&quot;&gt;[3]G. D. Hager and P. N. Belhumeur, “Efficient region tracking with parametric models of geometry and illumination,” &lt;i&gt;Pattern Analysis and Machine Intelligence, IEEE Transactions on&lt;/i&gt;, vol. 20, no. 10, pp. 1025–1039, Oct. 1998.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;hierarchical_motion_estimate&quot;&gt;[4]J. R. Bergen, P. Anandan, T. J. Hanna, and R. Hingorani, “Hierarchical model-based motion estimation,” 1992, pp. 237–252.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Shum_Szeliski_00&quot;&gt;[5]H.-Y. Shum and R. Szeliski, “Construction of panoramic mosaics with global and local alignment,” &lt;i&gt;International Journal of Computer Vision&lt;/i&gt;, vol. 36, no. 2, pp. 101–130, Feb. 2000.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Christensen_Johnson_01&quot;&gt;[6]G. E. Christensen and H. J. Johnson, “Consistent image registration,” &lt;i&gt;Medical Imaging, IEEE Transactions on&lt;/i&gt;, vol. 20, no. 7, pp. 568–582, Jul. 2001.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Baker_Matthews_01&quot;&gt;[7]S. Baker and I. Matthews, “Equivalence and efficiency of image alignment algorithms,” in &lt;i&gt;Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on&lt;/i&gt;, 2001, vol. 1, pp. I-1090-I-1097 vol.1.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Cootes_Edwards_98&quot;&gt;[8]T. F. Cootes, G. J. Edwards, and C. J. Taylor, “Active appearance models,” in &lt;i&gt;Computer Vision ECCV’98&lt;/i&gt;, vol. 1407, H. Burkhardt and B. Neumann, Eds. Springer Berlin Heidelberg, 1998, pp. 484–498.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Dellaert_Collins_99&quot;&gt;[9]F. Dellaert and R. Collins, “Fast Image-Based Tracking by Selective Pixel Integration,” in &lt;i&gt;In Proceedings of the ICCV Workshop on Frame-Rate Vision&lt;/i&gt;, 1999, pp. 1–22.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Baker_Gross_03&quot;&gt;[10]S. Baker, R. Gross, and I. Matthews, “Lucas-Kanade 20 Years On: A Unifying Framework: Part 3,” Robotics Institute, Pittsburgh, PA, CMU-RI-TR-03-35, Nov. 2003.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Ashraf_Lucey_10&quot;&gt;[11]A. B. Ashraf, S. Lucey, and T. Chen, “Fast image alignment in the Fourier domain,” in &lt;i&gt;Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on&lt;/i&gt;, 2010, pp. 2480–2487.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Dowson_Bowden_08&quot;&gt;[12]N. Dowson and R. Bowden, “Mutual Information for Lucas-Kanade Tracking (MILK): An Inverse Compositional Formulation,” &lt;i&gt;Pattern Analysis and Machine Intelligence, IEEE Transactions on&lt;/i&gt;, vol. 30, no. 1, pp. 180–185, Jan. 2008.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Amberg_Blake_09&quot;&gt;[13]B. Amberg, A. Blake, and T. Vetter, “On compositional Image Alignment, with an application to Active Appearance Models,” in &lt;i&gt;Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on&lt;/i&gt;, 2009, pp. 1714–1721.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Megret_Authesserre_10&quot;&gt;[14]R. Megret, J. Authesserre, and Y. Berthoumieu, “Bidirectional Composition on Lie Groups for Gradient-Based Image Alignment,” &lt;i&gt;Image Processing, IEEE Transactions on&lt;/i&gt;, vol. 19, no. 9, pp. 2369–2381, Sep. 2010.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Oron_Bar-Hillel_14&quot;&gt;[15]S. Oron, A. Bar-Hillel, and S. Avidan, “Extended Lucas Kanade Tracking,” in &lt;i&gt;European Conference on Computer Vision (ECCV)&lt;/i&gt;, 2014.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Baker_Simon_04&quot;&gt;[16]S. Baker and I. Matthews, “Lucas-Kanade 20 Years On: A Unifying Framework,” &lt;i&gt;International Journal of Computer Vision&lt;/i&gt;, vol. 56, no. 3, pp. 221–255, 2004.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
 
 </description>
 				<pubDate>Fri, 08 May 2015 00:00:00 +0800</pubDate>
-				<link>http://turingki.github.com/blog/2015-05-08-LK/</link>
-				<guid isPermaLink="true">http://turingki.github.com/blog/2015-05-08-LK/</guid>
+				<link>http://turingki.com/blog/2015-05-08-LK/</link>
+				<guid isPermaLink="true">http://turingki.com/blog/2015-05-08-LK/</guid>
 			</item>
 		
 			<item>
@@ -1152,8 +1176,8 @@ b)  Suppose the minimal time required for a message passing (from a sender to a 
 
 </description>
 				<pubDate>Tue, 05 May 2015 00:00:00 +0800</pubDate>
-				<link>http://turingki.github.com/course/2015-05-05-DS/</link>
-				<guid isPermaLink="true">http://turingki.github.com/course/2015-05-05-DS/</guid>
+				<link>http://turingki.com/course/2015-05-05-DS/</link>
+				<guid isPermaLink="true">http://turingki.com/course/2015-05-05-DS/</guid>
 			</item>
 		
 			<item>
@@ -1203,8 +1227,8 @@ E=\sum_{i = 1}^{n}\|m - x_i\|_2^2
 &lt;/script&gt;
 </description>
 				<pubDate>Sun, 03 May 2015 00:00:00 +0800</pubDate>
-				<link>http://turingki.github.com/blog/2015-05-03-PCA/</link>
-				<guid isPermaLink="true">http://turingki.github.com/blog/2015-05-03-PCA/</guid>
+				<link>http://turingki.com/blog/2015-05-03-PCA/</link>
+				<guid isPermaLink="true">http://turingki.com/blog/2015-05-03-PCA/</guid>
 			</item>
 		
 			<item>
@@ -1214,8 +1238,8 @@ E=\sum_{i = 1}^{n}\|m - x_i\|_2^2
 &lt;p&gt;这篇博客源自对论文&lt;a href=&quot;../img/2014_arXiv_Bristow.pdf&quot;&gt;Why do linear SVMs trained on HOG features perform so well?&lt;/a&gt;的一些体会。&lt;/p&gt;
 </description>
 				<pubDate>Fri, 01 May 2015 00:00:00 +0800</pubDate>
-				<link>http://turingki.github.com/blog/2015-05-01-HOG%E7%89%B9%E5%BE%81%E4%B8%8E%E7%BA%BF%E6%80%A7SVM%E5%88%86%E7%B1%BB%E5%99%A8%E5%9C%A8%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
-				<guid isPermaLink="true">http://turingki.github.com/blog/2015-05-01-HOG%E7%89%B9%E5%BE%81%E4%B8%8E%E7%BA%BF%E6%80%A7SVM%E5%88%86%E7%B1%BB%E5%99%A8%E5%9C%A8%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+				<link>http://turingki.com/blog/2015-05-01-HOG%E7%89%B9%E5%BE%81%E4%B8%8E%E7%BA%BF%E6%80%A7SVM%E5%88%86%E7%B1%BB%E5%99%A8%E5%9C%A8%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+				<guid isPermaLink="true">http://turingki.com/blog/2015-05-01-HOG%E7%89%B9%E5%BE%81%E4%B8%8E%E7%BA%BF%E6%80%A7SVM%E5%88%86%E7%B1%BB%E5%99%A8%E5%9C%A8%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
 			</item>
 		
 	</channel>

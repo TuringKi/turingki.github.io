@@ -13,7 +13,7 @@
   
   <!--<link rel="stylesheet" href="/css/pygments.css" />-->
   <!--<link rel="stylesheet" href="/css/i.css" /> -->
-  <link rel="alternate" type="application/rss+xml" title="TuringKi" href="http://turingki.github.com/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="TuringKi" href="http://turingki.com/feed.xml">
 
   <script src="../../js/jquery-1.10.2.min.js" charset="utf-8"></script>
   <script type="text/x-mathjax-config">
@@ -104,9 +104,9 @@ MathJax.Hub.Config({
 
 <h2 id="section">介绍</h2>
 
-<p>自从Lucas-Kanade 光流算法<a href="#Lucas_kanade_1981">(Lucas &amp; Kanade, 1981)</a>第一次作为一种图像对齐(Image Alignment)的技术被引入，LK算法已经成为了一种在机器视觉各种应用中被广泛使用的算法。这些应用包括追踪<a href="#eigen_tracking">(Black &amp; Jepson, 1998; Hager &amp; Belhumeur, 1998)</a>，运动估计<a href="#hierarchical_motion_estimate">(Bergen, Anandan, Hanna, &amp; Hingorani, 1992)</a>,图像拼接<a href="#Shum_Szeliski_00">(Shum &amp; Szeliski, 2000)</a>,医学图像配准<a href="#Christensen_Johnson_01">(Christensen &amp; Johnson, 2001)</a>，以及人脸建模<a href="#Baker_Matthews_01">(Baker &amp; Matthews, 2001; Cootes, Edwards, &amp; Taylor, 1998)</a>。</p>
+<p>自从Lucas-Kanade 光流算法<a href="#Lucas_kanade_1981">[1]</a>第一次作为一种图像对齐(Image Alignment)的技术被引入，LK算法已经成为了一种在机器视觉各种应用中被广泛使用的算法。这些应用包括追踪<a href="#eigen_tracking">[2], [3]</a>，运动估计<a href="#hierarchical_motion_estimate">[4]</a>,图像拼接<a href="#Shum_Szeliski_00">[5]</a>,医学图像配准<a href="#Christensen_Johnson_01">[6]</a>，以及人脸建模<a href="#Baker_Matthews_01">[7], [8]</a>。</p>
 
-<p>在过去的20多年里，很多作者尝试对LK算法进行扩展，包括提高求解效率<a href="#Dellaert_Collins_99">(Dellaert &amp; Collins, 1999; Baker &amp; Matthews, 2001)</a>、鲁棒性<a href="#region_tracking">(Hager &amp; Belhumeur, 1998; Baker, Gross, &amp; Matthews, 2003; Ashraf, Lucey, &amp; Chen, 2010; Dowson &amp; Bowden, 2008)</a>,优化算法的准确性<a href="#Amberg_Blake_09">(Amberg, Blake, &amp; Vetter, 2009; Megret, Authesserre, &amp; Berthoumieu, 2010; Oron, Bar-Hillel, &amp; Avidan, 2014)</a>。</p>
+<p>在过去的20多年里，很多作者尝试对LK算法进行扩展，包括提高求解效率<a href="#Dellaert_Collins_99">[9], [7]</a>、鲁棒性<a href="#region_tracking">[3], [10], [11], [12]</a>,优化算法的准确性<a href="#Amberg_Blake_09">[13], [14], [15]</a>。</p>
 
 <p>LK算法实质上是一种针对图像像素的梯度下降算法。给定一个模板$T(\mathbf{x})$,原始的LK算法(missing reference)被用于在查询图像$I(\mathbf{x})$中<code>对齐（ alignment）</code>模板。其中$\mathbf{x} = (x,y)^T$表示图像像素的坐标。具体的说，在已知一个初始仿射变换参数$\mathbf{p_0}$的条件下，LK构造一个最小平方误差（MSE）目标函数$E$，以梯度下降的方式在仿射变换参数空间求得$E$在$\mathbf{p_0}$的某个邻域内的最优解$\mathbf{p}$，那么$\mathbf{p}$所表征的在$I(\mathbf{x})$中的图像即为与模板$T(\mathbf{x})$最“相像”的图像(Figure 1.)。</p>
 
@@ -325,7 +325,7 @@ H = \nabla I|_{\mathbf{pi}} \frac{\partial{W}}{\partial{\mathbf{p}}}
 
 <p>由上面的推导过程可知，在迭代求解目标函数最优解的每一次迭代中，我们只需要知道矩阵$H$就可以解出$\Delta \mathbf{p}$的值。而$H$的计算包含两部分，1)Jacobian矩阵可以在迭代开始前预先算出;2)$图像梯度 \nabla I$的计算需要知道上一次迭代求出的图像。</p>
 
-<div align="center"><img src="../img/lk_illustration.png" /><p class="figure_caption">Figure 3.LK算法的过程示例图<a href="#Baker_Simon_04">(Baker &amp; Matthews, 2004)</a>。注意，与上述推导过程不同，此处图像并没有抽成列向量的形式。</p></div>
+<div align="center"><img src="../img/lk_illustration.png" /><p class="figure_caption">Figure 3.LK算法的过程示例图<a href="#Baker_Simon_04">[16]</a>。注意，与上述推导过程不同，此处图像并没有抽成列向量的形式。</p></div>
 
 <h2 id="matlab">简单的Matlab实现</h2>
 
@@ -349,28 +349,38 @@ H = \nabla I|_{\mathbf{pi}} \frac{\partial{W}}{\partial{\mathbf{p}}}
 
 <h2 id="section-4">引用</h2>
 
-<ol class="bibliography"><li><span id="Lucas_kanade_1981">Lucas, B. D., &amp; Kanade, T. (1981). An Iterative Image Registration Technique with an Application to Stereo Vision (IJCAI). In <i>Proceedings of the 7th International Joint Conference on Artificial Intelligence (IJCAI ’81)</i> (pp. 674–679).</span></li>
-<li><span id="eigen_tracking">Black, M. J., &amp; Jepson, A. D. (1998). EigenTracking: Robust Matching and Tracking of Articulated Objects Using a View-Based Representation. <i>International Journal Of Computer Vision</i>, <i>26</i>(1), 63–84. doi:10.1023/A:1007939232436</span></li>
-<li><span id="region_tracking">Hager, G. D., &amp; Belhumeur, P. N. (1998). Efficient region tracking with parametric models of geometry and illumination. <i>Pattern Analysis And Machine Intelligence, IEEE Transactions On</i>, <i>20</i>(10), 1025–1039. doi:10.1109/34.722606</span></li>
-<li><span id="hierarchical_motion_estimate">Bergen, J. R., Anandan, P., Hanna, T. J., &amp; Hingorani, R. (1992). Hierarchical model-based motion estimation (pp. 237–252). Springer-Verlag.</span></li>
-<li><span id="Shum_Szeliski_00">Shum, H.-Y., &amp; Szeliski, R. (2000). Construction of panoramic mosaics with global and local alignment. <i>International Journal Of Computer Vision</i>, <i>36</i>(2), 101–130. Retrieved from http://research.microsoft.com/apps/pubs/default.aspx?id=75614</span></li>
-<li><span id="Christensen_Johnson_01">Christensen, G. E., &amp; Johnson, H. J. (2001). Consistent image registration. <i>Medical Imaging, IEEE Transactions On</i>, <i>20</i>(7), 568–582. doi:10.1109/42.932742</span></li>
-<li><span id="Baker_Matthews_01">Baker, S., &amp; Matthews, I. (2001). Equivalence and efficiency of image alignment algorithms. In <i>Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on</i> (Vol. 1, pp. I-1090-I-1097 vol.1). doi:10.1109/CVPR.2001.990652</span></li>
-<li><span id="Cootes_Edwards_98">Cootes, T. F., Edwards, G. J., &amp; Taylor, C. J. (1998). Active appearance models. In H. Burkhardt &amp; B. Neumann (Eds.), <i>Computer Vision ECCV’98</i> (Vol. 1407, pp. 484–498). Springer Berlin Heidelberg. doi:10.1007/BFb0054760</span></li>
-<li><span id="Dellaert_Collins_99">Dellaert, F., &amp; Collins, R. (1999). Fast Image-Based Tracking by Selective Pixel Integration. In <i>In Proceedings of the ICCV Workshop on Frame-Rate Vision</i> (pp. 1–22).</span></li>
-<li><span id="Baker_Gross_03">Baker, S., Gross, R., &amp; Matthews, I. (2003). <i>Lucas-Kanade 20 Years On: A Unifying Framework: Part 3</i> (No. CMU-RI-TR-03-35). Pittsburgh, PA: Robotics Institute.</span></li>
-<li><span id="Ashraf_Lucey_10">Ashraf, A. B., Lucey, S., &amp; Chen, T. (2010). Fast image alignment in the Fourier domain. In <i>Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on</i> (pp. 2480–2487). doi:10.1109/CVPR.2010.5539948</span></li>
-<li><span id="Dowson_Bowden_08">Dowson, N., &amp; Bowden, R. (2008). Mutual Information for Lucas-Kanade Tracking (MILK): An Inverse Compositional Formulation. <i>Pattern Analysis And Machine Intelligence, IEEE Transactions On</i>, <i>30</i>(1), 180–185. doi:10.1109/TPAMI.2007.70757</span></li>
-<li><span id="Amberg_Blake_09">Amberg, B., Blake, A., &amp; Vetter, T. (2009). On compositional Image Alignment, with an application to Active Appearance Models. In <i>Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on</i> (pp. 1714–1721). doi:10.1109/CVPR.2009.5206788</span></li>
-<li><span id="Megret_Authesserre_10">Megret, R., Authesserre, J., &amp; Berthoumieu, Y. (2010). Bidirectional Composition on Lie Groups for Gradient-Based Image Alignment. <i>Image Processing, IEEE Transactions On</i>, <i>19</i>(9), 2369–2381. doi:10.1109/TIP.2010.2048406</span></li>
-<li><span id="Oron_Bar-Hillel_14">Oron, S., Bar-Hillel, A., &amp; Avidan, S. (2014). Extended Lucas Kanade Tracking. In <i>European Conference on Computer Vision (ECCV)</i>. Springer.</span></li>
-<li><span id="Baker_Simon_04">Baker, S., &amp; Matthews, I. (2004). Lucas-Kanade 20 Years On: A Unifying Framework. <i>International Journal Of Computer Vision</i>, <i>56</i>(3), 221–255. doi:10.1023/B:VISI.0000011205.11775.fd</span></li></ol>
+<ol class="bibliography"><li><span id="Lucas_kanade_1981">[1]B. D. Lucas and T. Kanade, “An Iterative Image Registration Technique with an Application to Stereo Vision (IJCAI),” in <i>Proceedings of the 7th International Joint Conference on Artificial Intelligence (IJCAI ’81)</i>, 1981, pp. 674–679.</span></li>
+<li><span id="eigen_tracking">[2]M. J. Black and A. D. Jepson, “EigenTracking: Robust Matching and Tracking of Articulated Objects Using a View-Based Representation,” <i>International Journal of Computer Vision</i>, vol. 26, no. 1, pp. 63–84, 1998.</span></li>
+<li><span id="region_tracking">[3]G. D. Hager and P. N. Belhumeur, “Efficient region tracking with parametric models of geometry and illumination,” <i>Pattern Analysis and Machine Intelligence, IEEE Transactions on</i>, vol. 20, no. 10, pp. 1025–1039, Oct. 1998.</span></li>
+<li><span id="hierarchical_motion_estimate">[4]J. R. Bergen, P. Anandan, T. J. Hanna, and R. Hingorani, “Hierarchical model-based motion estimation,” 1992, pp. 237–252.</span></li>
+<li><span id="Shum_Szeliski_00">[5]H.-Y. Shum and R. Szeliski, “Construction of panoramic mosaics with global and local alignment,” <i>International Journal of Computer Vision</i>, vol. 36, no. 2, pp. 101–130, Feb. 2000.</span></li>
+<li><span id="Christensen_Johnson_01">[6]G. E. Christensen and H. J. Johnson, “Consistent image registration,” <i>Medical Imaging, IEEE Transactions on</i>, vol. 20, no. 7, pp. 568–582, Jul. 2001.</span></li>
+<li><span id="Baker_Matthews_01">[7]S. Baker and I. Matthews, “Equivalence and efficiency of image alignment algorithms,” in <i>Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on</i>, 2001, vol. 1, pp. I-1090-I-1097 vol.1.</span></li>
+<li><span id="Cootes_Edwards_98">[8]T. F. Cootes, G. J. Edwards, and C. J. Taylor, “Active appearance models,” in <i>Computer Vision ECCV’98</i>, vol. 1407, H. Burkhardt and B. Neumann, Eds. Springer Berlin Heidelberg, 1998, pp. 484–498.</span></li>
+<li><span id="Dellaert_Collins_99">[9]F. Dellaert and R. Collins, “Fast Image-Based Tracking by Selective Pixel Integration,” in <i>In Proceedings of the ICCV Workshop on Frame-Rate Vision</i>, 1999, pp. 1–22.</span></li>
+<li><span id="Baker_Gross_03">[10]S. Baker, R. Gross, and I. Matthews, “Lucas-Kanade 20 Years On: A Unifying Framework: Part 3,” Robotics Institute, Pittsburgh, PA, CMU-RI-TR-03-35, Nov. 2003.</span></li>
+<li><span id="Ashraf_Lucey_10">[11]A. B. Ashraf, S. Lucey, and T. Chen, “Fast image alignment in the Fourier domain,” in <i>Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on</i>, 2010, pp. 2480–2487.</span></li>
+<li><span id="Dowson_Bowden_08">[12]N. Dowson and R. Bowden, “Mutual Information for Lucas-Kanade Tracking (MILK): An Inverse Compositional Formulation,” <i>Pattern Analysis and Machine Intelligence, IEEE Transactions on</i>, vol. 30, no. 1, pp. 180–185, Jan. 2008.</span></li>
+<li><span id="Amberg_Blake_09">[13]B. Amberg, A. Blake, and T. Vetter, “On compositional Image Alignment, with an application to Active Appearance Models,” in <i>Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on</i>, 2009, pp. 1714–1721.</span></li>
+<li><span id="Megret_Authesserre_10">[14]R. Megret, J. Authesserre, and Y. Berthoumieu, “Bidirectional Composition on Lie Groups for Gradient-Based Image Alignment,” <i>Image Processing, IEEE Transactions on</i>, vol. 19, no. 9, pp. 2369–2381, Sep. 2010.</span></li>
+<li><span id="Oron_Bar-Hillel_14">[15]S. Oron, A. Bar-Hillel, and S. Avidan, “Extended Lucas Kanade Tracking,” in <i>European Conference on Computer Vision (ECCV)</i>, 2014.</span></li>
+<li><span id="Baker_Simon_04">[16]S. Baker and I. Matthews, “Lucas-Kanade 20 Years On: A Unifying Framework,” <i>International Journal of Computer Vision</i>, vol. 56, no. 3, pp. 221–255, 2004.</span></li></ol>
 
 
     
 
 
 
+
+  
+    
+    
+    
+      
+        
+      
+    
+  
 
   
     
@@ -406,7 +416,7 @@ H = \nabla I|_{\mathbf{pi}} \frac{\partial{W}}{\partial{\mathbf{p}}}
   </div>
   <div class="right align-left">
     
-      <span class="next disabled">Next</span>
+      <a href="/blog/2015-05-23-CF/" class="next">Next</a>
     
   </div>
   <div class="clear"></div>
