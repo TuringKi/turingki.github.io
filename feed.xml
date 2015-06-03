@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-06-03 16:58:42</updateDate>
+		<updateDate>2015-06-03 17:01:19</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.com</link>
@@ -14,11 +14,10 @@
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;object-extraction-dataset&quot;&gt;Object Extraction Dataset&lt;/h3&gt;
-&lt;p&gt;url:http://objectextraction.github.io/&lt;/p&gt;
 
-&lt;p&gt;This Object Extraction newly collected by us contains 10183 images with groundtruth segmentation masks. We selected the images from the PASCAL[1], iCoseg[2], Internet [3] dataset as well as other data (most of them are about people and clothes) from the web. We randomly split the dataset with 8230 images for training and 1953 images for testing.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://objectextraction.github.io/&quot;&gt;主页&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1c0cwwAc&quot;&gt;images.zip and groundtruth.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1c0cwwAc&quot;&gt;数据集&lt;/a&gt;&lt;/p&gt;
 </description>
 				<pubDate>Thu, 04 Jun 2015 00:00:00 +0800</pubDate>
 				<link>http://turingki.com/blog/2015-06-04-data/</link>
