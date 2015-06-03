@@ -116,21 +116,51 @@ MathJax.Hub.Config({
 
 <h2 id="section-1">学习问题和正则</h2>
 
-<h2 id="section-2">数学补充(泛函分析和概率论)</h2>
+<p>我们先给出<code>监督学习</code>的形式化定义。设存在一个product space（中文如何翻译?）$\mathbb{Z} = \mathbb{X} \times \mathbb{Y}$,其中$\mathbb{X}$是一个欧式空间，$\mathbb{Y}$是$\mathbb{R}$的一个子集。   在$\mathbb{Z}$中存在一个未知的<code>概率分布函数</code>$\mu (z)$。有<code>训练集</code> $S = \lbrace (\mathbf{x_1},y_1),(\mathbf{x_2},y_2),\dots,(\mathbf{x_N},y_N)\rbrace$<code>独立同分布（I.I.D）</code>地采样自$\mu$。设$\mathscr{H}$是一个函数空间:$\lbrace f | f:\mathbb{X} \to \mathbb{Y} \rbrace$。那么监督学习算法是这样的一种映射:</p>
 
-<h2 id="section-3">再生核空间</h2>
+<script type="math/tex; mode=display">
+
+L:\mathbb{Z}^N \to \mathscr{H}
+\label{supervised_learning}
+</script>
+
+<p>它通过考察训练集$S$并在$\mathscr{H}$中找到一个最佳的函数$f_S$使得$f_S (\mathbf{x}) \approx y$。</p>
+
+<p>映射$\ref{supervised_learning}$几乎道尽了监督学习的玄机。要对一个监督学习算法进行研究，由这个映射我们知道，需要处理两个部分:1)训练集$\mathbb{Z}^N$，例如特征提取，特征选择，核方法等等；2)对假设空间$\mathscr{H}$进行处理，例如最大间隔超平面。</p>
+
+<h3 id="section-2">期望风险，经验风险</h3>
+
+<p>给定一个风险函数$V(f,z)$,那么<code>期望风险</code>定义为：</p>
+
+<script type="math/tex; mode=display">
+I[f] = \int_{\mathbb{Z}}{V(f,z)d \mu(z)}
+</script>
+
+<p>针对数据集$S$的<code>经验风险</code>定义为：</p>
+
+<script type="math/tex; mode=display">
+I_S[f] = \frac{1}{N}\sum_{i = 1}^{N}{V(f,z_i)}
+</script>
+
+<h3 id="section-3">泛化能力</h3>
+
+<h3 id="section-4">稳定性</h3>
+
+<h2 id="section-5">数学补充(泛函分析和概率论)</h2>
+
+<h2 id="section-6">再生核空间</h2>
 
 <h2 id="mercer-">字典，特征映射Mercer 理论</h2>
 
 <h2 id="tikhonov-">Tikhonov 正则和表示理论</h2>
 
-<h2 id="section-4">正则最小二乘</h2>
+<h2 id="section-7">正则最小二乘</h2>
 
 <h2 id="logistic-">Logistic 回归和支持向量机</h2>
 
 <h2 id="iterative-regularization-via-early-stopping">Iterative Regularization via Early Stopping</h2>
 
-<h2 id="section-5">稀疏表示</h2>
+<h2 id="section-8">稀疏表示</h2>
 
 <h2 id="proximal-methods">Proximal Methods</h2>
 
@@ -146,7 +176,7 @@ MathJax.Hub.Config({
 
 <h2 id="regularization-for-multi-output-learning">Regularization for Multi-Output Learning</h2>
 
-<h2 id="section-6">学习数据表示:深度学习</h2>
+<h2 id="section-9">学习数据表示:深度学习</h2>
 
     
 
