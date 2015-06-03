@@ -24,6 +24,37 @@ introduction: 本课程参照MIT的9.520:Statistical Learning Theory and Applica
 
 ##学习问题和正则
 
+我们先给出`监督学习`的形式化定义。设存在一个product space（中文如何翻译?）$\mathbb{Z} = \mathbb{X} \times \mathbb{Y}$,其中$\mathbb{X}$是一个欧式空间，$\mathbb{Y}$是$\mathbb{R}$的一个子集。   在$\mathbb{Z}$中存在一个未知的`概率分布函数`$\mu (z)$。有`训练集` $S = \lbrace (\mathbf{x_1},y_1),(\mathbf{x_2},y_2),\dots,(\mathbf{x_N},y_N)\rbrace$`独立同分布（I.I.D）`地采样自$\mu$。设$\mathscr{H}$是一个函数空间:$\lbrace f \| f:\mathbb{X} \to \mathbb{Y} \rbrace$。那么监督学习算法是这样的一种映射:
+
+$$
+
+L:\mathbb{Z}^N \to \mathscr{H}
+\label{supervised_learning}
+$$
+
+它通过考察训练集$S$并在$\mathscr{H}$中找到一个最佳的函数$f_S$使得$f_S (\mathbf{x}) \approx y$。
+
+映射$\ref{supervised_learning}$几乎道尽了监督学习的玄机。要对一个监督学习算法进行研究，由这个映射我们知道，需要处理两个部分:1)训练集$\mathbb{Z}^N$，例如特征提取，特征选择，核方法等等；2)对假设空间$\mathscr{H}$进行处理，例如最大间隔超平面。
+
+###期望风险，经验风险
+
+给定一个风险函数$V(f,z)$,那么`期望风险`定义为：
+
+$$
+I[f] = \int_{\mathbb{Z}}{V(f,z)d \mu(z)}
+$$
+
+针对数据集$S$的`经验风险`定义为：
+
+$$
+I_S[f] = \frac{1}{N}\sum_{i = 1}^{N}{V(f,z_i)}
+$$
+
+
+###泛化能力
+
+###稳定性
+
 ##数学补充(泛函分析和概率论)
 
 ##再生核空间
