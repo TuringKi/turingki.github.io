@@ -14,7 +14,7 @@
       {% capture index %}{{ index | plus: '1' }}{% endcapture %}
        <h3><a href="{{ post.url }}">{{ post.title }}</a><b> </b><small><time date="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time></small></h3>
    
-       <h5>Abstract:</h5>{{ post.summary |truncate:300 }}
+       <h5>Abstract:</h5>{{ post.summary }}
 
       {% endfor %}
       </li>
