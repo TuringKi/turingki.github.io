@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-07-31 14:17:10</updateDate>
+		<updateDate>2015-07-31 14:46:26</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.com</link>
@@ -10,8 +10,10 @@
 			<item>
 				<title>【Paper Reading】 MUlti-Store Tracker (MUSTer), a Cognitive Psychology Inspired Approach to Object Tracking</title>
 				<description>&lt;blockquote&gt;
-  &lt;p&gt;This paper propose a strategy to combine two kinds of trackers, a DSST tracker for short-term tracking, a key-point tracker for long-term.&lt;/p&gt;
+  &lt;p&gt;This paper propose a strategy to combine two kinds of trackers, a DSST tracker for short-term tracking, a key-point tracker for long-term. &lt;a href=&quot;../img/muster.pdf&quot;&gt;original paper&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/muster1.png&quot; alt=&quot;MUSTer&quot; /&gt;&lt;/p&gt;
 </description>
 				<pubDate>Fri, 31 Jul 2015 00:00:00 +0800</pubDate>
 				<link>http://turingki.com/research/2015-07-31-MUSTer/</link>
@@ -19,12 +21,25 @@
 			</item>
 		
 			<item>
-				<title>【Paper Reading】 MEEM, Robust Tracking via Multiple Experts Using Entropy</title>
-				<description>
+				<title>【Paper Reading】 MEEM, Robust Tracking via Multiple Experts Using Entropy Minimization</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;This paper propose a novel strategy, called multi-expert restoration, to address the problem of noise informations added to appearances models when doing the update. &lt;a href=&quot;../img/meem.pdf&quot;&gt;Original Paper&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
 				<pubDate>Fri, 31 Jul 2015 00:00:00 +0800</pubDate>
 				<link>http://turingki.com/research/2015-07-31-MEEM/</link>
 				<guid isPermaLink="true">http://turingki.com/research/2015-07-31-MEEM/</guid>
+			</item>
+		
+			<item>
+				<title>【Tools】 Gaussian Process</title>
+				<description>&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+</description>
+				<pubDate>Fri, 31 Jul 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/research/2015-07-31-GP/</link>
+				<guid isPermaLink="true">http://turingki.com/research/2015-07-31-GP/</guid>
 			</item>
 		
 			<item>
@@ -1245,57 +1260,6 @@ b)  Suppose the minimal time required for a message passing (from a sender to a 
 				<pubDate>Tue, 05 May 2015 00:00:00 +0800</pubDate>
 				<link>http://turingki.com/course/2015-05-05-DS/</link>
 				<guid isPermaLink="true">http://turingki.com/course/2015-05-05-DS/</guid>
-			</item>
-		
-			<item>
-				<title>【笔记】什么是主成分分析？（Updated:2015-5-17）</title>
-				<description>&lt;p&gt;原文：&lt;a href=&quot;../img/What is principal component analysis.pdf&quot;&gt;What is principal component analysis&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;摘要&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;PCA(Principal Component Analysis)，主成分分析，是一种广泛使用的降维技术。它通过将属于某个高维空间$H$的数据集，&lt;b&gt;在尽量保留数据集主要信息的情况下&lt;/b&gt;，线性变换到$H$的某个低维子空间$h$，以方便对数据集进行后续处理。&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;pca&quot;&gt;1.均值：0维PCA&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;最简单的数据降维方法，当然是用数据集所在空间的一个点来描述数据集，即所谓的&lt;b&gt;0维PCA&lt;/b&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;给定一组样本$S = {x_1,x_2,\dots,x_n} \in R^N$,我们要找到这样的一个$m \in R^N$,使得$m$能够&lt;b&gt;尽量准确地&lt;/b&gt;表征$S$整体信息。那么可以构造：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-E=\sum_{i = 1}^{n}\|m - x_i\|_2^2
-&lt;/script&gt;
-
-&lt;p&gt;即使得$m$与$S$中的每个样本的欧氏距离最小。对上式我们可以很容易的求解出$m = \frac{1}{n}\sum_{i = 1}^{n}x_i$，这就是$S$的样本&lt;b&gt;均值&lt;/b&gt;。这也与我们的直观认识是符合的：用一组数据的平均值粗略地描述这组数据的整体性质。比如说用平均年龄衡量一个公司的员工的“年轻”程度；用平均身高评价一个篮球队的是否具有身体优势。&lt;/p&gt;
-
-&lt;p&gt;然而这样的表述数据性质的方式还是太过于粗略了，均值某种程度上只能反映出数据集的全局(Global)性质。而更多的情况下，我们需要知道数据的一些更加“局部”(local)的信息，例如数据集中的样本点在空间中的分布情况，是密集呢，还是稀疏。举个更加具体的例子：当我们描述一个高斯分布的时候，通常需要两个参数,期望（可以用均值估计）和方差。只给定期望是无法描述一个高斯分布的。按照这样的思路，我们将所谓&lt;b&gt;0维PCA&lt;/b&gt;推高一维，尝试用&lt;b&gt;1维PCA&lt;/b&gt;描述数据集$S$。&lt;/p&gt;
-
-&lt;h3 id=&quot;pca-1&quot;&gt;2.1维PCA&lt;/h3&gt;
-
-&lt;p&gt;在此之前我们先给出PCA的一般定义:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code&gt;定义1&lt;/code&gt;：给定$n$个样本点$x_1,x_2,\dots,x_n \in R^p$,主成分分析(PCA)寻找这样一个子空间使得它满足:1)维度$k &amp;lt; p $；2)这n个样本点与各自在此空间的正交映射的欧式距离之和最小。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;注意，在研究对象是离散样本点的情况下，数学上我们可以用一个矩阵来近似表征样本所处的子空间。因此我们令$X = [x_1,x_2,\dots,x_n] \in R^{p \times n}$表征原样本空间。那么上述定义可以由下面的目标函数表示：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-
-\hat{X} = argmin_{M:rank(M) = k} \| X - M \|^2_F
-
-&lt;/script&gt;
-</description>
-				<pubDate>Sun, 03 May 2015 00:00:00 +0800</pubDate>
-				<link>http://turingki.com/blog/2015-05-03-PCA/</link>
-				<guid isPermaLink="true">http://turingki.com/blog/2015-05-03-PCA/</guid>
 			</item>
 		
 	</channel>
