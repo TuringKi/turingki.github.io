@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-07-31 14:51:19</updateDate>
+		<updateDate>2015-07-31 15:00:01</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.com</link>
@@ -33,9 +33,7 @@
 		
 			<item>
 				<title>【Tools】 Gaussian Process</title>
-				<description>&lt;blockquote&gt;
-
-&lt;/blockquote&gt;
+				<description>&lt;h3 id=&quot;what-is-gaussian-process&quot;&gt;What is Gaussian Process?&lt;/h3&gt;
 </description>
 				<pubDate>Fri, 31 Jul 2015 00:00:00 +0800</pubDate>
 				<link>http://turingki.com/research/2015-07-31-GP/</link>
