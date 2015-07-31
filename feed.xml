@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<updateDate>2015-07-31 13:31:47</updateDate>
+		<updateDate>2015-07-31 14:17:10</updateDate>
 		<title>TuringKi</title>
 		<description>Personal Blog</description>		
 		<link>http://turingki.com</link>
 		<atom:link href="http://turingki.com/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>【Paper Reading】 MUlti-Store Tracker (MUSTer), a Cognitive Psychology Inspired Approach to Object Tracking</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;This paper propose a strategy to combine two kinds of trackers, a DSST tracker for short-term tracking, a key-point tracker for long-term.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+				<pubDate>Fri, 31 Jul 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/research/2015-07-31-MUSTer/</link>
+				<guid isPermaLink="true">http://turingki.com/research/2015-07-31-MUSTer/</guid>
+			</item>
+		
+			<item>
+				<title>【Paper Reading】 MEEM, Robust Tracking via Multiple Experts Using Entropy</title>
+				<description>
+</description>
+				<pubDate>Fri, 31 Jul 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/research/2015-07-31-MEEM/</link>
+				<guid isPermaLink="true">http://turingki.com/research/2015-07-31-MEEM/</guid>
+			</item>
 		
 			<item>
 				<title>机器视觉训练数据集</title>
@@ -1276,17 +1296,6 @@ E=\sum_{i = 1}^{n}\|m - x_i\|_2^2
 				<pubDate>Sun, 03 May 2015 00:00:00 +0800</pubDate>
 				<link>http://turingki.com/blog/2015-05-03-PCA/</link>
 				<guid isPermaLink="true">http://turingki.com/blog/2015-05-03-PCA/</guid>
-			</item>
-		
-			<item>
-				<title>HOG特征与线性SVM分类器在机器视觉中的应用</title>
-				<description>&lt;h3 id=&quot;section&quot;&gt;摘要&lt;/h3&gt;
-
-&lt;p&gt;这篇博客源自对论文&lt;a href=&quot;../img/2014_arXiv_Bristow.pdf&quot;&gt;Why do linear SVMs trained on HOG features perform so well?&lt;/a&gt;的一些体会。&lt;/p&gt;
-</description>
-				<pubDate>Fri, 01 May 2015 00:00:00 +0800</pubDate>
-				<link>http://turingki.com/blog/2015-05-01-HOG%E7%89%B9%E5%BE%81%E4%B8%8E%E7%BA%BF%E6%80%A7SVM%E5%88%86%E7%B1%BB%E5%99%A8%E5%9C%A8%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
-				<guid isPermaLink="true">http://turingki.com/blog/2015-05-01-HOG%E7%89%B9%E5%BE%81%E4%B8%8E%E7%BA%BF%E6%80%A7SVM%E5%88%86%E7%B1%BB%E5%99%A8%E5%9C%A8%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
 			</item>
 		
 	</channel>

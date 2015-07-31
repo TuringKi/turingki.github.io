@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title>HOG特征与线性SVM分类器在机器视觉中的应用</title>
+  <title>【Paper Reading】 MUlti-Store Tracker (MUSTer), a Cognitive Psychology Inspired Approach to Object Tracking</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="stylesheet" href="/css/pygments.css" />
@@ -49,7 +49,7 @@ MathJax.Hub.Config({
       
       <ul>
 
-        <li class="current">
+        <li class="">
         <a href="/blog">Blogs (Chinese)</a>
         </li>
         <li class="">
@@ -88,7 +88,7 @@ MathJax.Hub.Config({
 
 
     <article>
-    <h1>HOG特征与线性SVM分类器在机器视觉中的应用</h1>
+    <h1>【Paper Reading】 MUlti-Store Tracker (MUSTer), a Cognitive Psychology Inspired Approach to Object Tracking</h1>
 <div class="BlogAnchor">
     <p>
         <b id="AnchorContentToggle" title="收起" style="cursor:pointer;">Contents[-]</b>
@@ -101,58 +101,11 @@ MathJax.Hub.Config({
                     </ul>
      </div>
 </div>
-    <h3 id="section">摘要</h3>
-
-<p>这篇博客源自对论文<a href="../img/2014_arXiv_Bristow.pdf">Why do linear SVMs trained on HOG features perform so well?</a>的一些体会。</p>
-
+    >This paper propose a strategy to combine two kinds of trackers, a DSST tracker for short-term tracking, a key-point tracker for long-term.
     
 
 
 
-
-  
-    
-    
-    
-      
-        
-      
-    
-  
-
-  
-    
-    
-    
-      
-        
-      
-    
-  
-
-  
-    
-    
-    
-      
-        
-      
-    
-  
-
-  
-    
-    
-    
-      
-        
-      
-    
-  
-
-  
-    
-  
 
 <div class="section-nav">
   <div class="left align-right">
@@ -162,7 +115,7 @@ MathJax.Hub.Config({
   </div>
   <div class="right align-left">
     
-      <a href="/blog/2015-05-03-PCA/" class="next">Next</a>
+      <span class="next disabled">Next</span>
     
   </div>
   <div class="clear"></div>
