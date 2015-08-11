@@ -1,0 +1,151 @@
+
+@font-face {
+
+    font-family: "MathJax_Math-Italic";
+
+    src: url("./font/MathJax_Math-Italic.otf");
+}
+
+ 
+#pagination {
+    border-top: 1px dotted #888888;
+    padding-top: 1em;
+}
+#pagination li {
+    float: left;
+    display: block;
+    height: 1.3em;
+    width: 1.3em;
+    line-height: 1.3em;
+    text-align: center;
+}
+#pagination li.last_page {
+    width: 3em;
+}
+#pagination li.current-page {
+    background-color: #ddd;
+}
+#pagination li a {
+    text-decoration: underline;
+}
+.blk_hidden{
+
+}
+.blk_shown{
+
+}
+h1, h2,ul {
+    clear: both;
+}
+
+ul.pagination1 li:hover,
+ul.pagination2 li:hover,
+ul.pagination3 li:hover {
+   /* background-color: #FF9500;*/
+}
+
+ul.pagination1 li,
+ul.pagination2 li,
+ul.pagination3 li {
+    /*
+    padding: 10px;
+    font-family: georgia;
+    background-color: #8890FC;
+    font-size: 24px;
+    color: #fff;
+    line-height: 1;
+    width: 600px;
+    margin-bottom: 1px;
+    list-style:none;
+    */
+}
+
+ul.red {
+    outline:10px solid red;
+}
+
+ul.simplePagerNav{
+    padding: 60px;
+    width: auto;
+    margin:0px auto;
+}
+
+ul.simplePagerNav li{
+    display:block;
+    float: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: georgia;
+    font-size:14px;
+    color: white;
+}
+
+ul.simplePagerNav li a{
+    color: white;
+    text-decoration: none;
+}
+
+li.currentPage {
+    background: red;
+    background: #FF9500;    
+}
+
+ul.simplePagerNav li.currentPage a {
+    color: white;    
+}
+
+table.pageme {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}  
+
+table.pageme td {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+p.figure_caption{
+    font-size: 12px;
+}
+
+.big_title{
+    font-size: 45px;
+    margin: 12px;
+    font-family: MathJax_Math-italic;
+}
+.course_cover 
+{
+  
+    list-style: none;
+    padding: 8px;
+    width:200px;
+    height:280px;
+   
+           /* W3C syntax */
+}
+.course_unit{
+    padding: 10px;
+    width: 100%;
+}
+.course_panel li{
+    display: block;
+    list-style: none;
+    border: 15px;
+    border-color: white;
+    height: 300px;
+}
+.course_detail{
+    width: 64%;
+}
+.course_detail h3{
+    text-align: center;
+}
+.course_cover a img{
+      width:170px;
+    height:250px;
+   clear: both; 
+display: block; 
+margin:auto; 
+box-shadow: 5px 15px 18px rgba(0,0,0,.6);
+border: 5px;
+    border-radius:8px;            /* W3C syntax */
+}

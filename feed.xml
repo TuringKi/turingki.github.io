@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<updateDate>2015-08-11 17:30:00</updateDate>
+		<title>TuringKi</title>
+		<description>Personal Blog</description>		
+		<link>http://turingki.com</link>
+		<atom:link href="http://turingki.com/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>【Paper Reading】 MUlti-Store Tracker (MUSTer), a Cognitive Psychology Inspired Approach to Object Tracking</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;This paper propose a strategy to combine two kinds of trackers, a DSST tracker for short-term tracking, a key-point tracker for long-term. &lt;a href=&quot;../img/muster.pdf&quot;&gt;original paper&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/muster1.png&quot; alt=&quot;MUSTer&quot; /&gt;&lt;/p&gt;
+</description>
+				<pubDate>Fri, 31 Jul 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/research/2015-07-31-MUSTer/</link>
+				<guid isPermaLink="true">http://turingki.com/research/2015-07-31-MUSTer/</guid>
+			</item>
+		
+			<item>
+				<title>【Paper Reading】 MEEM, Robust Tracking via Multiple Experts Using Entropy Minimization</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;This paper propose a novel strategy, called multi-expert restoration, to address the problem of noise informations added to appearances models when doing the update. &lt;a href=&quot;../img/meem.pdf&quot;&gt;Original Paper&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+				<pubDate>Fri, 31 Jul 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/research/2015-07-31-MEEM/</link>
+				<guid isPermaLink="true">http://turingki.com/research/2015-07-31-MEEM/</guid>
+			</item>
+		
+			<item>
+				<title>【Tools】 Gaussian Process</title>
+				<description>&lt;h3 id=&quot;what-is-gaussian-process&quot;&gt;What is Gaussian Process?&lt;/h3&gt;
+</description>
+				<pubDate>Fri, 31 Jul 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/research/2015-07-31-GP/</link>
+				<guid isPermaLink="true">http://turingki.com/research/2015-07-31-GP/</guid>
+			</item>
+		
+			<item>
+				<title>机器视觉训练数据集</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;由于有些国外的网盘类网站（eg.Dropbox）国内无法访问或者访问缓慢，使得很多的数据集难以获取，本文将作者已经下载到的数据集上传到百度云，方便国内的研究者获取。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;object-extraction-dataset&quot;&gt;Object Extraction Dataset&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://objectextraction.github.io/&quot;&gt;主页&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1c0cwwAc&quot;&gt;数据集&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Thu, 04 Jun 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/blog/2015-06-04-data/</link>
+				<guid isPermaLink="true">http://turingki.com/blog/2015-06-04-data/</guid>
+			</item>
+		
+			<item>
+				<title>相关滤波器(Correlation Filters)</title>
+				<description>&lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
+
+&lt;p&gt;在开始介绍相关滤波之前，我们先看看&lt;a href=&quot;http://www.votchallenge.net/vot2014/index.html&quot;&gt;VOT 2014&lt;/a&gt;前十名的算法：&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/vot2014.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 1. VOT 2014前十名。&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;其中排在前三位的算法DSST&lt;a href=&quot;#danelljan2014accurate&quot;&gt;[1]&lt;/a&gt;，SAMF(多种方法的整合，无对应的公开发表论文)，KCF&lt;a href=&quot;#henriques2015tracking&quot;&gt;[2]&lt;/a&gt;都是基于相关滤波的。从排名我们可以看出相关滤波在目标追踪领域有着非常出彩的效果。那么到底什么是相关滤波呢？对此我们按照相关滤波的历史发展过程进行讲解。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;原理&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;总结&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;引用&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;danelljan2014accurate&quot;&gt;[1]M. Danelljan, G. Häger, F. S. Khan, and M. Felsberg, “Accurate scale estimation for robust visual tracking,” in &lt;i&gt;Proceedings of the British Machine Vision Conference BMVC&lt;/i&gt;, 2014.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;henriques2015tracking&quot;&gt;[2]J. F. Henriques, R. Caseiro, P. Martins, and J. Batista, “High-Speed Tracking with Kernelized Correlation Filters,” &lt;i&gt;Pattern Analysis and Machine Intelligence, IEEE Transactions on&lt;/i&gt;, 2015.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</description>
+				<pubDate>Sat, 23 May 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/blog/2015-05-23-CF/</link>
+				<guid isPermaLink="true">http://turingki.com/blog/2015-05-23-CF/</guid>
+			</item>
+		
+			<item>
+				<title>【课程】统计学习</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;摘要：本课程参照MIT的&lt;a href=&quot;http://www.mit.edu/~9.520/fall14/&quot;&gt;9.520:Statistical Learning Theory and Applications&lt;/a&gt;整理而成，它从正则(Regularization )的角度全面审视了包括&lt;code&gt;Logistic 回归&lt;/code&gt;, &lt;code&gt;支持向量机&lt;/code&gt;，&lt;code&gt;稀疏表示&lt;/code&gt;、&lt;code&gt;流形正则&lt;/code&gt;等方法在内的多种机器学习方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
+
+&lt;p&gt;本课程主要讲解统计学习理论框架下的机器学习方法的一些最新进展。这既包括一些经典的方法，如正则网络和支持向量机，也会涉及一些几何(geometry)方法，稀疏(sparsity)，在线学习，特征选择(feature selection)，结构化输出和多任务学习等在内的一些前沿的技术。本课程也会谈到RBF和深度学习网络的联系。&lt;/p&gt;
+
+&lt;p&gt;过去15年中，如何有效的&lt;code&gt;学习&lt;/code&gt;已经成为了研究AI的一个中心问题。&lt;/p&gt;
+
+&lt;p&gt;数学理论，算法实现和神经科学是机器学习的三大支柱。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/learnin_math_algorithm_neuroscience.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 1.1.数学为机器学习的算法研究提供了理论工具以回答一些基础问题，例如什么样的学习模型具有泛化能力？如何提高学习算法的稳定性？这些问题都需要数学的介入。工程实践是对理论算法的实现，它需要针对实际问题对理论算法进行某种改造。而神经科学对于机器学习的作用是比较研究，站在神经科学的角度看待机器学习，你会发现机器学习可能在自然科学的研究中发挥其独特的作用：即回答什么是智能？&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;机器学习和传统求解实际问题的数学模型(例如微分方程)最大的不同在于它需要关注模型的 &lt;code&gt;泛化能量(generalization)&lt;/code&gt;，即对未知数据的预测能力，而不仅仅关注当前数据的拟合情况。更多的情况下，机器学习算法甚至需要在当前的数据(训练集)的拟合程度和泛化能力之间做出权衡。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;学习问题和正则&lt;/h2&gt;
+
+&lt;p&gt;我们先给出&lt;code&gt;监督学习&lt;/code&gt;的形式化定义。设存在一个product space（中文如何翻译?）$\mathbb{Z} = \mathbb{X} \times \mathbb{Y}$,其中$\mathbb{X}$是一个欧式空间，$\mathbb{Y}$是$\mathbb{R}$的一个子集。   在$\mathbb{Z}$中存在一个未知的&lt;code&gt;概率分布函数&lt;/code&gt;$\mu (z)$。有&lt;code&gt;训练集&lt;/code&gt; $S = \lbrace (\mathbf{x_1},y_1),(\mathbf{x_2},y_2),\dots,(\mathbf{x_N},y_N)\rbrace$&lt;code&gt;独立同分布（I.I.D）&lt;/code&gt;地采样自$\mu$。设$\mathscr{H}$是一个函数空间:$\lbrace f | f:\mathbb{X} \to \mathbb{Y} \rbrace$。那么监督学习算法是这样的一种映射:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+L:\mathbb{Z}^N \to \mathscr{H}
+\label{supervised_learning}
+&lt;/script&gt;
+
+&lt;p&gt;它通过考察训练集$S$并在$\mathscr{H}$中找到一个最佳的函数$f_S$使得$f_S (\mathbf{x}) \approx y$。&lt;/p&gt;
+
+&lt;p&gt;映射$\ref{supervised_learning}$几乎道尽了监督学习的玄机。要对一个监督学习算法进行研究，由这个映射我们知道，需要处理两个部分:1)训练集$\mathbb{Z}^N$，例如特征提取，特征选择，核方法等等；2)对假设空间$\mathscr{H}$进行处理，例如最大间隔超平面。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;期望风险，经验风险&lt;/h3&gt;
+
+&lt;p&gt;给定一个风险函数$V(f,z)$,那么&lt;code&gt;期望风险&lt;/code&gt;定义为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+I[f] = \int_{\mathbb{Z}}{V(f,z)d \mu(z)}
+&lt;/script&gt;
+
+&lt;p&gt;针对数据集$S$的&lt;code&gt;经验风险&lt;/code&gt;定义为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+I_S[f] = \frac{1}{N}\sum_{i = 1}^{N}{V(f,z_i)}
+&lt;/script&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;泛化能力&lt;/h3&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;稳定性&lt;/h3&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;数学补充(泛函分析和概率论)&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;再生核空间&lt;/h2&gt;
+
+&lt;h2 id=&quot;mercer-&quot;&gt;字典，特征映射Mercer 理论&lt;/h2&gt;
+
+&lt;h2 id=&quot;tikhonov-&quot;&gt;Tikhonov 正则和表示理论&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;正则最小二乘&lt;/h2&gt;
+
+&lt;h2 id=&quot;logistic-&quot;&gt;Logistic 回归和支持向量机&lt;/h2&gt;
+
+&lt;h2 id=&quot;iterative-regularization-via-early-stopping&quot;&gt;Iterative Regularization via Early Stopping&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-8&quot;&gt;稀疏表示&lt;/h2&gt;
+
+&lt;h2 id=&quot;proximal-methods&quot;&gt;Proximal Methods&lt;/h2&gt;
+
+&lt;h2 id=&quot;multiple-kernel-learning&quot;&gt;Multiple Kernel Learning&lt;/h2&gt;
+
+&lt;h2 id=&quot;generalization-bounds-intro-to-stability&quot;&gt;Generalization Bounds, Intro to Stability&lt;/h2&gt;
+
+&lt;h2 id=&quot;stability-of-tikhonov-regularization&quot;&gt;Stability of Tikhonov Regularization&lt;/h2&gt;
+
+&lt;h2 id=&quot;consistency-learnability-and-regularization&quot;&gt;Consistency, Learnability and Regularization&lt;/h2&gt;
+
+&lt;h2 id=&quot;manifold-regularization&quot;&gt;Manifold Regularization&lt;/h2&gt;
+
+&lt;h2 id=&quot;regularization-for-multi-output-learning&quot;&gt;Regularization for Multi-Output Learning&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-9&quot;&gt;学习数据表示:深度学习&lt;/h2&gt;
+</description>
+				<pubDate>Fri, 22 May 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/course/2015-05-22-Statistical-Learning/</link>
+				<guid isPermaLink="true">http://turingki.com/course/2015-05-22-Statistical-Learning/</guid>
+			</item>
+		
+			<item>
+				<title>【课程】数字图像处理重点</title>
+				<description>&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;基于&lt;a href=&quot;http://cs.hitsz.edu.cn/teachers/t1/1190359289.html&quot;&gt;卢光明&lt;/a&gt;老师的讲义整理，以问题的形式回顾本课程的重点。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;i-&quot;&gt;I. 什么是霍夫变换？简述其过程。&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/hough transform.png&quot; alt=&quot;hough transform&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Calculating steps of hough transform:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In parameter space, quantize $a$ and $b$, and give out 
+($a_{min}$).&lt;/li&gt;
+  &lt;li&gt;Set an accumulator A: A is A(amin:amax, bmin:bmax),set A to zero at the beginning.&lt;/li&gt;
+  &lt;li&gt;For a given point (xi,yi) in the original space, let a equal to each allowed values on the a-axis, and solve for the corresponding b using the equation: &lt;/li&gt;
+  &lt;li&gt;The resulting b are then rounded off to the nearest allowed value in the b-axis. If a choice of ap results in solution bq, we let A(p,q)=A(p,q)+1
+At the end of this procedure, a value Q in $A_{(i,j)}$ corresponds to Q points in the xy space lying on the line y=aix+bj.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ii-&quot;&gt;II. 列出三种颜色模型，简述其基本组成。&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;GRB模型&lt;/code&gt;:最简单的颜色模型，以三维数组存放Red,Green,Blue的颜色值。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;HSI模型&lt;/code&gt;:反映了人的视觉系统感知彩色的方式，以&lt;code&gt;色调&lt;/code&gt;、&lt;code&gt;饱和度&lt;/code&gt;和&lt;code&gt;强度&lt;/code&gt;三种基本特征量来感知颜色。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/HSI2RGB.png&quot; alt=&quot;HSI2RGB&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;YUV模型&lt;/code&gt;:用于电视显示的颜色模型。Y表示亮度，$U = \frac{Red}{Green}$,$Q =  \frac{Blue}{Yellow}$。单独列出亮度信号是方便兼容黑白电视。&lt;/p&gt;
+
+&lt;h2 id=&quot;iii-&quot;&gt;III. 压缩率和冗余&lt;/h2&gt;
+
+&lt;p&gt;Data redundancy is the central issue in digital image compression.&lt;/p&gt;
+
+&lt;p&gt;If $n1$ and $n2$ denote the number of information-carrying units in two data sets that represent the same information&lt;/p&gt;
+
+&lt;p&gt;The relative data redundancy $RD$ of the first data set can be defined as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+RD = 1 −1/CR
+&lt;/script&gt;
+
+&lt;p&gt;where compression ratio $CR$ is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+CR =n1/n2
+&lt;/script&gt;
+
+&lt;h2 id=&quot;iv--inverse-filtering--&quot;&gt;IV. 什么是 inverse filtering ? 简述图像复原模型。&lt;/h2&gt;
+
+&lt;p&gt;The degradation process is modeled as a degradation function that together with an additive noise term.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+g(x,y) = h(x,y) * f(x,y) + \eta(x,y)
+&lt;/script&gt;
+
+&lt;p&gt;In frequency domain representation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+G(u,v) = H(u,v)F(u,v) + N(u,v)
+&lt;/script&gt;
+
+&lt;p&gt;Where: $f(x,y)$ is the input image, $g(x,y)$ is the degraded image, $h(x,y)$ is the degradation function, and $\eta(x,y)$ is the additive noise.The degradation model is as shown following figure:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/degradation model.png&quot; alt=&quot;degradation model&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And the restoration model is:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/restoration model.png&quot; alt=&quot;restoration model&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the equation above:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\bar{F}(u,v) = \frac{G(u,v)}{H(u,v)} = F(u,v) + \frac{N(u,v)}{H(u,v)}
+&lt;/script&gt;
+
+&lt;p&gt;It tells us that even if we know the degradation function we cannot recover the undegraded image. Because $N(u,v)$ is a random function whose Fourier transform is not known.&lt;/p&gt;
+
+&lt;h2 id=&quot;v-median-filteringaverage-filteringlaplacian-filtering&quot;&gt;V. Median Filtering,Average Filtering,Laplacian Filtering&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;中值滤波&lt;/code&gt;的基本思想是，把局部区域的像素按灰度等级进行排序，取该领域中灰度的中值作为当前像素的灰度值。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;均值滤波&lt;/code&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\
+\left[\begin{array}{cccc}
+    \frac{1}{9} &amp;    \frac{1}{9}    &amp; \frac{1}{9} \\
+    \frac{1}{9} &amp;    \frac{1}{9}   &amp; \frac{1}{9}\\
+    \frac{1}{9} &amp; \frac{1}{9} &amp; \frac{1}{9}
+\end{array}\right]
+
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;code&gt;拉普拉斯滤波&lt;/code&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\
+\left[\begin{array}{cccc}
+    0 &amp; 1 &amp; 0 \\
+    1 &amp; -4 &amp; 1 \\
+    0 &amp; 1 &amp; 0 
+\end{array}\right]
+
+ %]]&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;vi-&quot;&gt;VI. 膨胀和腐蚀&lt;/h2&gt;
+</description>
+				<pubDate>Fri, 15 May 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/course/2015-05-15-DIP/</link>
+				<guid isPermaLink="true">http://turingki.com/course/2015-05-15-DIP/</guid>
+			</item>
+		
+			<item>
+				<title>【课程】移动计算</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;基于&lt;a href=&quot;http://www.cs.cityu.edu.hk/~jia&quot;&gt;贾小华&lt;/a&gt;老师的课件整理。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;i-introduction&quot;&gt;I. Introduction&lt;/h2&gt;
+
+&lt;h3 id=&quot;mobile-computing&quot;&gt;1. Mobile Computing&lt;/h3&gt;
+
+&lt;p&gt;Mobile computing starts from late 1990s due to the development of wireless communication and mobile devices&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Mobile Computing = Mobile + Computation&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;wireless ≠ mobile (cordless phone ≠ mobile phone)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Mobile communication only provides connectivity between distributed entities (mobile units – mobile servers).Mobile communication requires integration of wireless networks into existing fixed networks(&lt;code&gt;WLAN&lt;/code&gt;, &lt;code&gt;Internet&lt;/code&gt;,
+ &lt;code&gt;Cellular networks&lt;/code&gt; ).In addition to communication, we also need to support mobile applications. There are three basic components:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Networks&lt;/code&gt;: mobile/wireless networks + wired networks (connectivity, QoS, …)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Devices and computing units&lt;/code&gt;: usually with limited resources, i.e., CPU power, memory, battery power, …&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Application software&lt;/code&gt;: mobile apps, mobile data access, …)&lt;/p&gt;
+
+&lt;h3 id=&quot;mobile-services&quot;&gt;2.  Mobile Services&lt;/h3&gt;
+
+&lt;p&gt;There are three kinds of mobile services:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Location-based services&lt;/code&gt;:Services that depend on the locations of the users, such as shopping malls, gas stations, toilets, …&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Context-aware services&lt;/code&gt;:Services that depend on the context detected in the system&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Surveillance and event triggering services&lt;/code&gt;:Detecting system status (e.g. intruders, crisis, …);Emergency events that require timely responses&lt;/p&gt;
+
+&lt;h2 id=&quot;ii-internet-protocols&quot;&gt;II. Internet Protocols&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;IP&lt;/code&gt;:IP实现两个基本功能：寻址和分段。IP可以根据数据报报头中包括的目的地址将数据报传送到目的地址，在此过程中IP负责选择传送的道路，这种选择道路称为路由功能。如果有些网络内只能传送小数据报，IP可以将数据报&lt;code&gt;重新组装&lt;/code&gt;并在报头域内注明。IP模块中包括这些基本功能，这些模块存在于网络中的每台主机和网关上，而且这些模块（特别在网关上）有路由选择和其它服务功能。对IP来说，数据报之间没有什么联系，对IP不好说什么连接或逻辑链路。&lt;/p&gt;
+
+&lt;p&gt;IP使用四个关键技术提供服务：&lt;code&gt;服务类型&lt;/code&gt;，&lt;code&gt;生存时间&lt;/code&gt;，&lt;code&gt;选项&lt;/code&gt;和&lt;code&gt;报头校验码&lt;/code&gt;。服务类型指希望得到的服务质量。服务类型是一个参数集，这些参数是Internet能够提供服务的代表。这种服务类型由网关使用，用于在特定的网络，或是用于下下一个要经过的网络，或是下一个要对这个数据报进行路由的网关上选择实际的传送参数。生存时间是数据报可以生存的时间上限。它由发送者设置，由经过路由的地方处理。如果未到达时生存时间为零，抛弃此数据报。对于控制函数来说选项是重要的，但对于通常的通信来说它没有存在的必要。选项包括时间戳，安全和特殊路由。报头校验码保证数据的正确传输。如果校验出错，抛弃整个数据报。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ICMP&lt;/code&gt;:ICMP是（Internet Control Message Protocol）Internet控制报文协议。它是TCP/IP协议族的一个子协议，用于在IP主机、路由器之间传递控制消息。控制消息是指网络通不通、主机是否可达、路由是否可用等网络本身的消息。这些控制消息虽然并不传输用户数据，但是对于用户数据的传递起着重要的作用。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;IGMP&lt;/code&gt;:Internet 组管理协议称为IGMP协议（Internet Group Management Protocol），是因特网协议家族中的一个组播协议。该协议运行在主机和组播路由器之间。IGMP协议共有三个版本，即IGMPv1、v2 和v3。&lt;/p&gt;
+
+&lt;h2 id=&quot;iii-wireless-communication-fundamentals&quot;&gt;III. Wireless Communication Fundamentals&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/Wireless Networks.png&quot; alt=&quot;Wireless Networks&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;multiplexing-techniques&quot;&gt;1. Multiplexing Techniques&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Frequency-division multiplexing (FDM)&lt;/code&gt;:Takes advantage of the fact that the useful bandwidth of the medium exceeds the required bandwidth of a given signal&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Time-division multiplexing (TDM)&lt;/code&gt;:Takes advantage of the fact that the achievable bit rate of the medium exceeds the required data rate of a digital signal&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Code-division multiplexing (CDM)&lt;/code&gt;:Each sender uses a unique random number (code) and XORs the signal with this random number.
+ &lt;code&gt;码分多路复用&lt;/code&gt;CDM又称&lt;code&gt;码分多址（Code Division Multiple Access ,CDMA）&lt;/code&gt;,它既共享信道的频率,也共享时间,是一种真正的动态复用技术.其原理是每比特时间被分成m个更短的时间槽，称为芯片（Chip）,通常情况下每比特有64或128个芯片.每个站点(通道)被指定一个唯一的m位的代码或芯片序列。当发送1时站点就发送芯片序列，发送0时就发送芯片序列的反码。当两个或多个站点同时发送时，各路数据在信道中被线形相加。为了从信道中分离出各路信号，要求各个站点的芯片序列是相互正交的.&lt;/p&gt;
+
+&lt;p&gt;CDMA的优点：&lt;code&gt;All terminals can use the same frequency, no planning needed Huge code space (e.g. 232) compared to frequency space;Interferences is not coded &lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;iv-cellular-system-fundamentals&quot;&gt;IV. Cellular System Fundamentals&lt;/h2&gt;
+
+&lt;h3 id=&quot;overview-of-telecommunication-systems&quot;&gt;1. Overview of Telecommunication(无线通信) Systems&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;1G&lt;/code&gt;: Basic mobile telephony service.Based on &lt;code&gt;analog&lt;/code&gt; cellular technology.i.e.,  American Mobile Phone (AMPS) and NMT in Europe&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;2G&lt;/code&gt;: mobile telephony services for mass users with improved ciphering and efficient utilization of the radio spectrum
+&lt;code&gt;Digital&lt;/code&gt; cellular technology.i.e., GSM and CDMA&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;2.5G&lt;/code&gt;: Mobile Internet/data services together with voice services.Packet switching technology adding into 2G.Providing mobile data services over 2G networks.i.e., GPRS (General Packet Radio Service) and EDGE&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;3G&lt;/code&gt;: enhanced 2.5G services with improved mobile internet services and emerging new applications.CDMA2000 and UMTS (Universal Mobile Telecommunication System)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;4G (LTE/WiMAX)&lt;/code&gt; and &lt;code&gt;XG&lt;/code&gt;: what will be the next? IP-based mobile networks?&lt;/p&gt;
+
+&lt;h3 id=&quot;cellular-networks&quot;&gt;2. Cellular Networks&lt;/h3&gt;
+
+&lt;p&gt;蜂窝网络或移动网络(Cellular network)是一种移动通信硬件架构，把移动电话的服务区分为一个个正六边形的小子区，每个小区设一个基站，形成了形状酷似“蜂窝”的结构，因而把这种移动通信方式称为蜂窝移动通信方式。&lt;/p&gt;
+
+&lt;p&gt;蜂窝网络被广泛采用的原因是源于一个数学结论，即:
+&lt;code&gt;相同半径的圆形覆盖平面当圆心处于正六边形网格的各正六边形中心，也就是当圆心处于正三角网格的格点时所用圆的数量最少&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;虽然使用最少个结点可以覆盖最大面积的图形即使要求结点在一个如同晶格般有平移特性的网格上也仍是有待求解的未知问题，但在通讯中，使用圆形来表述实践要求通常是合理的，因此出于节约设备构建成本的考虑，正三角网格或者也称为简单六角网格是最好的选择。这样形成的网络覆盖在一起，形状非常象蜂窝，因此被称作蜂窝网络。&lt;/p&gt;
+
+&lt;p&gt;蜂窝网络的优缺点：&lt;/p&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Higher capacity(更高的频率容量)&lt;/code&gt;: implementing space division multiplexing to allow frequency reuses to support higher bandwidth and more users&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Less transmission power（更小的传输能量）&lt;/code&gt;: MSs are not far away from BSs. The power consumption of mobile device is minimized &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Local interference（局部干扰少）&lt;/code&gt;: shorter distance between MS and BS leads to low transmission power =&amp;gt; less interference&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Robustness（容错率高）&lt;/code&gt;: Decentralized system with multiple BSs for connection with MSs =&amp;gt; more fault tolerant &lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Infrastructure&lt;/code&gt;: require a complex infrastructure to have full coverage of the whole service area and onnect all base stations&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Handoff&lt;/code&gt;: moving from one cell into another &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Umbrella cell (hierarchical cell)&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;Two (or more) levels: macro cell over multiple micro-cells&lt;/p&gt;
+
+&lt;p&gt;To reduce number of handoffs for fast moving users (in vehicles)&lt;/p&gt;
+
+&lt;p&gt;A tradeoff solution for channel reuse and the frequent handoffs&lt;/p&gt;
+
+&lt;h4 id=&quot;a-&quot;&gt;A. 蜂窝信道分配&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;FDMA系统&lt;/code&gt;：利用信号衰减原理。关键：将频谱划分为若干个信道(用户信道载波)，在距离足够远时可以复用信道。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;静态信道分配&lt;/code&gt;：每一蜂窝预先分配一组固定的信道，实现简单。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;动态信道分配&lt;/code&gt;：基站从MSC处动态分配一个信道，蜂窝可以使用所有的信道，降低了阻塞概率，实现复杂，需要实时流量检测和基站间的协调处理。&lt;/p&gt;
+
+&lt;h3 id=&quot;sir&quot;&gt;2. SIR的计算&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\frac{S}{I} = \frac{1}{6}(\frac{D}{R})^{\alpha}
+&lt;/script&gt;
+
+&lt;h2 id=&quot;v-cellular-networks-in-operations&quot;&gt;V. Cellular Networks in Operations&lt;/h2&gt;
+
+&lt;h3 id=&quot;cellular-system-infrastructure&quot;&gt;1.  Cellular System Infrastructure&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/Cellular System Infrastructure.png&quot; alt=&quot;Cellular System Infrastructure&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;vi-wireless-lans-ieee-80211-wi-fi&quot;&gt;VI. Wireless LANs IEEE 802.11 (Wi-Fi)&lt;/h2&gt;
+
+&lt;h3 id=&quot;wireless-local-area-network-lan-basis&quot;&gt;1. Wireless Local Area Network (LAN) basis&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Wireless Local Area Network (WLAN)&lt;/code&gt; provide access to wired &lt;code&gt;LANs&lt;/code&gt; and the &lt;code&gt;Internet&lt;/code&gt;.Which in a very local area,less than 100 meters;and provide high data rates,, up to 54 Mbps currently.&lt;/p&gt;
+
+&lt;p&gt;WLANs 的两种模式:&lt;code&gt;Infrastructure Mode(eg.WiFi)&lt;/code&gt; 和 &lt;code&gt;Ad Hoc Mode（eg.蓝牙）&lt;/code&gt;.Infrastructure 模式中，所有无线的host都连接到一个access point，由access point 负责无线网络和有线网络的通信。Ad Hoc 模式中不存在access point，各个host点对点通信。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/Infrastructure Mode.png&quot; alt=&quot;Infrastructure Mode&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/Ad Hoc Mode.png&quot; alt=&quot;Ad Hoc Mode&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一个MS如何加入一个LWANs呢？&lt;/p&gt;
+
+&lt;p&gt;分成四步：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Discover available networks&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Select a network&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Authentication&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Association (registration)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;连接建立后，如何传输数据？&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;载波侦听多路访问/碰撞避免&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Carrier Sense Multiple Access (CSMA)&lt;/code&gt;: Listen before talk
+,Sense the channel
+,If the channel is idle, transmit immediately
+;If the channel is busy
+;wait a random amount of time  (random backoff time)
+;sense the channel again&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Collision Detection (CD)&lt;/code&gt;: Stop if collision occurs.
+;If there is a collision detected during the transmission
+;stop transmission immediately 
+;wait a random amount of time 
+;Goto step 1 to sense the channel again&lt;/p&gt;
+
+&lt;p&gt;而对于&lt;code&gt;802.11&lt;/code&gt;，是&lt;code&gt;没有冲突检测的!!!&lt;/code&gt;替代它的是&lt;code&gt;CSMA/CA(载波监听/冲突避免)&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/DCF.png&quot; alt=&quot;DCF&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;RTS/CTS协议&lt;/code&gt;：即请求发送/允许发送协议，相当于一种握手协议，主要用来解决”隐藏终端”问题。”隐藏终端”（Hidden Stations）是指，基站A向基站B发送信息，基站C未侦测到A也向B发送，故A和C同时将信号发送至B，引起信号冲突，最终导致发送至B的信号都丢失了。”隐藏终端”多发生在大型单元中（一般在室外环境），这将带来效率损失，并且需要错误恢复机制。当需要传送大容量文件时，尤其需要杜绝”隐藏终端”现象的发生。IEEE802.11提供了如下解决方案。在参数配置中，若使用RTS/CTS协议，同时设置传送上限字节数—-一旦待传送的数据大于此上限值时，即启动RTS/CTS握手协议：首先，A向B发送RTS信号，表明A要向B发送若干数据，B收到RTS后，向所有基站发出CTS信号，表明已准备就绪，A可以发送，而其余欲向B发送数据的基站则暂停发送；双方在成功交换RTS/CTS信号（即完成握手）后才开始真正的数据传递，保证了多个互不可见的发送站点同时向同一接收站点发送信号时，实际只能是收到接收站点回应CTS的那个站点能够进行发送，避免了冲突发生。即使有冲突发生，也只是在发送RTS时，这种情况下，由于收不到接收站点的CTS消息，大家再回头用DCF协议提供的竞争机制，分配一个随机退守定时值，等待下一次介质空闲DIFS（Distributed Inter-Frame Space）后竞争发送RTS，直到成功为止。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/RTS_CTS.png&quot; alt=&quot;RTS_CTS&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;vii-wireless-mesh-networks&quot;&gt;VII. Wireless Mesh Networks&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;Mesh&lt;/code&gt;:所有节点都相连。&lt;/p&gt;
+
+&lt;p&gt;无线网状网络（&lt;code&gt;无线Mesh网络，或WMN/wireless mesh network&lt;/code&gt;）也称为“多跳（multi-hop）”网络，它是一种与传统无线网络完全不同的新型无线网络技术。在传统的无线局域网(WLAN)中，每个客户端均通过一条与AP相连的无线链路来访问网络，用户如果要进行相互通信的话，必须首先访问一个固定的接入点(AP)，这种网络结构被称为单跳网络。而在无线Mesh网络中，任何无线设备节点都可以同时作为AP和路由器，网络中的每个节点都可以发送和接收信号，每个节点都可以与一个或者多个对等节点进行直接通信。这种结构的最大好处在于：如果最近的AP由于流量过大而导致拥塞的话，那么数据可以自动重新路由到一个通信流量较小的邻近节点进行传输。依此类推，数据包还可以根据网络的情况，继续路由到与之最近的下一个节点进行传输，直到到达最终目的地为止。这样的访问方式就是多跳访问。&lt;/p&gt;
+
+&lt;h2 id=&quot;viii-mobile-ad-hoc-networksmanet&quot;&gt;VIII. Mobile Ad Hoc Networks(MANET)&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;MANET&lt;/code&gt;为&lt;code&gt;Mobile Ad hoc network&lt;/code&gt;的简称，Ad hoc网络是一种自组织网络，分为固定节点和移动节点两种。MANET特指节点具有移动性的Ad hoc网络。比如有N个笔记本电脑通过802.11的Ad hoc模式自己组网形成一个网络，如果笔记本的使用者不移动的话，网络的拓扑就不会改变，路由等也就是固定的。但是如果每个出租车上都配置一个无线网卡，全部出租车组成一个网络，则拓扑是不断变化的，路由等也变的复杂。&lt;/p&gt;
+
+&lt;h1 id=&quot;ix-wireless-sensor-networks&quot;&gt;IX. Wireless Sensor Networks&lt;/h1&gt;
+
+&lt;p&gt;Working Modes of Sensor Networks:1)&lt;code&gt;Proactive networks&lt;/code&gt;,2)&lt;code&gt;reactive networks&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Data Aggregation in Sensor Networks&lt;/code&gt;:In traditional networks each node is identified by an IP address, which is used for routing. Sensor networks, in general, do not require routing between specific nodes.In most of sensor network applications, data can be aggregated (e.g., min, max, avg, etc) at internal node before passing it up further to the sink.Data aggregation takes a &lt;code&gt;tree structure&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Routing in Sensor Networks – Flat Routing&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;1)直接扩散:eg.every 20 ms for the next 10 seconds, send me a location estimate of any four-legged animal in subregion R of the sensor field.&lt;/p&gt;
+
+&lt;p&gt;该算法实现的过程包括三个阶段：兴趣扩散，梯度建立以及路径加强。&lt;/p&gt;
+
+&lt;p&gt;兴趣扩散(Interest Propagation)：Sink节点查询兴趣消息，兴趣消息采用泛洪的方法传播到网络，来通知整个网络中的其他节点它需要的信息。&lt;/p&gt;
+
+&lt;p&gt;梯度建立(Initial gradients set up)：在兴趣消息扩散的同时相应的路由路经也建立完成。有“兴趣消息”相关数据的普通节点将自己采集的数据通过建立好的路径传送到Sink节点。&lt;/p&gt;
+
+&lt;p&gt;路径加强(Data Delivery,reinforced gradients)：最后sink节点选择一条最优路径作为强化路径。&lt;/p&gt;
+
+&lt;p&gt;Problems of flooding protocol.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Implosion&lt;/code&gt;(内聚): A node always sends data to its neighbors even if the same data has been received by the neighbors from other nodes.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Overlap&lt;/code&gt;（重叠）: The nodes waste energy and bandwidth by sending the overlapping data.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Resource&lt;/code&gt; Blindness: Nodes do not change activities based on the energy availability.&lt;/p&gt;
+
+&lt;p&gt;2)&lt;code&gt;Sensor Protocols for Information via Negotiation&lt;/code&gt; :&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Negotiation&lt;/code&gt; : communicate with each other about the sensor data already received and the data still needed, via meta-data messages.&lt;/p&gt;
+
+&lt;p&gt;Data ADV (advertisement) is broadcast throughout the network;&lt;/p&gt;
+
+&lt;p&gt;Anybody interested in the data sends a REQ to the data source ;&lt;/p&gt;
+
+&lt;p&gt;No data aggregation is considered in both Directed Diffusion and SPIN;&lt;/p&gt;
+
+&lt;p&gt;SPIN-1:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/SPIN-1.png&quot; alt=&quot;SPIN-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Hierarchical Routing in Sensor Networks&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hierarchical clustering schemes are the most suitable for wireless sensor networks.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The network hass of a Base Station (BS) through which the end user can access data from the sensor network.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;BS can transmit with high power.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Nodes cannot reply directly to the BS due to their low power constraints, resulting in &lt;code&gt;asymmetric communication&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/Hierarchical Routing.png&quot; alt=&quot;Hierarchical Routing &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Low Energy Adaptive Clustering Hierarchy (&quot;LEACH&quot;)&lt;/code&gt; is a &lt;code&gt;TDMA-based MAC protocol&lt;/code&gt; which is integrated with clustering and a simple routing protocol in wireless sensor networks (WSNs). The goal of LEACH is to lower the energy consumption required to create and maintain clusters in order to improve the life time of a wireless sensor network.&lt;/p&gt;
+
+&lt;p&gt;该算法基本思想是：以循环的方式随机选择&lt;code&gt;簇头节点&lt;/code&gt;，将整个网络的能量负载平均分配到每个传感器节点中，从而达到降低网络能源消耗、提高网络整体生存时间的目的。仿真表明，与一般的平面多跳路由协议和静态分层算法相比，LEACH分簇协议可以将网络生命周期延长15%。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/LEACH.png&quot; alt=&quot;LEACH&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;x-vehicular-ad-hoc-networks&quot;&gt;X. Vehicular Ad Hoc Networks&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;What are vehicular networks? &lt;/code&gt;:A vehicle in the near future will be an integrated system with on-board sensors, computers and communication devices on wheels.
+&lt;code&gt;Why vehicular networks?&lt;/code&gt;:Fast and Direct Communication;Low cost;
+&lt;code&gt;Characteristics of VANETs&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;Highly dynamic topology&lt;/p&gt;
+
+&lt;p&gt;Frequently disconnected network&lt;/p&gt;
+
+&lt;p&gt;Sufficient energy and storage&lt;/p&gt;
+
+&lt;p&gt;Geographical type of communication&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Routing in VANETs&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Ad hoc routing&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Prediction-based AODV&lt;/code&gt;:Predict link lifetimes using the speed and location information of nodes&lt;/p&gt;
+
+&lt;p&gt;Position-based routing&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;GPSR&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;GPCR&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Cluster-based routing&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Forming stable clustering structure&lt;/code&gt;&lt;/p&gt;
+</description>
+				<pubDate>Mon, 11 May 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/course/2015-05-11-Mobile-Computing/</link>
+				<guid isPermaLink="true">http://turingki.com/course/2015-05-11-Mobile-Computing/</guid>
+			</item>
+		
+			<item>
+				<title>卢卡斯- 金出武雄(Lucas-Kanade) 算法</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;摘要:这篇短文主要介绍卢卡斯- 金出武雄算法的原理及其实现。Lucas-Kanade 算法是一种经典的梯度下降搜索算法，它于上个世纪八十年代由&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=1802&quot;&gt;Bruce D. Lucas&lt;/a&gt;和&lt;a href=&quot;http://www.ri.cmu.edu/person.html?person_id=136&quot;&gt;Takeo Kanade&lt;/a&gt;提出。在图像对齐，图像配准，机器视觉的目标跟踪等领域有着广泛的应用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
+
+&lt;p&gt;自从Lucas-Kanade 光流算法&lt;a href=&quot;#Lucas_kanade_1981&quot;&gt;[1]&lt;/a&gt;第一次作为一种图像对齐(Image Alignment)的技术被引入，LK算法已经成为了一种在机器视觉各种应用中被广泛使用的算法。这些应用包括追踪&lt;a href=&quot;#eigen_tracking&quot;&gt;[2], [3]&lt;/a&gt;，运动估计&lt;a href=&quot;#hierarchical_motion_estimate&quot;&gt;[4]&lt;/a&gt;,图像拼接&lt;a href=&quot;#Shum_Szeliski_00&quot;&gt;[5]&lt;/a&gt;,医学图像配准&lt;a href=&quot;#Christensen_Johnson_01&quot;&gt;[6]&lt;/a&gt;，以及人脸建模&lt;a href=&quot;#Baker_Matthews_01&quot;&gt;[7], [8]&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;在过去的20多年里，很多作者尝试对LK算法进行扩展，包括提高求解效率&lt;a href=&quot;#Dellaert_Collins_99&quot;&gt;[9], [7]&lt;/a&gt;、鲁棒性&lt;a href=&quot;#region_tracking&quot;&gt;[3], [10], [11], [12]&lt;/a&gt;,优化算法的准确性&lt;a href=&quot;#Amberg_Blake_09&quot;&gt;[13], [14], [15]&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;LK算法实质上是一种针对图像像素的梯度下降算法。给定一个模板$T(\mathbf{x})$,原始的LK算法(missing reference)被用于在查询图像$I(\mathbf{x})$中&lt;code&gt;对齐（ alignment）&lt;/code&gt;模板。其中$\mathbf{x} = (x,y)^T$表示图像像素的坐标。具体的说，在已知一个初始仿射变换参数$\mathbf{p_0}$的条件下，LK构造一个最小平方误差（MSE）目标函数$E$，以梯度下降的方式在仿射变换参数空间求得$E$在$\mathbf{p_0}$的某个邻域内的最优解$\mathbf{p}$，那么$\mathbf{p}$所表征的在$I(\mathbf{x})$中的图像即为与模板$T(\mathbf{x})$最“相像”的图像(Figure 1.)。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/lk_function.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 1.如上图所示，LK在图像对齐中的应用:通过LK算法可以求得图像$I(\mathbf{x})$中绿框所表示的仿射参数，
+使得框出的图像与模板$T(\mathbf{x})$最匹配，即所谓的“对齐”。&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;这篇短文主要目的是简要介绍LK算法的基本原理以及简单的算法实现。下面的一个小节我们将推导出LK算法。之后以一个简单1维的例子说明LK算法的原理。最后给出LK算法的Matlab实现。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;原理&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;仿射变换&lt;/h3&gt;
+
+&lt;p&gt;因为LK算法是在仿射变换的参数空间做梯度下降搜索，那么我们应该首先弄清楚什么叫仿射变换。在此我们做简单的介绍。&lt;/p&gt;
+
+&lt;p&gt;一个任意的仿射变换都可以表示为一个矩阵（&lt;code&gt;线性变换&lt;/code&gt;）再加上一个向量(&lt;code&gt;偏移量&lt;/code&gt;)。下面的例子是将列向量组成的矩阵$A$仿射变换到矩阵$B$。其中$M_0$是线性变换矩阵，$\mathbf{b}$是偏移向量。&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+B = M_0A + \mathbf{b}
+&lt;/script&gt;
+
+&lt;p&gt;上式也可简写为:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\left[      
+ \begin{array}{c} B\\ 1 
+ \end{array} 
+ \right] 
+ = M\left[ \begin{array}{c} A\\ 1 \end{array} 
+ \right] =  \left[      
+ \begin{array}{ccc} M_0&amp;\mathbf{b}\\ \mathbf{0}&amp;1 \end{array} 
+ \right] \left[ \begin{array}{c} A\\ 1 \end{array} 
+ \right]
+
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;我们称$M$为&lt;code&gt;仿射变换的参数矩阵&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/affine_transform_example.png&quot; width=&quot;300px&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 2.给定一个仿射变换参数矩阵$M$，我们可以将Image 1的三角形仿射变换到Image 2。&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;因为图像坐标$\mathbf{x} \in \mathbb{R}^2$，所以在图像处理中的仿射变换参数矩阵为$M \in \mathbb{R}^{3 \times 3}$。&lt;/p&gt;
+
+&lt;h3 id=&quot;lk&quot;&gt;LK算法的推导&lt;/h3&gt;
+
+&lt;p&gt;我们先给出LK算法的目标函数。&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\label{obejct_function}
+E = \min{\| T(X_0) - I(MX))\|^2 }
+
+&lt;/script&gt;
+
+&lt;p&gt;其中$X_0,X$分别表示模板图像$T$和查询图像$I$的像素坐标矩阵，为便于后面的分析，我们将模板和查询图像都抽成列向量的形式，即令$T,I \in \mathbb{R}^N$，$N$为归一化后的图像像素点个数。$M$表示仿射变换的参数矩阵。我们需要在仿射变换的参数空间找到一个$M_{opt}$使得目标函数$E$最小。由于我们无法得知函数$I(\mathbf{x})$的解析形式，故使用求偏导解$E$的方法无法实现。LK算法利用了一个巧妙的方法迭代求解$E$的最优解。下面我们将介绍这一方法。&lt;/p&gt;
+
+&lt;p&gt;我们先令：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+
+M = \left[ 
+
+\begin{array}{ccc}
+
+p_1&amp;p_2&amp;p_3\\
+p_4&amp;p_5&amp;p_6\\
+0&amp;0&amp;1
+\end{array}
+\right]
+
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;即矩阵$M$可以用六个实数参数$p_1,p_2,\dots,p_6$表示。我们令$\mathbf{p} = (p_1,p_2,\dots,p_6)^T$。那么可以构造函数$W(\mathbf{x};\mathbf{p}) = M \mathbf{x}$，$W :\mathscr{X} \to \mathscr{X}$，即W将给定的图像中的位置坐标$\mathbf{x}$按照仿射变换参数$\mathbf{p}$变换到另一个坐标位置。则有:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+I(M X) = I(W(X;\mathbf{p}))
+&lt;/script&gt;
+
+&lt;p&gt;注意此处我们已将坐标向量$\mathbf{x}$换成了整幅图像所有坐标所组成的矩阵$X$,所以此处$X$其实是一个常数。由于不知道$I$的解析形式，但我们可以对$I$构造如下的迭代形式：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+I(W(X;\mathbf{p_{i}})) = I(W(X;\mathbf{p_{i - 1}} + \Delta \mathbf{p}))
+&lt;/script&gt;
+
+&lt;p&gt;只要我们知道每一步迭代的$\Delta \mathbf{p}$值，就可以求得$\mathbf{p_{opt}}$。&lt;/p&gt;
+
+&lt;p&gt;将上述表示在$\mathbf{p_i}$处做&lt;code&gt;一阶泰勒展开&lt;/code&gt;，有：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+I(W(X;\mathbf{p_{i + 1}})) = I(W(X;\mathbf{p_{i}})) + \nabla I  |_{\mathbf{p_i}}\frac{\partial{W}}{\partial{\mathbf{p}}} \Delta \mathbf{p}
+\label{taylor_expansion}
+
+
+&lt;/script&gt;
+
+&lt;p&gt;$\frac{\partial{W}}{\partial{\mathbf{p}}}$为&lt;code&gt;Jacobian矩阵&lt;/code&gt;。它可表示为:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\frac{\partial{W}}{\partial{\mathbf{p}}} = 
+ \left[ 
+
+\begin{array}{cccccc}
+
+\frac{\partial{W_1}}{\partial{p_1}}&amp;\frac{\partial{W_1}}{\partial{p_2}}&amp;\frac{\partial{W_1}}{\partial{p_3}}&amp;\frac{\partial{W_1}}{\partial{p_4}}&amp;\frac{\partial{W_1}}{\partial{p_5}}&amp;\frac{\partial{W_1}}{\partial{p_6}}\\
+
+\frac{\partial{W_2}}{\partial{p_1}}&amp;\frac{\partial{W_2}}{\partial{p_2}}&amp;\frac{\partial{W_2}}{\partial{p_3}}&amp;\frac{\partial{W_2}}{\partial{p_4}}&amp;\frac{\partial{W_2}}{\partial{p_5}}&amp;\frac{\partial{W_2}}{\partial{p_6}}
+\end{array}
+\right]
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;其中：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+W = \left[
+\begin{array}{cc}
+W_1\\W_2
+\end{array}
+\right],
+
+&lt;/script&gt;
+
+&lt;p&gt;$W_1,W_2 \in \mathbb{R}^N$，$N$是查询图像归一化到同一大小（一般与模板的大小相同）后的像素个数。&lt;/p&gt;
+
+&lt;p&gt;因为:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\left[      
+ \begin{array}{c} W\\ \mathbf{1} 
+ \end{array} 
+ \right] 
+ = M\left[ \begin{array}{c} X\\ \mathbf{1} \end{array} 
+ \right] =  \left[ 
+
+\begin{array}{ccc}
+
+p_1&amp;p_2&amp;p_3\\
+p_4&amp;p_5&amp;p_6\\
+0&amp;0&amp;1
+\end{array}
+\right] \left[ \begin{array}{c} X\\ \mathbf{1} \end{array} 
+ \right]
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;所以我们可以得到:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+\frac{\partial{W_1}}{\partial{p_1}} = X_1, 
+\frac{\partial{W_1}}{\partial{p_2}} = X_2,
+\frac{\partial{W_1}}{\partial{p_3}} = \mathbf{1}, 
+\frac{\partial{W_1}}{\partial{p_4}} = \mathbf{0}, 
+\frac{\partial{W_1}}{\partial{p_5}} = \mathbf{0}, 
+\frac{\partial{W_1}}{\partial{p_6}} = \mathbf{0}. 
+
+\\
+
+\frac{\partial{W_2}}{\partial{p_1}} = \mathbf{0}, 
+\frac{\partial{W_2}}{\partial{p_2}} = \mathbf{0},
+\frac{\partial{W_2}}{\partial{p_3}} = \mathbf{0}, 
+\frac{\partial{W_2}}{\partial{p_4}} = X_1, 
+\frac{\partial{W_2}}{\partial{p_5}} = X_2, 
+\frac{\partial{W_2}}{\partial{p_6}} = \mathbf{1}. 
+
+&lt;/script&gt;
+
+&lt;p&gt;其中：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+X = \left[
+\begin{array}{cc}
+X_1\\X_2
+\end{array}
+\right]
+
+&lt;/script&gt;
+
+&lt;p&gt;$X_1,X_2 \in \mathbb{R}^N$。那么$\frac{\partial{W}}{\partial{\mathbf{p}}}$为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\frac{\partial{W}}{\partial{\mathbf{p}}} = 
+ \left[ 
+
+\begin{array}{cccccc}
+
+X_1&amp;X_2&amp;\mathbf{1}&amp;\mathbf{0}&amp;\mathbf{0}&amp;\mathbf{0} \\
+\mathbf{0}&amp;\mathbf{0}&amp;\mathbf{0}&amp;X_1&amp;X_2&amp;\mathbf{1} \\
+
+\end{array}
+\right]
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;我们回过头继续处理目标函数$\ref{obejct_function}$,将泰勒展开式$\ref{taylor_expansion}$带入，可得到第$i+1$次迭代的目标函数,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+E_{i+1} = \min{\| T(X_0) - I(W(X;\mathbf{p_{i}})) - \nabla I |_{\mathbf{p_i}}\frac{\partial{W}}{\partial{\mathbf{p}}}  \Delta \mathbf{p}
+ \|^2 }
+
+&lt;/script&gt;
+
+&lt;p&gt;上式是关于$\Delta \mathbf{p}$的最小二乘问题，可得到：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+\Delta \mathbf{p} = H^{\dagger} (I(W(X;\mathbf{p_{i}})) - T(X_0))
+&lt;/script&gt;
+
+&lt;p&gt;其中，&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+H = \nabla I|_{\mathbf{pi}} \frac{\partial{W}}{\partial{\mathbf{p}}} 
+&lt;/script&gt;
+
+&lt;p&gt;由上面的推导过程可知，在迭代求解目标函数最优解的每一次迭代中，我们只需要知道矩阵$H$就可以解出$\Delta \mathbf{p}$的值。而$H$的计算包含两部分，1)Jacobian矩阵可以在迭代开始前预先算出;2)$图像梯度 \nabla I$的计算需要知道上一次迭代求出的图像。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../img/lk_illustration.png&quot; /&gt;&lt;p class=&quot;figure_caption&quot;&gt;Figure 3.LK算法的过程示例图&lt;a href=&quot;#Baker_Simon_04&quot;&gt;[16]&lt;/a&gt;。注意，与上述推导过程不同，此处图像并没有抽成列向量的形式。&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;matlab&quot;&gt;简单的Matlab实现&lt;/h2&gt;
+
+&lt;p&gt;计算Jacobian矩阵：&lt;/p&gt;
+
+&lt;table class=&quot;highlighttable&quot;&gt;&lt;tr&gt;&lt;td class=&quot;linenos&quot;&gt;&lt;div class=&quot;linenodiv&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;1
+2
+3
+4
+5
+6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;jac_x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kron&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;jac_y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kron&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;jac_one&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dW_dp&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jac_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jac_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jac_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;总结&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;引用&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;Lucas_kanade_1981&quot;&gt;[1]B. D. Lucas and T. Kanade, “An Iterative Image Registration Technique with an Application to Stereo Vision (IJCAI),” in &lt;i&gt;Proceedings of the 7th International Joint Conference on Artificial Intelligence (IJCAI ’81)&lt;/i&gt;, 1981, pp. 674–679.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;eigen_tracking&quot;&gt;[2]M. J. Black and A. D. Jepson, “EigenTracking: Robust Matching and Tracking of Articulated Objects Using a View-Based Representation,” &lt;i&gt;International Journal of Computer Vision&lt;/i&gt;, vol. 26, no. 1, pp. 63–84, 1998.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;region_tracking&quot;&gt;[3]G. D. Hager and P. N. Belhumeur, “Efficient region tracking with parametric models of geometry and illumination,” &lt;i&gt;Pattern Analysis and Machine Intelligence, IEEE Transactions on&lt;/i&gt;, vol. 20, no. 10, pp. 1025–1039, Oct. 1998.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;hierarchical_motion_estimate&quot;&gt;[4]J. R. Bergen, P. Anandan, T. J. Hanna, and R. Hingorani, “Hierarchical model-based motion estimation,” 1992, pp. 237–252.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Shum_Szeliski_00&quot;&gt;[5]H.-Y. Shum and R. Szeliski, “Construction of panoramic mosaics with global and local alignment,” &lt;i&gt;International Journal of Computer Vision&lt;/i&gt;, vol. 36, no. 2, pp. 101–130, Feb. 2000.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Christensen_Johnson_01&quot;&gt;[6]G. E. Christensen and H. J. Johnson, “Consistent image registration,” &lt;i&gt;Medical Imaging, IEEE Transactions on&lt;/i&gt;, vol. 20, no. 7, pp. 568–582, Jul. 2001.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Baker_Matthews_01&quot;&gt;[7]S. Baker and I. Matthews, “Equivalence and efficiency of image alignment algorithms,” in &lt;i&gt;Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on&lt;/i&gt;, 2001, vol. 1, pp. I-1090-I-1097 vol.1.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Cootes_Edwards_98&quot;&gt;[8]T. F. Cootes, G. J. Edwards, and C. J. Taylor, “Active appearance models,” in &lt;i&gt;Computer Vision ECCV’98&lt;/i&gt;, vol. 1407, H. Burkhardt and B. Neumann, Eds. Springer Berlin Heidelberg, 1998, pp. 484–498.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Dellaert_Collins_99&quot;&gt;[9]F. Dellaert and R. Collins, “Fast Image-Based Tracking by Selective Pixel Integration,” in &lt;i&gt;In Proceedings of the ICCV Workshop on Frame-Rate Vision&lt;/i&gt;, 1999, pp. 1–22.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Baker_Gross_03&quot;&gt;[10]S. Baker, R. Gross, and I. Matthews, “Lucas-Kanade 20 Years On: A Unifying Framework: Part 3,” Robotics Institute, Pittsburgh, PA, CMU-RI-TR-03-35, Nov. 2003.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Ashraf_Lucey_10&quot;&gt;[11]A. B. Ashraf, S. Lucey, and T. Chen, “Fast image alignment in the Fourier domain,” in &lt;i&gt;Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on&lt;/i&gt;, 2010, pp. 2480–2487.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Dowson_Bowden_08&quot;&gt;[12]N. Dowson and R. Bowden, “Mutual Information for Lucas-Kanade Tracking (MILK): An Inverse Compositional Formulation,” &lt;i&gt;Pattern Analysis and Machine Intelligence, IEEE Transactions on&lt;/i&gt;, vol. 30, no. 1, pp. 180–185, Jan. 2008.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Amberg_Blake_09&quot;&gt;[13]B. Amberg, A. Blake, and T. Vetter, “On compositional Image Alignment, with an application to Active Appearance Models,” in &lt;i&gt;Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on&lt;/i&gt;, 2009, pp. 1714–1721.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Megret_Authesserre_10&quot;&gt;[14]R. Megret, J. Authesserre, and Y. Berthoumieu, “Bidirectional Composition on Lie Groups for Gradient-Based Image Alignment,” &lt;i&gt;Image Processing, IEEE Transactions on&lt;/i&gt;, vol. 19, no. 9, pp. 2369–2381, Sep. 2010.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Oron_Bar-Hillel_14&quot;&gt;[15]S. Oron, A. Bar-Hillel, and S. Avidan, “Extended Lucas Kanade Tracking,” in &lt;i&gt;European Conference on Computer Vision (ECCV)&lt;/i&gt;, 2014.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;Baker_Simon_04&quot;&gt;[16]S. Baker and I. Matthews, “Lucas-Kanade 20 Years On: A Unifying Framework,” &lt;i&gt;International Journal of Computer Vision&lt;/i&gt;, vol. 56, no. 3, pp. 221–255, 2004.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+
+</description>
+				<pubDate>Fri, 08 May 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/blog/2015-05-08-LK/</link>
+				<guid isPermaLink="true">http://turingki.com/blog/2015-05-08-LK/</guid>
+			</item>
+		
+			<item>
+				<title>【课程】分布式系统</title>
+				<description>&lt;blockquote&gt;
+  &lt;p&gt;注：基于&lt;a href=&quot;http://www.hitsz.edu.cn/body/shizi/detailcn.php?strID=604&quot;&gt;堵宏伟&lt;/a&gt;老师和&lt;a href=&quot;http://www.cs.cityu.edu.hk/~jia/cs6223/cs6223.html&quot;&gt;贾小华&lt;/a&gt;老师的课件整理。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;chapter-1introduction&quot;&gt;Chapter 1.Introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;Keywords:resource sharing,collaborative computing,concurrency,no global clock,independent failure&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;the-motivation-of-distributed-system&quot;&gt;The motivation of distributed system:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Resourse Sharing&lt;/p&gt;
+
+    &lt;p&gt;including :hardware sharing,software sharing,data sharing,service sharing,and media stream sharing.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Collaborative Computing&lt;/p&gt;
+
+    &lt;p&gt;parallel computing,distributed computing.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;Definition:A distributed system is defined as one in which components at networked computers communicate and 
+coordinate their actions only by passing messages.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/distributed system.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Middleware&lt;/code&gt; is the core layer of distriubuted system.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/distributed applications.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;features-of-distributed-system&quot;&gt;3 features of distributed system:&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Concurrency&lt;/code&gt;:multi-process and multi-threads concurrently executing ,sharing resources.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;No gobal clock&lt;/code&gt;:program coordination(程序间的协调工作) depend on massage passing.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;independent failure&lt;/code&gt;:some processes failure,can not known by other processes.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-typical-distributed-systems&quot;&gt;some typical distributed systems&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;DNS service&lt;a href=&quot;http://linux.vbird.org/linux_server/0350dns.php#Whatisdns&quot;&gt;?&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;distributed file system(eg.&lt;a href=&quot;http://hadoop.apache.org/docs/r1.0.4/cn/hdfs_design.html&quot;&gt;Hadoop&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GPS&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;question-1&quot;&gt;Question 1&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;List the three main software components that may fail when a client process invokes a method in a server object, giving an example of a failure in each case. To what extent are these failures independent of one another? Suggest how the components can be made to tolerate one another’s failures&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The three main software components that may fail are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the client process e.g. it may crash&lt;/li&gt;
+  &lt;li&gt;the server process e.g. the process may crash&lt;/li&gt;
+  &lt;li&gt;the communication software e.g. a message may fail to arrive&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The failures are generally caused independently of one another. Examples of dependent failures:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;if the loss of a message causes the client or server process to crash. (The crashing of a server would cause a client to perceive that a reply message is missing and might indirectly cause it to fail). &lt;/li&gt;
+  &lt;li&gt;if clients crashing cause servers problems. &lt;/li&gt;
+  &lt;li&gt;if the crash of a process causes a failures in the communication software.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both processes should be able to tolerate missing messages. The client must tolerate a missing reply message after it has sent an invocation request message. Instead of making the user wait forever for the reply, a client process could use a timeout and then tell the user it has not been able to contact the server. &lt;/p&gt;
+
+&lt;p&gt;A simple server just waits for request messages, executes invocations and sends replies. It should be absolutely immune to lost messages. But if a server stores information about its clients it might eventually fail if clients crash without informing the server (so that it can remove redundant information). (See stateless servers in chapter 4/5/8).&lt;/p&gt;
+
+&lt;p&gt;The communication software should be designed to tolerate crashes in the communicating processes. For example, the failure of one process should not cause problems in the communication between the surviving processes. &lt;/p&gt;
+
+&lt;h2 id=&quot;chapter-2distributed-systems-models&quot;&gt;Chapter 2.Distributed Systems models&lt;/h2&gt;
+
+&lt;h3 id=&quot;physical-model&quot;&gt;physical model&lt;/h3&gt;
+
+&lt;p&gt;Physical model describe distributed system  explicitly.It capture &lt;code&gt;hardware composition&lt;/code&gt; in terms of computers and their &lt;code&gt;inter-connnecting networks&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The baseline physical model:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hardware and software components located at networked computers communicate and coordinate their actions by passing messages.&lt;/li&gt;
+  &lt;li&gt;Very simple physical model of a distributed system.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/generations of distributed systems.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;architectural-model&quot;&gt;architectural model&lt;/h3&gt;
+
+&lt;p&gt;This model describe systems in terms of computational and communication task performed by computational elements.An architectural model of a distributed system simplifies and abstracts the functions of the individual components of a distributed system and 1)Organization of components across the network of computers.2)Their interrelationship, i.e., communicate with each other.&lt;/p&gt;
+
+&lt;h3 id=&quot;architectural-elements&quot;&gt;Architectural elements&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;communicating entities&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;communicating entities are tpyically processes.&lt;/li&gt;
+  &lt;li&gt;Problem-oriented perspective&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;Communicating paradigms&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Interprocess communication (IPC)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Remote invocation &lt;/p&gt;
+
+    &lt;p&gt;Resulting in the calling of a remote operation,procedure or method.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Indirect communication&lt;/p&gt;
+
+    &lt;p&gt;Group communication&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;../img/group communication.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;publish-subscribe-system&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Communication through propagation of events&lt;/li&gt;
+      &lt;li&gt;Generally associated with publish/subscribe systems&lt;/li&gt;
+      &lt;li&gt;Sender process publishes events&lt;/li&gt;
+      &lt;li&gt;Receiver process subscribes to events and receives only the ones it is interested in&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;../img/publish-subscribe-systems.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;Roles and responsibilities&lt;/code&gt;:C-S,P2P&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Placement&lt;/code&gt;(布局):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Services provided by multiple servers.eg.[Web servers and NIS]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/services provided by multiple servers.png&quot; alt=&quot;services provided by multiple servers&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Proxy server and caches.&lt;/p&gt;
+
+    &lt;p&gt;A cache is a store of recently used data objects that is closer to the objects themselves. Caches might be co-located with each client or may be located in a proxy server that can be shared by several clients.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/proxy server and caches.png&quot; alt=&quot;proxy server and caches&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mobile code.eg [applets]&lt;/li&gt;
+  &lt;li&gt;Mobile agents.eg [collecting information]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;Architectural patterns&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/software and hardware service layers.png&quot; alt=&quot;software and hardware service layers&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;the platform layer is indepedent in each  facility.such as,x86/Windows, intel x86/Solaris, PowerPC/Mac OS X, Intel x86/Linux&lt;/p&gt;
+
+&lt;p&gt;Middleware is a layer that provide a convenient programming model to application programmers.&lt;/p&gt;
+
+&lt;h3 id=&quot;fundamental-model&quot;&gt;fundamental model&lt;/h3&gt;
+
+&lt;p&gt;Including interaction model,failure model,and the security model. &lt;/p&gt;
+
+&lt;h4 id=&quot;interface-models&quot;&gt;Interface models&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Performance of the commnication channels:latency(分属于两个不同服务器的进程间的通信时间。) and bandwidth.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;two variants of the interavtion model:同步和异步.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;failure-models&quot;&gt;Failure models(分布式系统中的对于错误的处理。)&lt;/h4&gt;
+
+&lt;p&gt;The failure model defines ways in which failure may occur in order to provide an understanding of the effects of failure.&lt;/p&gt;
+
+&lt;h4 id=&quot;security-models&quot;&gt;Security models&lt;/h4&gt;
+
+&lt;p&gt;The security of a distributed system can be archived by securing the processes and the channels used for their interactions and by protecting the objects that they encapsulate against unauthorized access.&lt;/p&gt;
+
+&lt;h2 id=&quot;distributed-time-and-clock-synchronization&quot;&gt;Distributed Time and Clock Synchronization&lt;/h2&gt;
+
+&lt;p&gt;时间的同步对于分布式系统有着重要的意义。回忆我们前面描述的关于分布式系统的三个特点：1)并发性,2)无全局时钟,3)错误独立发生.“无全局时钟”对于许多应用来说是个不小的障碍，比如服务器与客户端间的信息同步是需要知晓双方的时间戳。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;物理时间&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;格林威治时间&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;International atomic time&lt;/code&gt;：以物质的原子内部发射的电磁振荡频率为基准的时间计量系统。秒长定义为铯 -133 原子基态的两个超精细能级间在零磁场下跃迁辐射9192631770周所持续的时间 。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Coordinated Universal Time (UTC)&lt;/code&gt; : Based on the atomic time (TAI) and introduced from 1 Jan 1972.A leap second is occasionally inserted or deleted to keep in step with solar time when the difference btw a solar-day and a TAI-day is over 800ms&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;计算机时间&lt;/code&gt;:计算机时间由CMOS时钟电路的振荡器生成。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/computer clock.png&quot; alt=&quot;computer clock&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在分布式系统中当然会涉及到计算机时间与我们日常使用的标准时间(格林威治时间或者世界时间)的同步与校准问题。由于振荡电路的计数频率精度上限，计算机时间可能会快于或慢于标准时间。所以我们需要对振荡电路的计数频率做动态地调整。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/computer clock adjust.png&quot; alt=&quot;computer clock adjust&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;而对于如何与标准时间同步，最简单的方法是直接从标准时间的相关机构获取：但传统方法(GPS,WWV,GOES)并不适合每台主机。
+对于一个client,我们可以利用远程过程调用(&lt;a href=&quot;http://baike.baidu.com/link?url=DP4b-y5hPFuokNF0uYsdGCgDOu2O7FceJvPaPIKxxrR8AKV71ButnDLMhghSyAmCPjI_I7qmy-JO74pwNGrKtZrS1DbJQfDXAKxbR3NjXsi&quot;&gt;RPC&lt;/a&gt; ）同步时钟，但是此种方法返回的时间并没有加上服务器与客户端通信的时间，当然是不准确的。&lt;/p&gt;
+
+&lt;p&gt;为了解决上面的问题，下面我们给出两种算法:&lt;code&gt;Cristian’s 算法&lt;/code&gt;和&lt;code&gt;Berkeley 算法&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h4 id=&quot;cristian-&quot;&gt;Cristian 算法&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/cristian algorithm.png&quot; alt=&quot;cristian algorithm&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;question-2&quot;&gt;Question 2&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;A client attempts to synchronize with a time server. It records the following round trip times and timestamps returned by the server.
+a)  To what time should it set its clock?  Estimate the accuracy of the setting with respect to the server’s clock.&lt;br /&gt;
+b)  Suppose the minimal time required for a message passing (from a sender to a receiver) in the system is 8 msec. Do your answers change?&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Round trip time (msec)     time (hr:min:sec)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;22                  10:54:23.674
+25                  10:54:25.450
+20                  10:54:28.342
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Solution: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;            10:54:23.685            accuracy a) ±11msec              b) ±3msec
+           10:54:25.4625                             ±12.5msec               ±4.5msec
+           10:54:28.352                               ±10msec                  ±2msec
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;berkeley-&quot;&gt;Berkeley 算法&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/berkeley algorithm.png&quot; alt=&quot;berkeley algorithm&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sockets-communication&quot;&gt;Sockets Communication&lt;/h2&gt;
+&lt;p&gt;###Sockets
+一个分布式系统可以大致上建模为服务器和客户端进程。服务器和客户端通常在不同的主机上，它们之间的交互需要通过消息传递(&lt;code&gt;Message Passing&lt;/code&gt;)。服务器进程在提供服务时，需要得到一个&lt;code&gt;端口&lt;/code&gt;。同样的，客户端在于服务器通信时也需要从所在的主机获取一个端口。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;传输层协议&lt;/code&gt;支持不同主机进程间的通信，它分为两种:1)面向链接的协议(&lt;code&gt;TCP&lt;/code&gt;);2)无链接的协议(&lt;code&gt;UDP&lt;/code&gt;)。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Sockets（套接字）&lt;/code&gt;:对传输层的抽象。它支持不同的传输层协议。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/sockets.png&quot; alt=&quot;sockets&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一些sockets的操作：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;socket ,bind,listen, accept, connect,read/write, send/recv, sendto/recvfrom, sendmsg/recvmsg,close/shutdown&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;进程间通信&lt;/h3&gt;
+
+&lt;h4 id=&quot;question-3&quot;&gt;Question 3&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;a)  explain the relationship between IPC and RPC.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In fact, RPC is finally implemented by IPC. RPC is a higher level application.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;b)when you use RPC package to write application programs, why do you need to have an interface definition?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Because usually the people who write server programs are different from those who write client programs. In order for these different groups to agree on something which can make the whole system work, a uniform standard must be specified for both groups. This standard is exactly the interface definition we are writing.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;c) what client &amp;amp; server procedures should you write and what procedures are automatically generated by the RPC compiler?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Stub and skeleton are automatically generated by the RPC compiler together with sample client and server files. But we need to modify the samples according to our needs.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;2 .  The Election Service provides two remote procedures:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;•   Vote: with two parameters through which the client supplies the name of a candidate (string) and the voter’s number (integer).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;•   Result: with one parameter of the name of a candidate and the system returns the number of votes the candidate has obtained&amp;gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Define the interface to the Election service in Sun XDR.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;struct voteargs {
+    string  name;
+    int id;
+};&lt;/p&gt;
+
+&lt;p&gt;program ELECTION {
+    version VERSION {
+    void    Vote(voteargs) = 1;
+    int Result(string) = 2;
+    } = 1;
+} 13456;&lt;/p&gt;
+
+&lt;h2 id=&quot;remote-method-invocationrmi&quot;&gt;Remote Method Invocation(RMI)&lt;/h2&gt;
+
+&lt;p&gt;RMI实际上是RPC的Java实现。&lt;/p&gt;
+
+&lt;p&gt;　RMI是Remote Method Invocation的简称，是J2SE的一部分，能够让程序员开发出基于Java的分布式应用。一个RMI对象是一个远 程Java对象，可以从另一个Java虚拟机上（甚至跨过网络）调用它的方法，可以像调用本地Java对象的方法一样调用远程对象的方法，使分布在不同的JVM中的对象的外表和行为都 像本地对象一样。&lt;/p&gt;
+
+&lt;h2 id=&quot;group-communication&quot;&gt;Group Communication&lt;/h2&gt;
+
+&lt;h2 id=&quot;mutual-exclusion--election-algorithms&quot;&gt;Mutual exclusion &amp;amp; election algorithms&lt;/h2&gt;
+
+&lt;h3 id=&quot;process-synchronization&quot;&gt;Process Synchronization&lt;/h3&gt;
+
+&lt;p&gt;Techniques to coordinate execution among processes.&lt;/p&gt;
+
+&lt;h2 id=&quot;consistency-and-replication&quot;&gt;Consistency and Replication&lt;/h2&gt;
+
+&lt;p&gt;为什么需要数据冗余？&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;提高稳定性；&lt;/li&gt;
+  &lt;li&gt;提高大型系统的性能。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;冗余必须是一致的(consistent)。&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数据的修改必须在所以副本上同时执行。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;name-services&quot;&gt;Name Services&lt;/h2&gt;
+
+&lt;h3 id=&quot;name-address-route&quot;&gt;Name, address, route&lt;/h3&gt;
+
+&lt;p&gt;The    &lt;code&gt;name&lt;/code&gt; indicates what we seek&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Human readable&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Universal Resource Names (URNs)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;An &lt;code&gt;address&lt;/code&gt; indicates where it is&lt;/p&gt;
+
+&lt;p&gt;IP address, port&lt;/p&gt;
+
+&lt;p&gt;A &lt;code&gt;route&lt;/code&gt; tells how to get there &lt;/p&gt;
+
+&lt;p&gt;Internet routing&lt;/p&gt;
+
+&lt;h2 id=&quot;concurrency-control-methods&quot;&gt;Concurrency Control Methods&lt;/h2&gt;
+
+&lt;h3 id=&quot;two-phase-locking&quot;&gt;Two phase locking&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Lock data items before access. &lt;/li&gt;
+  &lt;li&gt;Serialized in the order of obtaining locks. &lt;/li&gt;
+  &lt;li&gt;No abort and restart.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;timestamp-ordering&quot;&gt;Timestamp ordering(按开始时间序列化)&lt;/h3&gt;
+
+&lt;p&gt;In computer science, a timestamp-based concurrency control algorithm is a non-lock concurrency control method. It is used in some databases to safely handle transactions, using timestamps.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Check timestamps of data items before access.&lt;/li&gt;
+  &lt;li&gt;Serialized in the order of start time. &lt;/li&gt;
+  &lt;li&gt;Abort during execution.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;optimistic-method&quot;&gt;Optimistic method（按结束时间序列化）&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Validate at the close.&lt;/li&gt;
+  &lt;li&gt;Serialized in the order of close time. &lt;/li&gt;
+  &lt;li&gt;Abort at validation.&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+				<pubDate>Tue, 05 May 2015 00:00:00 +0800</pubDate>
+				<link>http://turingki.com/course/2015-05-05-DS/</link>
+				<guid isPermaLink="true">http://turingki.com/course/2015-05-05-DS/</guid>
+			</item>
+		
+	</channel>
+</rss>
